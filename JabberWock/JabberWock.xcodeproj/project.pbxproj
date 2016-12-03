@@ -19,6 +19,10 @@
 		1B1CE2E71DF0127E00DD2561 /* charset.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B1CE2E61DF0127E00DD2561 /* charset.swift */; };
 		1B1CE2E91DF017F000DD2561 /* head.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B1CE2E81DF017F000DD2561 /* head.swift */; };
 		1B1CE2EB1DF0185C00DD2561 /* body.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B1CE2EA1DF0185C00DD2561 /* body.swift */; };
+		1B71C0DB1DF2A98F006492D5 /* JW.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B71C0DA1DF2A98F006492D5 /* JW.swift */; };
+		1B71C0DD1DF2AF13006492D5 /* result.txt in Resources */ = {isa = PBXBuildFile; fileRef = 1B71C0DC1DF2AF13006492D5 /* result.txt */; };
+		1B71C0DF1DF2B24B006492D5 /* JWTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B71C0DE1DF2B24B006492D5 /* JWTest.swift */; };
+		1B71C0E21DF2B2D9006492D5 /* JW.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B71C0DA1DF2A98F006492D5 /* JW.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -48,6 +52,9 @@
 		1B1CE2E61DF0127E00DD2561 /* charset.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = charset.swift; sourceTree = "<group>"; };
 		1B1CE2E81DF017F000DD2561 /* head.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = head.swift; sourceTree = "<group>"; };
 		1B1CE2EA1DF0185C00DD2561 /* body.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = body.swift; sourceTree = "<group>"; };
+		1B71C0DA1DF2A98F006492D5 /* JW.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JW.swift; sourceTree = "<group>"; };
+		1B71C0DC1DF2AF13006492D5 /* result.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = result.txt; sourceTree = "<group>"; };
+		1B71C0DE1DF2B24B006492D5 /* JWTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JWTest.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -100,6 +107,7 @@
 				1B1CE2C71DEFF8D000DD2561 /* LaunchScreen.storyboard */,
 				1B1CE2CA1DEFF8D000DD2561 /* Info.plist */,
 				1B1CE2C21DEFF8D000DD2561 /* JabberWock.xcdatamodeld */,
+				1B71C0DC1DF2AF13006492D5 /* result.txt */,
 			);
 			path = JabberWock;
 			sourceTree = "<group>";
@@ -109,6 +117,7 @@
 			children = (
 				1B1CE2D31DEFF8D000DD2561 /* JabberWockTests.swift */,
 				1B1CE2D51DEFF8D000DD2561 /* Info.plist */,
+				1B71C0DE1DF2B24B006492D5 /* JWTest.swift */,
 			);
 			path = JabberWockTests;
 			sourceTree = "<group>";
@@ -142,6 +151,7 @@
 			children = (
 				1B1CE2E41DF0117200DD2561 /* language.swift */,
 				1B1CE2E61DF0127E00DD2561 /* charset.swift */,
+				1B71C0DA1DF2A98F006492D5 /* JW.swift */,
 			);
 			name = global;
 			sourceTree = "<group>";
@@ -234,6 +244,7 @@
 				1B1CE2C91DEFF8D000DD2561 /* LaunchScreen.storyboard in Resources */,
 				1B1CE2C61DEFF8D000DD2561 /* Assets.xcassets in Resources */,
 				1B1CE2C11DEFF8D000DD2561 /* Main.storyboard in Resources */,
+				1B71C0DD1DF2AF13006492D5 /* result.txt in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -253,6 +264,7 @@
 			files = (
 				1B1CE2BE1DEFF8D000DD2561 /* ViewController.swift in Sources */,
 				1B1CE2E51DF0117200DD2561 /* language.swift in Sources */,
+				1B71C0DB1DF2A98F006492D5 /* JW.swift in Sources */,
 				1B1CE2C41DEFF8D000DD2561 /* JabberWock.xcdatamodeld in Sources */,
 				1B1CE2EB1DF0185C00DD2561 /* body.swift in Sources */,
 				1B1CE2DF1DF0086500DD2561 /* html.swift in Sources */,
@@ -266,7 +278,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1B71C0DF1DF2B24B006492D5 /* JWTest.swift in Sources */,
 				1B1CE2D41DEFF8D000DD2561 /* JabberWockTests.swift in Sources */,
+				1B71C0E21DF2B2D9006492D5 /* JW.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -468,6 +482,7 @@
 				1B1CE2DA1DEFF8D000DD2561 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		1B1CE2DB1DEFF8D000DD2561 /* Build configuration list for PBXNativeTarget "JabberWockTests" */ = {
 			isa = XCConfigurationList;
@@ -476,6 +491,7 @@
 				1B1CE2DD1DEFF8D000DD2561 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 

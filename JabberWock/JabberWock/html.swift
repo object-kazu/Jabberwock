@@ -9,6 +9,10 @@
 import Foundation
 
 class HTML {
-    var lang : LANG!
-    var charset : CHARSET!
+    var lang            : LANG!
+    var charset         : CHARSET!
+    var resultString    : String = ""
+    var openString      : String = "<html>"
+    var closeString     : String = "</html>"
+    
 }
