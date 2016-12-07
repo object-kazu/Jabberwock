@@ -23,6 +23,10 @@
 		1B71C0DD1DF2AF13006492D5 /* result.txt in Resources */ = {isa = PBXBuildFile; fileRef = 1B71C0DC1DF2AF13006492D5 /* result.txt */; };
 		1B71C0DF1DF2B24B006492D5 /* JWTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B71C0DE1DF2B24B006492D5 /* JWTest.swift */; };
 		1B71C0E21DF2B2D9006492D5 /* JW.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B71C0DA1DF2A98F006492D5 /* JW.swift */; };
+		1BD05B4E1DF6CB3000AFAABD /* htmlTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BD05B4D1DF6CB3000AFAABD /* htmlTest.swift */; };
+		1BD05B511DF6CDC100AFAABD /* html.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B1CE2DE1DF0086500DD2561 /* html.swift */; };
+		1BD05B521DF6CF8400AFAABD /* language.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B1CE2E41DF0117200DD2561 /* language.swift */; };
+		1BD05B531DF6CF8800AFAABD /* charset.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B1CE2E61DF0127E00DD2561 /* charset.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -55,6 +59,7 @@
 		1B71C0DA1DF2A98F006492D5 /* JW.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JW.swift; sourceTree = "<group>"; };
 		1B71C0DC1DF2AF13006492D5 /* result.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = result.txt; sourceTree = "<group>"; };
 		1B71C0DE1DF2B24B006492D5 /* JWTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JWTest.swift; sourceTree = "<group>"; };
+		1BD05B4D1DF6CB3000AFAABD /* htmlTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = htmlTest.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -118,6 +123,7 @@
 				1B1CE2D31DEFF8D000DD2561 /* JabberWockTests.swift */,
 				1B1CE2D51DEFF8D000DD2561 /* Info.plist */,
 				1B71C0DE1DF2B24B006492D5 /* JWTest.swift */,
+				1BD05B4D1DF6CB3000AFAABD /* htmlTest.swift */,
 			);
 			path = JabberWockTests;
 			sourceTree = "<group>";
@@ -278,9 +284,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1BD05B531DF6CF8800AFAABD /* charset.swift in Sources */,
 				1B71C0DF1DF2B24B006492D5 /* JWTest.swift in Sources */,
+				1BD05B511DF6CDC100AFAABD /* html.swift in Sources */,
 				1B1CE2D41DEFF8D000DD2561 /* JabberWockTests.swift in Sources */,
+				1BD05B4E1DF6CB3000AFAABD /* htmlTest.swift in Sources */,
 				1B71C0E21DF2B2D9006492D5 /* JW.swift in Sources */,
+				1BD05B521DF6CF8400AFAABD /* language.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -413,10 +423,14 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = CSUJW2XS9K;
 				INFOPLIST_FILE = JabberWock/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				ONLY_ACTIVE_ARCH = YES;
 				PRODUCT_BUNDLE_IDENTIFIER = "jp.com.momiji-mac.JabberWock";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphonesimulator iphoneos";
 				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
 		};
@@ -426,10 +440,14 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = CSUJW2XS9K;
 				INFOPLIST_FILE = JabberWock/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				ONLY_ACTIVE_ARCH = YES;
 				PRODUCT_BUNDLE_IDENTIFIER = "jp.com.momiji-mac.JabberWock";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphonesimulator iphoneos";
 				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
 		};
@@ -443,6 +461,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "jp.com.momiji-mac.JabberWockTests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphonesimulator iphoneos";
 				SWIFT_VERSION = 3.0;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/JabberWock.app/JabberWock";
 			};
@@ -458,6 +477,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "jp.com.momiji-mac.JabberWockTests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphonesimulator iphoneos";
 				SWIFT_VERSION = 3.0;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/JabberWock.app/JabberWock";
 			};

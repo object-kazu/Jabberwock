@@ -7,7 +7,8 @@
 //
 
 import Foundation
-enum LANG {
+
+enum LANG :String{
     case en
     case ja
     

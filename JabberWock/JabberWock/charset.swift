@@ -8,7 +8,7 @@
 
 import Foundation
 
-enum CHARSET {
+enum CHARSET: String {
     case utf8
     
     func str() -> String {

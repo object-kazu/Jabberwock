@@ -8,11 +8,23 @@
 
 import Foundation
 
-class HTML {
+class HTML:JW {
     var lang            : LANG!
     var charset         : CHARSET!
-    var resultString    : String = ""
     var openString      : String = "<html>"
     var closeString     : String = "</html>"
+    
+    override init() {
+        lang = LANG.en
+        charset = CHARSET.utf8
+    }
+    
+    func assemble() {
+        resultString += openString
+        resultString += RET
+        resultString += closeString
+    }
+    
+    
     
 }
