@@ -10,6 +10,7 @@ import XCTest
 
 class htmlTest: XCTestCase {
     
+    var dctype = DOCTYPE()
     var html = HTML()
     
     
@@ -25,7 +26,20 @@ class htmlTest: XCTestCase {
     
    
     func test_html_basic() {
-        html.assemble()
+        html.addMember()
+        html.press()
+    }
+    
+    func test_addMember () {
+        dctype.addMember()
+        dctype.addMember(member: html)
+        dctype.press()
+    }
+    
+    func test_addChild(){
+        let hello = "Hello"
+        html.addCihld(child: hello)
+        html.addMember()
         html.press()
     }
 }

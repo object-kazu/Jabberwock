@@ -8,7 +8,8 @@
 
 import Foundation
 
-let INSERT_LANG: String = "lang = %"
+let INSERTSTRING: String    = "%%"
+let INSERT_LANG: String = "lang = " + INSERTSTRING
 
 class HTML:JW {
     var lang            : LANG!
@@ -29,13 +30,21 @@ class HTML:JW {
         }
         
         let str = "\"" + lang.str() + "\""
-        openString = openString.replacingOccurrences(of: "%", with: str)
+        openString = openString.replacingOccurrences(of: INSERTSTRING, with: str)
     }
     
-    func assemble() {
+    override func assemble() {
         insertLang()
         resultString += openString
         resultString += RET
+        
+        if childString.count > 0 {
+            for str in childString {
+                resultString += str
+                resultString += RET
+            }
+        }
+        
         resultString += closeString
     }
     

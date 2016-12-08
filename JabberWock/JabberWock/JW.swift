@@ -13,22 +13,45 @@ let RET: String = "\n"
 let TAB: String = "\t"
 let SPC: String = " "
 
-protocol pJW {
-    func assemble()
-}
 
 class JW {
-    var resultString : String = ""
+    var resultString: String   = ""
+    var childString : [String] = []
     
-    
-    func addMember (){
-        
+    func addMember () {
+        self.assemble()
     }
     
-    func addChild(){
-        
+    func addMember (member: JW){
+        resultString += RET
+        member.assemble()
+        resultString += member.resultString
+    }
+    
+    // add tab for indent
+    func addTab (str: String) -> String {
+        return TAB + str
+    }
+    
+    func addCihld (child: String) {
+        let t = child.replacingOccurrences(of: RET, with: RET + TAB)
+        childString.append(addTab(str: t))
     }
 
+    //        res += open
+    //        res += RET
+    //
+    //        if childString.count > 0 {
+    //            for str in childString {
+    //                res += str
+    //                res += RET
+    //            }
+    //        }
+    //        res += close
+    
+
+    func assemble() {}
+    
     // ファイルに書き出す
     func press ()  {
         
