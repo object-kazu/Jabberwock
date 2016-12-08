@@ -8,6 +8,11 @@
 
 import Foundation
 
+
+let RET: String = "\n"
+let TAB: String = "\t"
+let SPC: String = " "
+
 protocol pJW {
     func assemble()
 }
@@ -15,8 +20,6 @@ protocol pJW {
 class JW {
     var resultString : String = ""
     
-    let RET: String = "\n"
-    let TAB: String = "\t"
     
     func addMember (){
         

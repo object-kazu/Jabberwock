@@ -8,10 +8,12 @@
 
 import Foundation
 
+let INSERT_LANG: String = "lang = %"
+
 class HTML:JW {
     var lang            : LANG!
     var charset         : CHARSET!
-    var openString      : String = "<html>"
+    var openString      : String = "<html" + SPC + INSERT_LANG + SPC + ">"
     var closeString     : String = "</html>"
     
     override init() {
@@ -19,7 +21,13 @@ class HTML:JW {
         charset = CHARSET.utf8
     }
     
+    private func insertLang () {
+        let str = "\"" + lang.str() + "\""
+        openString = openString.replacingOccurrences(of: "%", with: str)
+    }
+    
     func assemble() {
+        insertLang()
         resultString += openString
         resultString += RET
         resultString += closeString
