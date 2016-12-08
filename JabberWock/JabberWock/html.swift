@@ -22,6 +22,12 @@ class HTML:JW {
     }
     
     private func insertLang () {
+        // html tagでlangを設定しない場合
+        if lang.str() == "" {
+            openString = "<html>"
+            return
+        }
+        
         let str = "\"" + lang.str() + "\""
         openString = openString.replacingOccurrences(of: "%", with: str)
     }

@@ -1,17 +1,16 @@
 //
-//  htmlTest.swift
+//  doctypeTest.swift
 //  JabberWock
 //
-//  Created by kazuyuki shimizu on 2016/12/06.
+//  Created by kazuyuki shimizu on 2016/12/08.
 //  Copyright © 2016年 momiji-mac. All rights reserved.
 //
 
 import XCTest
 
-class htmlTest: XCTestCase {
+class doctypeTest: XCTestCase {
     
-    var html = HTML()
-    
+    let dctype = DOCTYPE()
     
     override func setUp() {
         super.setUp()
@@ -23,9 +22,9 @@ class htmlTest: XCTestCase {
         super.tearDown()
     }
     
-   
-    func test_html_basic() {
-        html.assemble()
-        html.press()
+  
+    func test_doctype() {
+        dctype.press()
     }
+    
 }
