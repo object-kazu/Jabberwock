@@ -8,14 +8,34 @@
 
 import Foundation
 
-class HEADER {
-    let char = META()
-}
-
-class META {
-    var charset = CHARSET.utf8
-}
-class TITLE {
-    var title : String = ""
+class HEADER:JW {
+    
+    override init() {
+        super.init()
+        self.openString = "<head>"
+        self.closeString = "</head>"
+    }
+    
+    // title
+    func setTitle (title:String) {
+        let t = TITLE()
+        t.setTile(title: title)
+        setTitle(title: t)
+        
+    }
+    
+    func setTitle (title:JW){
+        addChild(child: title)
+    }
+    
+    override func assemble() {
+        assembleCore()
+    }
     
 }
+
+
+class META:JW {
+    var charset = CHARSET.utf8
+}
+

@@ -37,9 +37,35 @@ class htmlTest: XCTestCase {
     }
     
     func test_addChild(){
-        let hello = "Hello"
+        let hello = "my first task"
         html.addCihld(child: hello)
         html.addMember()
         html.press()
     }
+    
+    func test_add_header(){
+        // header
+        let header = HEADER()
+        html.addChild(child: header)
+        
+        // body
+        let hello = "my first task"
+        html.addCihld(child: hello)
+        html.addMember()
+        html.press()
+    }
+    
+    func test_add_header_title(){
+        // header
+        let header = HEADER()
+        header.setTitle(title:"task")
+        html.addChild(child: header)
+        
+        // body
+        let hello = "my first task"
+        html.addCihld(child: hello)
+        html.addMember()
+        html.press()
+    }
+    
 }

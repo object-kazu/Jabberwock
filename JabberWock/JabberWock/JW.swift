@@ -15,6 +15,9 @@ let SPC: String = " "
 
 
 class JW {
+    var openString      : String = ""
+    var closeString     : String = ""
+    
     var resultString: String   = ""
     var childString : [String] = []
     
@@ -33,24 +36,33 @@ class JW {
         return TAB + str
     }
     
+    func addChild (child : JW){
+        child.assemble()
+        self.addCihld(child: child.resultString)
+    }
+    
     func addCihld (child: String) {
         let t = child.replacingOccurrences(of: RET, with: RET + TAB)
         childString.append(addTab(str: t))
     }
 
-    //        res += open
-    //        res += RET
-    //
-    //        if childString.count > 0 {
-    //            for str in childString {
-    //                res += str
-    //                res += RET
-    //            }
-    //        }
-    //        res += close
-    
-
     func assemble() {}
+        
+    func assembleCore() {
+        resultString += openString
+        resultString += RET
+        
+        if childString.count > 0 {
+            for str in childString {
+                resultString += str
+                resultString += RET
+            }
+        }
+       
+        if closeString != "" {
+            resultString += closeString
+        }
+    }
     
     // ファイルに書き出す
     func press ()  {
@@ -73,8 +85,8 @@ class JW {
         }
         
         //file exist
-        let fileManager = FileManager.default //NSFileManager.defaultManager()
-        let path = "/Users/shimizukazuyuki/Desktop/sample.txt"
+        let fileManager = FileManager.default
+        let path = "/Users/shimizukazuyuki/Desktop/result.txt"
         
         if fileManager.fileExists(atPath: path){
             // remove file

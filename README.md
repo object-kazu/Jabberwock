@@ -4,18 +4,21 @@
 	書かなければいけないのか？
     すべてをSwiftで書いてしまえれば楽なのに！
     という実験である。
+	
     
-## > sample 1
-	func test_addChild(){
-        let hello = "Hello"
-        html.addCihld(child: hello)
-        html.addMember()
-        html.press()
-    }
-~
-output text
-~
+##  sample 1
+```
+func test_addChild(){
+    let hello = "Hello"
+    html.addCihld(child: hello)
+    html.addMember()
+    html.press()
+}
+```
+output
 
-	<html lang = "en" >
-	Hello
-	</html>
+```
+<html lang = "en" >
+Hello
+</html>
+```

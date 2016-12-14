@@ -14,12 +14,14 @@ let INSERT_LANG: String = "lang = " + INSERTSTRING
 class HTML:JW {
     var lang            : LANG!
     var charset         : CHARSET!
-    var openString      : String = "<html" + SPC + INSERT_LANG + SPC + ">"
-    var closeString     : String = "</html>"
     
     override init() {
+        super.init()
+        
         lang = LANG.en
         charset = CHARSET.utf8
+        self.openString =  "<html" + SPC + INSERT_LANG + SPC + ">"
+        self.closeString = "</html>"
     }
     
     private func insertLang () {
@@ -35,17 +37,7 @@ class HTML:JW {
     
     override func assemble() {
         insertLang()
-        resultString += openString
-        resultString += RET
-        
-        if childString.count > 0 {
-            for str in childString {
-                resultString += str
-                resultString += RET
-            }
-        }
-        
-        resultString += closeString
+        assembleCore()
     }
     
     
