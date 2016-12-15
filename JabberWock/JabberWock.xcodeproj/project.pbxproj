@@ -117,17 +117,17 @@
 		1B1CE2BA1DEFF8D000DD2561 /* JabberWock */ = {
 			isa = PBXGroup;
 			children = (
-				1B1CE2E31DF0115400DD2561 /* global */,
-				1B1CE2E21DF0089D00DD2561 /* js */,
 				1B1CE2E11DF0089700DD2561 /* css */,
+				1B1CE2E31DF0115400DD2561 /* global */,
 				1B1CE2E01DF0088C00DD2561 /* html */,
+				1B1CE2E21DF0089D00DD2561 /* js */,
 				1B1CE2BB1DEFF8D000DD2561 /* AppDelegate.swift */,
-				1B1CE2BD1DEFF8D000DD2561 /* ViewController.swift */,
-				1B1CE2BF1DEFF8D000DD2561 /* Main.storyboard */,
 				1B1CE2C51DEFF8D000DD2561 /* Assets.xcassets */,
-				1B1CE2C71DEFF8D000DD2561 /* LaunchScreen.storyboard */,
 				1B1CE2CA1DEFF8D000DD2561 /* Info.plist */,
 				1B1CE2C21DEFF8D000DD2561 /* JabberWock.xcdatamodeld */,
+				1B1CE2C71DEFF8D000DD2561 /* LaunchScreen.storyboard */,
+				1B1CE2BF1DEFF8D000DD2561 /* Main.storyboard */,
+				1B1CE2BD1DEFF8D000DD2561 /* ViewController.swift */,
 				1B71C0DC1DF2AF13006492D5 /* result.txt */,
 			);
 			path = JabberWock;
@@ -136,11 +136,11 @@
 		1B1CE2D21DEFF8D000DD2561 /* JabberWockTests */ = {
 			isa = PBXGroup;
 			children = (
-				1B1CE2D31DEFF8D000DD2561 /* JabberWockTests.swift */,
 				1B1CE2D51DEFF8D000DD2561 /* Info.plist */,
 				1B71C0DE1DF2B24B006492D5 /* JWTest.swift */,
-				1BD05B4D1DF6CB3000AFAABD /* htmlTest.swift */,
+				1B1CE2D31DEFF8D000DD2561 /* JabberWockTests.swift */,
 				1B7F1C751DF927FE006F570B /* doctypeTest.swift */,
+				1BD05B4D1DF6CB3000AFAABD /* htmlTest.swift */,
 			);
 			path = JabberWockTests;
 			sourceTree = "<group>";
@@ -148,14 +148,15 @@
 		1B1CE2E01DF0088C00DD2561 /* html */ = {
 			isa = PBXGroup;
 			children = (
-				1B1CE2DE1DF0086500DD2561 /* html.swift */,
-				1B1CE2E81DF017F000DD2561 /* head.swift */,
 				1B1CE2EA1DF0185C00DD2561 /* body.swift */,
 				1B7F1C731DF9265C006F570B /* documentType.swift */,
-				1BAAB6D91E00D2560009BA87 /* title.swift */,
+				1B1CE2E81DF017F000DD2561 /* head.swift */,
+				1B1CE2DE1DF0086500DD2561 /* html.swift */,
 				1B88D4E11E027E6A0069A8AC /* meta.swift */,
+				1BAAB6D91E00D2560009BA87 /* title.swift */,
 			);
 			name = html;
+			path = html;
 			sourceTree = "<group>";
 		};
 		1B1CE2E11DF0089700DD2561 /* css */ = {
@@ -163,6 +164,7 @@
 			children = (
 			);
 			name = css;
+			path = css;
 			sourceTree = "<group>";
 		};
 		1B1CE2E21DF0089D00DD2561 /* js */ = {
@@ -170,17 +172,19 @@
 			children = (
 			);
 			name = js;
+			path = js;
 			sourceTree = "<group>";
 		};
 		1B1CE2E31DF0115400DD2561 /* global */ = {
 			isa = PBXGroup;
 			children = (
-				1B1CE2E41DF0117200DD2561 /* language.swift */,
-				1B1CE2E61DF0127E00DD2561 /* charset.swift */,
 				1B71C0DA1DF2A98F006492D5 /* JW.swift */,
+				1B1CE2E61DF0127E00DD2561 /* charset.swift */,
 				1B88D4E31E027FF40069A8AC /* globaDef.swift */,
+				1B1CE2E41DF0117200DD2561 /* language.swift */,
 			);
 			name = global;
+			path = global;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -343,6 +347,7 @@
 				1B1CE2C01DEFF8D000DD2561 /* Base */,
 			);
 			name = Main.storyboard;
+			path = .;
 			sourceTree = "<group>";
 		};
 		1B1CE2C71DEFF8D000DD2561 /* LaunchScreen.storyboard */ = {
@@ -351,6 +356,7 @@
 				1B1CE2C81DEFF8D000DD2561 /* Base */,
 			);
 			name = LaunchScreen.storyboard;
+			path = .;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
