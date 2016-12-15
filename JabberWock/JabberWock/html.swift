@@ -8,18 +8,14 @@
 
 import Foundation
 
-let INSERTSTRING: String    = "%%"
-let INSERT_LANG: String = "lang = " + INSERTSTRING
 
 class HTML:JW {
     var lang            : LANG!
-    var charset         : CHARSET!
     
     override init() {
         super.init()
         
         lang = LANG.en
-        charset = CHARSET.utf8
         self.openString =  "<html" + SPC + INSERT_LANG + SPC + ">"
         self.closeString = "</html>"
     }

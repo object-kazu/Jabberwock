@@ -9,9 +9,6 @@
 import Foundation
 
 
-let RET: String = "\n"
-let TAB: String = "\t"
-let SPC: String = " "
 
 
 class JW {
@@ -59,7 +56,7 @@ class JW {
             }
         }
        
-        if closeString != "" {
+        if closeString != NO_CLOSETAG {
             resultString += closeString
         }
     }

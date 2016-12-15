@@ -68,4 +68,19 @@ class htmlTest: XCTestCase {
         html.press()
     }
     
+    func test_add_header_meta (){
+        // header
+        let header = HEADER()
+        header.setCharset(char: CHARSET.utf8)
+        header.setTitle(title: "task")
+        html.addChild(child: header)
+        
+        // body
+        let hello = "my first task"
+        html.addCihld(child: hello)
+        html.addMember()
+        html.press()
+        
+    }
+    
 }

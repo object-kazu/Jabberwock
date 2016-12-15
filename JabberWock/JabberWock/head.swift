@@ -32,10 +32,14 @@ class HEADER:JW {
         assembleCore()
     }
     
+    // charset
+    func setCharset (char: CHARSET) {
+        let c = META()
+        c.charset = CHARSET.utf8
+        addChild(child: c)
+    }
+    
 }
 
 
-class META:JW {
-    var charset = CHARSET.utf8
-}
 
