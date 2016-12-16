@@ -26,65 +26,79 @@ class htmlTest: XCTestCase {
     
    
     func test_html_basic() {
-        html.addMember()
         html.press()
     }
     
-    func test_addMember () {
-        dctype.addMember()
+    func test_add_doctipe(){
+        dctype.press()
+    }
+    
+    func test_add_html (){
+        dctype.addMember(member: html)
+        dctype.press()
+    }
+
+    func test_add_html_string() {
+        let hello = "my first task"
+        dctype.addCihld(child: hello)
+        dctype.press()
+        
+    }
+    
+    func test_add_member(){
+        let hello = "my first task"
+        dctype.addMember(member: hello)
+        dctype.press()
+    }
+    
+    func test_add_html_head(){
+        
+        // header
+        let head = HEAD()
+        html.addChild(child: head)
+        
+        // html
         dctype.addMember(member: html)
         dctype.press()
     }
     
-    func test_addChild(){
-        let hello = "my first task"
-        html.addCihld(child: hello)
-        html.addMember()
-        html.press()
-    }
-    
-    func test_add_header(){
-        // header
-        let header = HEADER()
-        html.addChild(child: header)
-        
-        // body
-        let hello = "my first task"
-        html.addCihld(child: hello)
-        html.addMember()
-        html.press()
+    func test_add_title () {
+        let title = TITLE()
+        title.setTile(title: "task")
+
+        dctype.addMember(member: title)
+        dctype.press()
     }
     
     func test_add_header_title(){
         // header
-        let header = HEADER()
-        header.setTitle(title:"task")
-        html.addChild(child: header)
+        let head = HEAD()
+        head.setTitle(title:"task")
+        html.addChild(child: head)
         
-        // body
-        let hello = "my first task"
-        html.addCihld(child: hello)
-        html.addMember()
-        html.press()
+        dctype.addMember(member: html)
+        dctype.press()
     }
     
     func test_add_header_meta (){
         // header
-        let header = HEADER()
-        header.setCharset(char: CHARSET.utf8)
-        header.setTitle(title: "task")
-        html.addChild(child: header)
+        let head = HEAD()
+        head.setCharset(char: CHARSET.utf8)
+        head.setTitle(title: "task")
+        html.addChild(child: head)
         
         // body
-        let hello = "my first task"
-        html.addCihld(child: hello)
-        html.addMember()
-        html.press()
+        dctype.addMember(member: html)
+        dctype.press()
         
     }
-    
-    func test_add_h1 (){
-        
-    }
+//
+//    func test_add_headings_h1 (){
+//        let h1 = HEADING()
+//        h1.headingLevel = 0 // h1 tag
+//        html.addChild(child: h1)
+//        html.addMember()
+//        html.press()
+//    }
     
 }

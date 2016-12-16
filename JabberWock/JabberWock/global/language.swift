@@ -13,13 +13,18 @@ enum LANG :String{
     case ja
     
     func str() -> String {
+        let charStrOpen = "lang=" + "\""
+        let charStrClose = "\""
+        
+        func charsetStr (char: String) -> String {
+            return charStrOpen + char + charStrClose
+        }
+        
         switch self {
         case .en:
-            return "en"
+            return charsetStr(char: "en")
         case .ja:
-            return "ja"
-        default:
-            return "ja"
+            return charsetStr(char: "ja")
         }
     }
     

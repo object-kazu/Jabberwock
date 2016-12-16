@@ -18,8 +18,9 @@ class JW {
     var resultString: String   = ""
     var childString : [String] = []
     
-    func addMember () {
-        self.assemble()
+
+    func addMember(member:String)  {
+        childString.append(member)
     }
     
     func addMember (member: JW){
@@ -43,13 +44,15 @@ class JW {
         childString.append(addTab(str: t))
     }
 
-    func assemble() {}
+    func assemble() {
+        assembleCore()
+    }
         
     func assembleCore() {
         resultString += openString
-        resultString += RET
         
         if childString.count > 0 {
+            resultString += RET
             for str in childString {
                 resultString += str
                 resultString += RET
@@ -63,6 +66,8 @@ class JW {
     
     // ファイルに書き出す
     func press ()  {
+        // prep resultString
+        assemble()
         
         // ドキュメントパス
         let documentsPath = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true)[0] as String

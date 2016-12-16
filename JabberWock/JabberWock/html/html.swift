@@ -16,7 +16,7 @@ class HTML:JW {
         super.init()
         
         lang = LANG.en
-        self.openString =  "<html" + SPC + INSERT_LANG + SPC + ">"
+        self.openString =  "<html" + SPC + INSERTSTRING + ">"
         self.closeString = "</html>"
     }
     
@@ -27,8 +27,8 @@ class HTML:JW {
             return
         }
         
-        let str = "\"" + lang.str() + "\""
-        openString = openString.replacingOccurrences(of: INSERTSTRING, with: str)
+        openString = openString.replacingOccurrences(of: INSERTSTRING, with: self.lang.str())
+
     }
     
     override func assemble() {

@@ -13,5 +13,5 @@ let TAB: String = "\t"
 let SPC: String = " "
 let NO_CLOSETAG : String = ""
 let INSERTSTRING: String    = "%%"
-let INSERT_LANG: String = "lang = " + INSERTSTRING
+
 

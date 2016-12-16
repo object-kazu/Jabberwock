@@ -19,8 +19,7 @@ class TITLE: JW {
     }
     
     func setTile(title: String) {
-        addCihld(child: title)
-        assembleCore()
+        addMember(member: title)
     }
     
 }

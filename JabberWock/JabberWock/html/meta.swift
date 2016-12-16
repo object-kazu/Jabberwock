@@ -16,7 +16,7 @@ class META:JW {
     override init() {
         super.init()
         
-        self.openString = "<meta=\"" + INSERTSTRING + "\"/>"
+        self.openString = "<meta" + SPC + INSERTSTRING + "\"/>"
         self.closeString = NO_CLOSETAG
     }
     

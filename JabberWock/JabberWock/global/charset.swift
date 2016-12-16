@@ -10,13 +10,23 @@ import Foundation
 
 enum CHARSET: String {
     case utf8
-    
+
+
     func str() -> String {
+        let charStrOpen = "charset=" + "\""
+        let charStrClose = "\""
+
+        func charsetStr (char: String) -> String {
+            return charStrOpen + char + charStrClose
+        }
+        
         switch self {
         case .utf8:
-            return "UTF-8"
+            return charsetStr(char: "UTF-8")
         default:
-            return "UTF-8"
+            return charsetStr(char: "UTF-8")
         }
     }
+    
+    
 }

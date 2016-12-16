@@ -8,7 +8,7 @@
 
 import Foundation
 
-class HEADER:JW {
+class HEAD:JW {
     
     override init() {
         super.init()
