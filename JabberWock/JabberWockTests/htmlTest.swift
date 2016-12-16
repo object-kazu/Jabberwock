@@ -69,36 +69,5 @@ class htmlTest: XCTestCase {
         dctype.addMember(member: title)
         dctype.press()
     }
-    
-    func test_add_header_title(){
-        // header
-        let head = HEAD()
-        head.setTitle(title:"task")
-        html.addChild(child: head)
-        
-        dctype.addMember(member: html)
-        dctype.press()
-    }
-    
-    func test_add_header_meta (){
-        // header
-        let head = HEAD()
-        head.setCharset(char: CHARSET.utf8)
-        head.setTitle(title: "task")
-        html.addChild(child: head)
-        
-        // body
-        dctype.addMember(member: html)
-        dctype.press()
-        
-    }
-//
-//    func test_add_headings_h1 (){
-//        let h1 = HEADING()
-//        h1.headingLevel = 0 // h1 tag
-//        html.addChild(child: h1)
-//        html.addMember()
-//        html.press()
-//    }
-    
+      
 }
