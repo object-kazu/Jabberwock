@@ -16,8 +16,8 @@ class HTML:JW {
         super.init()
         
         lang = LANG.en
-        self.openString =  "<html" + SPC + INSERTSTRING + ">"
-        self.closeString = "</html>"
+        self.openString     =  "<html" + SPC + INSERTSTRING + ">"
+        self.closeString    = "</html>"
     }
     
     private func insertLang () {
@@ -33,7 +33,8 @@ class HTML:JW {
     
     override func assemble() {
         insertLang()
-        assembleCore()
+        childString.append(RET)
+        assembleCore(isSingleLine: false)
     }
     
     

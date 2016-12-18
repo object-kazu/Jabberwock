@@ -22,4 +22,8 @@ class TITLE: JW {
         addMember(member: title)
     }
     
+    override func assemble() {
+        assembleCore(isSingleLine: true)
+    }
+    
 }

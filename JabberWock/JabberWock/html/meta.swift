@@ -28,7 +28,7 @@ class META:JW {
     
     override func assemble() {
         insertCharset()
-        assembleCore()
+        assembleCore(isSingleLine: true)
     }
 
 }

@@ -29,7 +29,7 @@ class HEAD:JW {
     }
     
     override func assemble() {
-        assembleCore()
+        assembleCore(isSingleLine: false)
     }
     
     // charset

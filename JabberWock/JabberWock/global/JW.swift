@@ -45,23 +45,37 @@ class JW {
     }
 
     func assemble() {
-        assembleCore()
+        assembleCore(isSingleLine: true)
     }
         
-    func assembleCore() {
+    func assembleCore(isSingleLine : Bool) {
         resultString += openString
-        
-        if childString.count > 0 {
-            resultString += RET
-            for str in childString {
-                resultString += str
-                resultString += RET
-            }
+
+        if isSingleLine {
+            childAssemble()
+        }else{
+            childrenAssemble()
         }
-       
+        
         if closeString != NO_CLOSETAG {
             resultString += closeString
         }
+    }
+    
+    private func childrenAssemble () {
+        resultString += RET
+        for str in childString {
+            resultString += str
+            resultString += RET
+        }
+
+    }
+    
+    private func childAssemble () {
+        if childString.count != 1 {
+            return
+        }
+        resultString += childString.first!
     }
     
     // ファイルに書き出す

@@ -39,8 +39,22 @@ class headingTest: XCTestCase {
     func test_heading_contents () {
         let h1 = HEADING()
         h1.level = 1
-        h1.contents = "test"
+        h1.content = "test"
         h1.press()
+    }
+    
+    func test_heading_h1_h2 () {
+        let h1 = HEADING()
+        h1.level = 1
+        h1.content = "test h1"
+        
+        let h2 = HEADING()
+        h2.level = 2
+        h2.content = "test h2"
+        
+        dctype.addMember(member: h1)
+        dctype.addMember(member: h2)
+        dctype.press()
     }
 
 }
