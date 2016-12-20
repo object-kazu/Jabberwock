@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1B19979B1E08A5E500C41C69 /* bodyTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B19979A1E08A5E500C41C69 /* bodyTest.swift */; };
+		1B19979D1E08F1C600C41C69 /* bistrong.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B19979C1E08F1C600C41C69 /* bistrong.swift */; };
+		1B19979F1E08FEAF00C41C69 /* bistrongTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B19979E1E08FEAF00C41C69 /* bistrongTest.swift */; };
+		1B1997A01E090FEB00C41C69 /* bistrong.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B19979C1E08F1C600C41C69 /* bistrong.swift */; };
 		1B1CE2BC1DEFF8D000DD2561 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B1CE2BB1DEFF8D000DD2561 /* AppDelegate.swift */; };
 		1B1CE2BE1DEFF8D000DD2561 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B1CE2BD1DEFF8D000DD2561 /* ViewController.swift */; };
 		1B1CE2C11DEFF8D000DD2561 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1B1CE2BF1DEFF8D000DD2561 /* Main.storyboard */; };
@@ -38,6 +42,7 @@
 		1BAAB6DB1E00D2DF0009BA87 /* head.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B1CE2E81DF017F000DD2561 /* head.swift */; };
 		1BAAB6DC1E00FD730009BA87 /* title.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BAAB6D91E00D2560009BA87 /* title.swift */; };
 		1BAAB6DD1E00FD7A0009BA87 /* body.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B1CE2EA1DF0185C00DD2561 /* body.swift */; };
+		1BCA4BA81E0953F50089772A /* footer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BCA4BA71E0953F50089772A /* footer.swift */; };
 		1BD05B4E1DF6CB3000AFAABD /* htmlTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BD05B4D1DF6CB3000AFAABD /* htmlTest.swift */; };
 		1BD05B511DF6CDC100AFAABD /* html.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B1CE2DE1DF0086500DD2561 /* html.swift */; };
 		1BD05B521DF6CF8400AFAABD /* language.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B1CE2E41DF0117200DD2561 /* language.swift */; };
@@ -58,6 +63,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		1B19979A1E08A5E500C41C69 /* bodyTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = bodyTest.swift; sourceTree = "<group>"; };
+		1B19979C1E08F1C600C41C69 /* bistrong.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = bistrong.swift; sourceTree = "<group>"; };
+		1B19979E1E08FEAF00C41C69 /* bistrongTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = bistrongTest.swift; sourceTree = "<group>"; };
 		1B1CE2B81DEFF8D000DD2561 /* JabberWock.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = JabberWock.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1B1CE2BB1DEFF8D000DD2561 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		1B1CE2BD1DEFF8D000DD2561 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -85,6 +93,7 @@
 		1B88D4E31E027FF40069A8AC /* globaDef.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = globaDef.swift; sourceTree = "<group>"; };
 		1B9946EC1E02A07D00BA13B4 /* heading.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = heading.swift; sourceTree = "<group>"; };
 		1BAAB6D91E00D2560009BA87 /* title.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = title.swift; sourceTree = "<group>"; };
+		1BCA4BA71E0953F50089772A /* footer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = footer.swift; sourceTree = "<group>"; };
 		1BD05B4D1DF6CB3000AFAABD /* htmlTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = htmlTest.swift; sourceTree = "<group>"; };
 		1BE090DA1E06536800A82473 /* pTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = pTest.swift; sourceTree = "<group>"; };
 		1BE090DC1E06538400A82473 /* p.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = p.swift; sourceTree = "<group>"; };
@@ -156,6 +165,8 @@
 				1B447C0C1E04102F009C1BB8 /* headingTest.swift */,
 				1BD05B4D1DF6CB3000AFAABD /* htmlTest.swift */,
 				1BE090DA1E06536800A82473 /* pTest.swift */,
+				1B19979A1E08A5E500C41C69 /* bodyTest.swift */,
+				1B19979E1E08FEAF00C41C69 /* bistrongTest.swift */,
 			);
 			path = JabberWockTests;
 			sourceTree = "<group>";
@@ -171,6 +182,8 @@
 				1B88D4E11E027E6A0069A8AC /* meta.swift */,
 				1BAAB6D91E00D2560009BA87 /* title.swift */,
 				1BE090DC1E06538400A82473 /* p.swift */,
+				1B19979C1E08F1C600C41C69 /* bistrong.swift */,
+				1BCA4BA71E0953F50089772A /* footer.swift */,
 			);
 			path = html;
 			sourceTree = "<group>";
@@ -307,6 +320,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				1B1CE2BE1DEFF8D000DD2561 /* ViewController.swift in Sources */,
+				1BCA4BA81E0953F50089772A /* footer.swift in Sources */,
+				1B19979D1E08F1C600C41C69 /* bistrong.swift in Sources */,
 				1B1CE2E51DF0117200DD2561 /* language.swift in Sources */,
 				1B7F1C741DF9265C006F570B /* documentType.swift in Sources */,
 				1BE090DD1E06538400A82473 /* p.swift in Sources */,
@@ -337,13 +352,16 @@
 				1BAAB6DB1E00D2DF0009BA87 /* head.swift in Sources */,
 				1B1CE2D41DEFF8D000DD2561 /* JabberWockTests.swift in Sources */,
 				1B7F1C761DF927FE006F570B /* doctypeTest.swift in Sources */,
+				1B1997A01E090FEB00C41C69 /* bistrong.swift in Sources */,
 				1BD05B4E1DF6CB3000AFAABD /* htmlTest.swift in Sources */,
 				1BAAB6DC1E00FD730009BA87 /* title.swift in Sources */,
 				1B7F1C771DF92804006F570B /* documentType.swift in Sources */,
 				1B71C0E21DF2B2D9006492D5 /* JW.swift in Sources */,
 				1B9946EE1E02A07D00BA13B4 /* heading.swift in Sources */,
 				1B447C0B1E040F7F009C1BB8 /* headTest.swift in Sources */,
+				1B19979B1E08A5E500C41C69 /* bodyTest.swift in Sources */,
 				1B88D4E51E0282550069A8AC /* meta.swift in Sources */,
+				1B19979F1E08FEAF00C41C69 /* bistrongTest.swift in Sources */,
 				1BD05B521DF6CF8400AFAABD /* language.swift in Sources */,
 				1BAAB6DD1E00FD7A0009BA87 /* body.swift in Sources */,
 				1B88D4E61E02825A0069A8AC /* globaDef.swift in Sources */,
@@ -516,6 +534,7 @@
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				DEVELOPMENT_TEAM = CSUJW2XS9K;
 				INFOPLIST_FILE = JabberWockTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "jp.com.momiji-mac.JabberWockTests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -532,6 +551,7 @@
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				DEVELOPMENT_TEAM = CSUJW2XS9K;
 				INFOPLIST_FILE = JabberWockTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "jp.com.momiji-mac.JabberWockTests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
