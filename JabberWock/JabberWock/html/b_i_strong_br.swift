@@ -39,7 +39,6 @@ class B : JW {
         insertContent()
         assembleCore(isSingleLine: true)
     }
-
 }
 
 class I : JW {
@@ -72,7 +71,8 @@ class I : JW {
         insertContent()
         assembleCore(isSingleLine: true)
     }
-    
+
+   
 }
 
 class STRONG : JW {
@@ -108,3 +108,41 @@ class STRONG : JW {
     }
     
 }
+
+class BR : JW {
+    var content :  String  = ""
+    
+    
+    override init() {
+        super.init()
+        initilizer()
+    }
+    
+    init(content: String) {
+        super.init()
+        self.initilizer()
+        self.content = content
+        
+    }
+    
+    private func initilizer () {
+        self.openString = ""
+        self.closeString = "<br>"
+    }
+    
+    
+    private func insertContent () {
+        childString.append(content)
+    }
+    
+    
+    override func assemble() {
+        insertContent()
+        assembleCore(isSingleLine: true)
+    }
+    
+}
+
+
+
+

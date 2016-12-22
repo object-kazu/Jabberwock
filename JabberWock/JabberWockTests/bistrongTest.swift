@@ -20,6 +20,7 @@ class bistrongTest: XCTestCase {
         super.tearDown()
     }
     
+    // <b>
     func test_b (){
         let bb = B()
         bb.content = "bold"
@@ -31,6 +32,18 @@ class bistrongTest: XCTestCase {
         bb.press()
     }
     
+    func test_b_tSt (){
+        let test = "bold string"
+        let ans = "<b>bold string</b>"
+        let bb = B(content: test)
+        let t = bb.tgStr()
+        
+        XCTAssertNotEqual(test, t)
+        XCTAssertEqual(ans, t)  
+    }
+    
+    
+    // <i>
     func test_i () {
         let ii = I()
         ii.content = "italic test"
@@ -42,6 +55,9 @@ class bistrongTest: XCTestCase {
         ii.press()
     }
     
+    
+    
+    //<strong>
     func test_strong () {
         let st = STRONG()
         st.content = "strong"
@@ -53,4 +69,17 @@ class bistrongTest: XCTestCase {
         st.press()
     }
     
+    // </br>
+    func test_br () {
+        let br = BR()
+        br.content = "this is br testing"
+        br.press()
+    }
+    
+    func test_p_and_br () {
+        let br = BR(content: "this is test")
+        let p = P()
+        p.contents = ["test1", "test2" + br.tgStr() + "yes!" , "test3"]
+        p.press()
+    }
 }

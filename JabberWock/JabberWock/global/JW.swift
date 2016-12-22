@@ -8,7 +8,8 @@
 
 import Foundation
 
-
+let EXPORT_TEST_Dir = "/Users/shimizukazuyuki/Desktop/index/"
+let EXPORT_TEST_File = "result.txt"
 
 
 class JW {
@@ -19,6 +20,17 @@ class JW {
     var childString : [String] = []
     
 
+    
+    //export string
+    func tgStr () -> String {
+        assemble()
+        return resultString
+    }
+    
+    
+
+    
+    // member, child
     func addMember(member:String)  {
         childString.append(member)
     }
@@ -79,7 +91,8 @@ class JW {
     }
     
     // ファイルに書き出す
-    func press ()  {
+    func press(name: String, dist : String){
+        
         // prep resultString
         assemble()
         
@@ -88,7 +101,7 @@ class JW {
         // 保存するもの
         let fileObject = resultString
         // ファイル名
-        let fileName = "result.txt"
+        let fileName = name
         // 保存する場所
         let filePath = documentsPath + fileName
         
@@ -100,9 +113,11 @@ class JW {
             
         }
         
+       
+        
         //file exist
         let fileManager = FileManager.default
-        let path = "/Users/shimizukazuyuki/Desktop/result.txt"
+        let path = dist + name
         
         if fileManager.fileExists(atPath: path){
             // remove file
@@ -116,6 +131,14 @@ class JW {
         } catch {
             assertionFailure("move error")
         }
+
+        
+    }
+    
+    
+    
+    func press ()  {
+        self.press(name: EXPORT_TEST_File, dist: EXPORT_TEST_Dir)
     }
     
     
