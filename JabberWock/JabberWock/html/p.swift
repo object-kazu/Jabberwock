@@ -12,6 +12,16 @@ class P: JW {
 
     var contents :  [String]  = []
     
+    override init() {
+        super.init()
+    }
+    
+    init(contents: [String]) {
+        super.init()
+        self.contents = contents
+        
+    }
+
     private func makeSentence () {
         
         childString.append(contentsOf: contents)
