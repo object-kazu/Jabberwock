@@ -20,6 +20,8 @@ class META:JW {
         self.closeString = NO_CLOSETAG
     }
     
+    
+    
     private func insertCharset () {
         // html tagでlangを設定しない場合
         openString = openString.replacingOccurrences(of: INSERTSTRING, with: self.charset.str())
@@ -28,7 +30,7 @@ class META:JW {
     
     override func assemble() {
         insertCharset()
-        assembleCore(isSingleLine: true)
+        assemble()
     }
 
 }

@@ -24,6 +24,10 @@ class headTest: XCTestCase {
         super.tearDown()
     }
     
+    func test_html () {
+        html.press()
+    }
+    
     func test_add_header_title(){
         // head
         let head = HEAD()

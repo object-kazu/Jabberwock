@@ -53,7 +53,7 @@ class ListCore : JW {
     
     override func assemble() {
         addChild(child: List(contents: contents))
-        assembleCore(isSingleLine: false)
+        assemble()
     }
 }
 
@@ -124,7 +124,7 @@ class ListItem : JW {
 
     override func assemble() {
         insertContent()
-        assembleCore(isSingleLine: true)
+        assemble()
     }
     
 }

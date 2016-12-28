@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1B08131F1E0E7AD400C0A8DD /* mixHtmlTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B08131E1E0E7AD400C0A8DD /* mixHtmlTest.swift */; };
 		1B19979B1E08A5E500C41C69 /* bodyTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B19979A1E08A5E500C41C69 /* bodyTest.swift */; };
 		1B19979D1E08F1C600C41C69 /* b_i_strong_br.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B19979C1E08F1C600C41C69 /* b_i_strong_br.swift */; };
 		1B19979F1E08FEAF00C41C69 /* bistrongTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B19979E1E08FEAF00C41C69 /* bistrongTest.swift */; };
@@ -70,6 +71,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		1B08131E1E0E7AD400C0A8DD /* mixHtmlTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = mixHtmlTest.swift; path = ../JabberWock/html/mixHtmlTest.swift; sourceTree = "<group>"; };
 		1B19979A1E08A5E500C41C69 /* bodyTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = bodyTest.swift; sourceTree = "<group>"; };
 		1B19979C1E08F1C600C41C69 /* b_i_strong_br.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = b_i_strong_br.swift; sourceTree = "<group>"; };
 		1B19979E1E08FEAF00C41C69 /* bistrongTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = bistrongTest.swift; sourceTree = "<group>"; };
@@ -170,6 +172,7 @@
 		1B1CE2D21DEFF8D000DD2561 /* JabberWockTests */ = {
 			isa = PBXGroup;
 			children = (
+				1B08131E1E0E7AD400C0A8DD /* mixHtmlTest.swift */,
 				1B1CE2D51DEFF8D000DD2561 /* Info.plist */,
 				1B71C0DE1DF2B24B006492D5 /* JWTest.swift */,
 				1B1CE2D31DEFF8D000DD2561 /* JabberWockTests.swift */,
@@ -379,6 +382,7 @@
 				1BD05B4E1DF6CB3000AFAABD /* htmlTest.swift in Sources */,
 				1BAAB6DC1E00FD730009BA87 /* title.swift in Sources */,
 				1B7F1C771DF92804006F570B /* documentType.swift in Sources */,
+				1B08131F1E0E7AD400C0A8DD /* mixHtmlTest.swift in Sources */,
 				1B71C0E21DF2B2D9006492D5 /* JW.swift in Sources */,
 				1B9946EE1E02A07D00BA13B4 /* heading.swift in Sources */,
 				1B447C0B1E040F7F009C1BB8 /* headTest.swift in Sources */,

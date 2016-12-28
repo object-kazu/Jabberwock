@@ -27,6 +27,34 @@ class JWTest: XCTestCase {
         jw.press()
     }
     
+    func test_assemble_Multi_true () {
+        jw.openString = "test"
+        jw.closeString = "done"
+        jw.isMultiLine = true
+        jw.assemble()
+        jw.press()
+    }
+    
+    func test_assemble_Multi_false () {
+        jw.openString = "test"
+        jw.closeString = "done"
+        jw.isMultiLine = false
+        jw.assemble()
+        jw.press()
+    }
+    
+    func test_addChild_string () {
+        jw.isMultiLine = false
+      
+        let s = "test"
+        jw.addCihld(child: s)
+        jw.press()
+        
+        /* answer
+         	test
+        */
+    }
+    
     
     
 }

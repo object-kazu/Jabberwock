@@ -55,6 +55,6 @@ private class Pp: JW {
     
     override func assemble() {
         insertContent()
-        assembleCore(isSingleLine: true)
+        assemble()
     }
 }

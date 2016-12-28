@@ -27,30 +27,27 @@ class htmlTest: XCTestCase {
    
     func test_html_basic() {
         html.press()
+
+        /*
+         <html lang="en">
+         </html>
+         */
+        
     }
     
-    func test_add_doctipe(){
-        dctype.press()
-    }
     
     func test_add_html (){
         dctype.addMember(member: html)
         dctype.press()
+        
+        /*
+         <!DOCTYPE html>
+         <html lang="en">
+         </html>
+         */
     }
 
-    func test_add_html_string() {
-        let hello = "my first task"
-        dctype.addCihld(child: hello)
-        dctype.press()
-        
-    }
-    
-    func test_add_member(){
-        let hello = "my first task"
-        dctype.addMember(member: hello)
-        dctype.press()
-    }
-    
+   
     func test_add_html_head(){
         
         // header

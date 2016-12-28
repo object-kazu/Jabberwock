@@ -14,6 +14,7 @@ class HTML:JW {
     
     override init() {
         super.init()
+        self.isMultiLine = true
         
         lang = LANG.en
         self.openString     =  "<html" + SPC + INSERTSTRING + ">"
@@ -27,14 +28,14 @@ class HTML:JW {
             return
         }
         
-        openString = openString.replacingOccurrences(of: INSERTSTRING, with: self.lang.str())
+        openString  = openString.replacingOccurrences(of: INSERTSTRING, with: self.lang.str())
+        openString += RET
 
     }
     
     override func assemble() {
         insertLang()
-        childString.append(RET)
-        assembleCore(isSingleLine: false)
+        makeResult()
     }
     
     

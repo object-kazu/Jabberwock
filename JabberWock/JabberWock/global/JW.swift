@@ -13,6 +13,7 @@ let EXPORT_TEST_File = "result.txt"
 
 
 class JW {
+    var isMultiLine     : Bool!
     var openString      : String = ""
     var closeString     : String = ""
     
@@ -27,18 +28,17 @@ class JW {
         return resultString
     }
     
-    
-
-    
-    // member, child
+    // add member
     func addMember(member:String)  {
-        childString.append(member)
+        resultString += member
+        resultString += RET
+        
     }
     
     func addMember (member: JW){
-        resultString += RET
         member.assemble()
-        resultString += member.resultString
+        addMember(member: member.resultString)
+        
     }
     
     // add tab for indent
@@ -46,6 +46,8 @@ class JW {
         return TAB + str
     }
     
+    
+    // add child
     func addChild (child : JW){
         child.assemble()
         self.addCihld(child: child.resultString)
@@ -56,30 +58,34 @@ class JW {
         childString.append(addTab(str: t))
     }
 
-    func assemble() {
-        assembleCore(isSingleLine: true)
+    func assemble(){
+        makeResult()
     }
-        
-    func assembleCore(isSingleLine : Bool) {
-        resultString += openString
+    
+    func makeResult() {
 
-        if isSingleLine {
+        resultString += openString
+        
+        if !isMultiLine! {
             childAssemble()
         }else{
             childrenAssemble()
+            resultString += RET
         }
         
         if closeString != NO_CLOSETAG {
             resultString += closeString
         }
+
     }
+        
+
     
     private func childrenAssemble () {
-        resultString += RET
         for str in childString {
             resultString += str
             resultString += RET
-        }
+           }
 
     }
     
@@ -93,7 +99,6 @@ class JW {
     // ファイルに書き出す
     func press(name: String, dist : String){
         
-        // prep resultString
         assemble()
         
         // ドキュメントパス

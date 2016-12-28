@@ -37,6 +37,6 @@ class BACKQUOTE : JW {
     
     override func assemble() {
         insertContent()
-        assembleCore(isSingleLine: true)
+        assemble()
     }
 }

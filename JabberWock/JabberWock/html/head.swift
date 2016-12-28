@@ -28,10 +28,6 @@ class HEAD:JW {
         addChild(child: title)
     }
     
-    override func assemble() {
-        assembleCore(isSingleLine: false)
-    }
-    
     // charset
     func setCharset (char: CHARSET) {
         let c = META()

@@ -13,7 +13,12 @@ class DOCTYPE:JW {
 
     override init() {
         super.init()
+        
+        self.isMultiLine = false
+        
         resultString = docType
+        resultString += RET
+        
     }
     
 }

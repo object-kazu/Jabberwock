@@ -19,7 +19,7 @@ class  DL : ListCore {
     
     override func assemble() {
         addChild(child: dList(contents: contents))
-        assembleCore(isSingleLine: false)
+        assemble()
     }
 
 }

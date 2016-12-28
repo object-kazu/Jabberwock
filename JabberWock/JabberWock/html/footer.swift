@@ -17,8 +17,6 @@ class FOOTER:JW {
     }
     
     
-    override func assemble() {
-        assembleCore(isSingleLine: false)
-    }
+
     
 }

@@ -37,7 +37,7 @@ class B : JW {
 
     override func assemble() {
         insertContent()
-        assembleCore(isSingleLine: true)
+        assemble()
     }
 }
 
@@ -69,7 +69,7 @@ class I : JW {
 
     override func assemble() {
         insertContent()
-        assembleCore(isSingleLine: true)
+        assemble()
     }
 
    
@@ -104,7 +104,7 @@ class STRONG : JW {
     
     override func assemble() {
         insertContent()
-        assembleCore(isSingleLine: true)
+        assemble()
     }
     
 }
@@ -138,7 +138,7 @@ class BR : JW {
     
     override func assemble() {
         insertContent()
-        assembleCore(isSingleLine: true)
+        assemble()
     }
     
 }

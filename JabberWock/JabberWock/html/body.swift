@@ -17,8 +17,6 @@ class BODY:JW {
     }
     
     
-    override func assemble() {
-        assembleCore(isSingleLine: false)
-    }
+    
     
 }

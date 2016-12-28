@@ -20,6 +20,14 @@ class HEADING : JW {
         self.closeString = "</h" + INSERTSTRING + ">"
         
     }
+
+    init(level: Int, content: String) {
+        super.init()
+        self.content = content
+        self.level = level
+        
+    }
+
     
     private func insertLevel () {
         if level < 1 {
@@ -42,7 +50,7 @@ class HEADING : JW {
     override func assemble() {
         insertLevel()
         insertContent()
-        assembleCore(isSingleLine: true)
+        assemble()
     }
 
     
