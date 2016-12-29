@@ -40,7 +40,7 @@ class P: JW {
 
 private class Pp: JW {
 
-    var content :  String  = ""
+//    var content :  String  = ""
 
     override init() {
         super.init()
@@ -49,10 +49,10 @@ private class Pp: JW {
         self.closeString = "</p>"
     }
     
-    private func insertContent () {
-        childString.append(content)
-    }
-    
+//    func insertContent () {
+//        childString.append(content)
+//    }
+//    
     override func assemble() {
         insertContent()
         assemble()

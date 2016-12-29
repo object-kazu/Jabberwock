@@ -9,28 +9,28 @@
 import Foundation
 
 class TITLE: JW {
-    private var title : String = ""
-    
+   
     override init() {
         super.init()
         initilizer()
     }
     
-    init(title: String) {
+    init(content: String) {
         super.init()
         self.initilizer()
-        setTile(title: title)
-        
+        setTile(content : content)
     }
     
     private func initilizer () {
+        self.isMultiLine = false
         self.openString = "<title>"
         self.closeString = "</title>"
     }
 
     
-    func setTile(title: String) {
-        addMember(member: title)
+    func setTile(content : String) {
+        self.content = content
+        self.insertContent()
     }
     
 

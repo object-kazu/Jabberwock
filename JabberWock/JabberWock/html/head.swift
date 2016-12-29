@@ -14,12 +14,13 @@ class HEAD:JW {
         super.init()
         self.openString = "<head>"
         self.closeString = "</head>"
+        self.isMultiLine = true
     }
     
     // title
     func setTitle (title:String) {
         let t = TITLE()
-        t.setTile(title: title)
+        t.setTile(content: title)
         setTitle(title: t)
         
     }

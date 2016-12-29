@@ -20,6 +20,7 @@ class JW {
     var resultString: String   = ""
     var childString : [String] = []
     
+    var content :  String  = ""
 
     
     //export string
@@ -27,6 +28,12 @@ class JW {
         assemble()
         return resultString
     }
+    
+    //insert content
+    func insertContent () {
+        childString.append(content)
+    }
+    
     
     // add member
     func addMember(member:String)  {
@@ -65,12 +72,16 @@ class JW {
     func makeResult() {
 
         resultString += openString
+
+        if isMultiLine! {
+                resultString += RET
+        }
         
         if !isMultiLine! {
             childAssemble()
         }else{
             childrenAssemble()
-            resultString += RET
+            //resultString += RET
         }
         
         if closeString != NO_CLOSETAG {

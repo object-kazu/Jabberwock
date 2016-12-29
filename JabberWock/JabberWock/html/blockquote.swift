@@ -10,7 +10,6 @@ import Foundation
 
 class BACKQUOTE : JW {
     
-    var content :  String  = ""
     
     
     override init() {
@@ -31,9 +30,6 @@ class BACKQUOTE : JW {
         self.closeString = "</blockquote>"
     }
     
-    private func insertContent () {
-        childString.append(content)
-    }
     
     override func assemble() {
         insertContent()

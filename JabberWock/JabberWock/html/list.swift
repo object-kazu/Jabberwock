@@ -99,7 +99,6 @@ class  List: JW {
 
 // <li> xxx
 class ListItem : JW {
-    var content : String = ""
     
     override init() {
         super.init()
@@ -116,10 +115,6 @@ class ListItem : JW {
     func initilizer () {
         self.openString = "<li>"
         self.closeString = ""
-    }
-
-    private func insertContent () {
-        childString.append(content)
     }
 
     override func assemble() {

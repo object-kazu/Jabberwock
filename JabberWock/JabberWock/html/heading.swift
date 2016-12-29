@@ -11,8 +11,7 @@ import Foundation
 class HEADING : JW {
     // h1 ~ h6
     var level:      Int     = 1
-    var content :  String   = ""
-
+  
     override init() {
         super.init()
         
@@ -43,9 +42,6 @@ class HEADING : JW {
         
     }
     
-    private func insertContent () {
-        childString.append(content)
-    }
     
     override func assemble() {
         insertLevel()

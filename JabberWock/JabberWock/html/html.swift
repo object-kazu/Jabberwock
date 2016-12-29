@@ -17,7 +17,7 @@ class HTML:JW {
         self.isMultiLine = true
         
         lang = LANG.en
-        self.openString     =  "<html" + SPC + INSERTSTRING + ">"
+        self.openString     = "<html" + SPC + INSERTSTRING + ">"
         self.closeString    = "</html>"
     }
     
@@ -29,7 +29,6 @@ class HTML:JW {
         }
         
         openString  = openString.replacingOccurrences(of: INSERTSTRING, with: self.lang.str())
-        openString += RET
 
     }
     

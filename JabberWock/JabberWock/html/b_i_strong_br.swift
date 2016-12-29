@@ -10,8 +10,6 @@ import Foundation
 
 class B : JW {
     
-    var content :  String  = ""
-
     
     override init() {
         super.init()
@@ -31,10 +29,7 @@ class B : JW {
         self.closeString = "</b>"
     }
 
-    private func insertContent () {
-        childString.append(content)
-    }
-
+   
     override func assemble() {
         insertContent()
         assemble()
@@ -42,8 +37,7 @@ class B : JW {
 }
 
 class I : JW {
-    var content :  String  = ""
-
+  
     
     override init() {
         super.init()
@@ -63,10 +57,7 @@ class I : JW {
     }
 
     
-    private func insertContent () {
-        childString.append(content)
-    }
-
+   
     override func assemble() {
         insertContent()
         assemble()
@@ -76,8 +67,7 @@ class I : JW {
 }
 
 class STRONG : JW {
-    var content :  String  = ""
-    
+   
     
     override init() {
         super.init()
@@ -97,10 +87,7 @@ class STRONG : JW {
     }
 
 
-    private func insertContent () {
-        childString.append(content)
-    }
-
+ 
     
     override func assemble() {
         insertContent()
@@ -110,8 +97,7 @@ class STRONG : JW {
 }
 
 class BR : JW {
-    var content :  String  = ""
-    
+ 
     
     override init() {
         super.init()
@@ -130,10 +116,6 @@ class BR : JW {
         self.closeString = "<br>"
     }
     
-    
-    private func insertContent () {
-        childString.append(content)
-    }
     
     
     override func assemble() {

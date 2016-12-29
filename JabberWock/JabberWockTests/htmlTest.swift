@@ -40,7 +40,7 @@ class htmlTest: XCTestCase {
         dctype.addMember(member: html)
         dctype.press()
         
-        /*
+        /* answer
          <!DOCTYPE html>
          <html lang="en">
          </html>
@@ -57,21 +57,41 @@ class htmlTest: XCTestCase {
         // html
         dctype.addMember(member: html)
         dctype.press()
+        
+        
+        /* answer
+         <!DOCTYPE html>
+         <html lang="en">
+            <head>
+            </head>
+         </html>
+         */
+        
     }
     
     
     // title test
     func test_add_title () {
         let title = TITLE()
-        title.setTile(title: "task")
+        title.setTile(content:"task")
 
         dctype.addMember(member: title)
         dctype.press()
+        
+        /* answer
+         <!DOCTYPE html>
+         <title>task</title>
+         */
     }
     
     func test_title_init() {
-        let t = TITLE(title: "testest")
+        let t = TITLE(content: "testest")
         t.press()
+        /* answer
+         <title>testest</title>
+         
+         
+         */
     }
       
 }
