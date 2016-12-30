@@ -12,27 +12,27 @@ class HEAD:JW {
     
     override init() {
         super.init()
-        self.openString = "<head>"
-        self.closeString = "</head>"
-        self.isMultiLine = true
+        self.openString     = "<head>"
+        self.closeString    = "</head>"
+        self.isMultiLine    = true
     }
     
     // title
-    func setTitle (title:String) {
+    func setTitle (of:String) {
         let t = TITLE()
-        t.setTile(content: title)
-        setTitle(title: t)
+        t.setTile(content: of)
+        setTitle(of: t)
         
     }
     
-    func setTitle (title:JW){
-        addChild(child: title)
+    func setTitle (of:JW){
+        addChild(child: of)
     }
     
     // charset
-    func setCharset (char: CHARSET) {
+    func setCharset (of: CHARSET) {
         let c = META()
-        c.charset = CHARSET.utf8
+        c.setCharset(of: of)
         addChild(child: c)
     }
     

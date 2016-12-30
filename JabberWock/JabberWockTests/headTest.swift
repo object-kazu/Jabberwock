@@ -24,30 +24,41 @@ class headTest: XCTestCase {
         super.tearDown()
     }
     
-    func test_html () {
-        html.press()
-    }
-    
     func test_add_header_title(){
         // head
         let head = HEAD()
-        head.setTitle(title:"task")
+        head.setTitle(of:"task")
         html.addChild(child: head)
         
         dctype.addMember(member: html)
         dctype.press()
+        
+        /* answer
+         <!DOCTYPE html>
+         <html lang="en">
+            <head>
+                <title>task</title>
+            </head>
+         </html>
+         
+         */
     }
     
     func test_add_header_meta (){
         // head
         let head = HEAD()
-        head.setCharset(char: CHARSET.utf8)
-        head.setTitle(title: "task")
+        head.setCharset(of: CHARSET.utf8)
+        head.setTitle(of: "task")
         html.addChild(child: head)
         
         // body
         dctype.addMember(member: html)
         dctype.press()
+        
+        /* answer
+         
+         
+         */
         
     }
    

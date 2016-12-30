@@ -43,7 +43,7 @@ class mixHtmlTest: XCTestCase {
         let head = HEAD()
         
         let meta = META()
-        meta.charset = CHARSET.utf8
+        meta.setCharset(of: CHARSET.utf8)
         
         let title = TITLE(content: "task")
         

@@ -12,8 +12,9 @@ class BODY:JW {
     
     override init() {
         super.init()
-        self.openString = "<body>"
-        self.closeString = "</body>"
+        self.isMultiLine    = true
+        self.openString     = "<body>"
+        self.closeString    = "</body>"
     }
     
     

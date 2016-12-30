@@ -1,14 +1,14 @@
 //
-//  body.swift
+//  metaTest.swift
 //  JabberWock
 //
-//  Created by kazuyuki shimizu on 2016/12/20.
+//  Created by 清水 一征 on 2016/12/30.
 //  Copyright © 2016年 momiji-mac. All rights reserved.
 //
 
 import XCTest
 
-class bodyTest: XCTestCase {
+class metaTest: XCTestCase {
     
     override func setUp() {
         super.setUp()
@@ -20,15 +20,6 @@ class bodyTest: XCTestCase {
         super.tearDown()
     }
     
-    func test_body (){
-        let bo = BODY()
-        bo.press()
-        
-        /* answer
-         <body>
-         </body>
-         
-         */
-    }
+   
     
 }

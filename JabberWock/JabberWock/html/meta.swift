@@ -11,27 +11,27 @@ import Foundation
 //<meta charset="UTF-8"/>
 
 class META:JW {
-    var charset : CHARSET = CHARSET.utf8
+    private var charset : CHARSET = CHARSET.utf8
     
     override init() {
         super.init()
-        
-        self.openString = "<meta" + SPC + INSERTSTRING + "\"/>"
-        self.closeString = NO_CLOSETAG
+        self.isMultiLine    = false
+        self.openString     = "<meta" + SPC + INSERTSTRING + "\"/>"
+        self.closeString    = NO_CLOSETAG
     }
     
+    func setCharset(of: CHARSET)  {
+        self.charset = of
+    }
     
-    
-    private func insertCharset () {
-        // html tagでlangを設定しない場合
+    func insertCharset () {
         openString = openString.replacingOccurrences(of: INSERTSTRING, with: self.charset.str())
-
     }
     
     override func assemble() {
         insertCharset()
-        assemble()
+        makeResult()
     }
-
+    
 }
 
