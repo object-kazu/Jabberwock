@@ -58,11 +58,21 @@ class bistrongTest: XCTestCase {
         let ii = I()
         ii.content = "italic test"
         ii.press()
+        
+        /* answer
+         <i>italic test</i>
+         */
+
     }
     
     func test_i_init (){
         let ii = I(content: "italic")
         ii.press()
+        /* answer
+         
+         <i>italic</i>
+         */
+
     }
     
     
@@ -72,11 +82,20 @@ class bistrongTest: XCTestCase {
         let st = STRONG()
         st.content = "strong"
         st.press()
+        
+        /* answer
+         <strong>strong</strong>
+         */
+
     }
     
     func test_strong_init () {
         let st = STRONG(content: "stronger")
         st.press()
+        /* answer
+         <strong>stronger</strong>
+         */
+
     }
     
     // </br>
@@ -84,6 +103,11 @@ class bistrongTest: XCTestCase {
         let br = BR()
         br.content = "this is br testing"
         br.press()
+        /* answer
+
+         this is br testing<br>
+         */
+
     }
     
     func test_p_and_br () {
@@ -91,5 +115,12 @@ class bistrongTest: XCTestCase {
         let p = P()
         p.contents = ["test1", "test2" + br.tgStr() + "yes!" , "test3"]
         p.press()
+        /* answer
+         <p>test1</p>
+         <p>test2this is test<br>yes!</p>
+         <p>test3</p>
+         
+         */
+
     }
 }

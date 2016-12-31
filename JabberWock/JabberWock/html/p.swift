@@ -48,22 +48,12 @@ class P: JW {
     }
 }
 
-private class Pp: JW {
+private class Pp: JWInsertContent {
 
-    override init() {
-        super.init()
-        initialize()
+    override func initilizer() {
+        self.openString = "<p>"
+        self.closeString = "</p>"
         
     }
     
-    private func initialize () {
-        self.openString = "<p>"
-        self.closeString = "</p>"
-        self.isMultiLine = false
-        
-    }
-
-    override func assemble() {
-        assembleWithContent()
-    }
 }
