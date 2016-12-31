@@ -8,31 +8,14 @@
 
 import Foundation
 
-class B : JW {
-    
-    
-    override init() {
-        super.init()
-        initilizer()
-        
-    }
-    
-    init(content: String) {
-        super.init()
-        self.initilizer()
-        self.content = content
-        
-    }
 
-    private func initilizer () {
+class B : JWInsertContent {
+
+    override func initilizer () {
         self.openString = "<b>"
         self.closeString = "</b>"
     }
 
-   
-    override func assemble() {
-        assembleWithContent()
-    }
 }
 
 class I : JW {
@@ -53,6 +36,7 @@ class I : JW {
     private func initilizer () {
         self.openString = "<i>"
         self.closeString = "</i>"
+        self.isMultiLine = false
     }
 
     
@@ -82,6 +66,7 @@ class STRONG : JW {
     private func initilizer () {
         self.openString = "<strong>"
         self.closeString = "</strong>"
+        self.isMultiLine = false
     }
 
 
@@ -111,6 +96,7 @@ class BR : JW {
     private func initilizer () {
         self.openString = ""
         self.closeString = "<br>"
+        self.isMultiLine = false
     }
     
     

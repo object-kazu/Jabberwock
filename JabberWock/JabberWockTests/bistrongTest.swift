@@ -25,11 +25,21 @@ class bistrongTest: XCTestCase {
         let bb = B()
         bb.content = "bold"
         bb.press()
+        
+        /* answer
+         <b>bold</b>
+         
+         */
     }
     
     func test_b_init () {
         let bb = B(content: "bold")
         bb.press()
+        /* answer
+         <b>bold</b>
+         
+         */
+
     }
     
     func test_b_tSt (){
