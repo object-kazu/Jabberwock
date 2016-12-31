@@ -74,7 +74,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		1B08131E1E0E7AD400C0A8DD /* mixHtmlTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = mixHtmlTest.swift; path = ../JabberWock/html/mixHtmlTest.swift; sourceTree = "<group>"; };
+		1B08131E1E0E7AD400C0A8DD /* mixHtmlTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = mixHtmlTest.swift; path = mixHtmlTest.swift; sourceTree = "<group>"; };
 		1B19979A1E08A5E500C41C69 /* bodyTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = bodyTest.swift; sourceTree = "<group>"; };
 		1B19979C1E08F1C600C41C69 /* b_i_strong_br.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = b_i_strong_br.swift; sourceTree = "<group>"; };
 		1B19979E1E08FEAF00C41C69 /* bistrongTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = bistrongTest.swift; sourceTree = "<group>"; };
@@ -139,11 +139,11 @@
 		1B1CE2AF1DEFF8D000DD2561 = {
 			isa = PBXGroup;
 			children = (
-				1B8122721E0A278E00495340 /* index.html */,
-				1BAAE56C1E0B5EEF00A13637 /* jquery-3.1.1.min.js */,
 				1B1CE2BA1DEFF8D000DD2561 /* JabberWock */,
 				1B1CE2D21DEFF8D000DD2561 /* JabberWockTests */,
 				1B1CE2B91DEFF8D000DD2561 /* Products */,
+				1B8122721E0A278E00495340 /* index.html */,
+				1BAAE56C1E0B5EEF00A13637 /* jquery-3.1.1.min.js */,
 			);
 			sourceTree = "<group>";
 		};
@@ -167,8 +167,8 @@
 				1B1CE2C51DEFF8D000DD2561 /* Assets.xcassets */,
 				1B1CE2CA1DEFF8D000DD2561 /* Info.plist */,
 				1B1CE2C21DEFF8D000DD2561 /* JabberWock.xcdatamodeld */,
-				1BAAE56A1E0B5C1800A13637 /* Main.storyboard */,
 				1B1CE2C71DEFF8D000DD2561 /* LaunchScreen.storyboard */,
+				1BAAE56A1E0B5C1800A13637 /* Main.storyboard */,
 				1B1CE2BD1DEFF8D000DD2561 /* ViewController.swift */,
 			);
 			path = JabberWock;
@@ -177,19 +177,19 @@
 		1B1CE2D21DEFF8D000DD2561 /* JabberWockTests */ = {
 			isa = PBXGroup;
 			children = (
-				1B08131E1E0E7AD400C0A8DD /* mixHtmlTest.swift */,
 				1B1CE2D51DEFF8D000DD2561 /* Info.plist */,
 				1B71C0DE1DF2B24B006492D5 /* JWTest.swift */,
 				1B1CE2D31DEFF8D000DD2561 /* JabberWockTests.swift */,
+				1B19979E1E08FEAF00C41C69 /* bistrongTest.swift */,
+				1B19979A1E08A5E500C41C69 /* bodyTest.swift */,
 				1B7F1C751DF927FE006F570B /* doctypeTest.swift */,
 				1B447C0A1E040F7F009C1BB8 /* headTest.swift */,
 				1B447C0C1E04102F009C1BB8 /* headingTest.swift */,
 				1BD05B4D1DF6CB3000AFAABD /* htmlTest.swift */,
-				1BE090DA1E06536800A82473 /* pTest.swift */,
-				1B19979A1E08A5E500C41C69 /* bodyTest.swift */,
-				1B19979E1E08FEAF00C41C69 /* bistrongTest.swift */,
 				1BCB14EC1E0CDC52009949A9 /* listTest.swift */,
 				1B8FACBF1E16964900641934 /* metaTest.swift */,
+				1B08131E1E0E7AD400C0A8DD /* mixHtmlTest.swift */,
+				1BE090DA1E06536800A82473 /* pTest.swift */,
 			);
 			path = JabberWockTests;
 			sourceTree = "<group>";
@@ -197,19 +197,19 @@
 		1B1CE2E01DF0088C00DD2561 /* html */ = {
 			isa = PBXGroup;
 			children = (
+				1B19979C1E08F1C600C41C69 /* b_i_strong_br.swift */,
+				1BAAE56E1E0B77F300A13637 /* blockquote.swift */,
 				1B1CE2EA1DF0185C00DD2561 /* body.swift */,
+				1BCB14EE1E0CE80F009949A9 /* dl.swift */,
 				1B7F1C731DF9265C006F570B /* documentType.swift */,
+				1BCA4BA71E0953F50089772A /* footer.swift */,
 				1B1CE2E81DF017F000DD2561 /* head.swift */,
 				1B9946EC1E02A07D00BA13B4 /* heading.swift */,
 				1B1CE2DE1DF0086500DD2561 /* html.swift */,
-				1B88D4E11E027E6A0069A8AC /* meta.swift */,
-				1BAAB6D91E00D2560009BA87 /* title.swift */,
-				1BE090DC1E06538400A82473 /* p.swift */,
-				1B19979C1E08F1C600C41C69 /* b_i_strong_br.swift */,
-				1BCA4BA71E0953F50089772A /* footer.swift */,
-				1BAAE56E1E0B77F300A13637 /* blockquote.swift */,
 				1BCB14E91E0CDC1B009949A9 /* list.swift */,
-				1BCB14EE1E0CE80F009949A9 /* dl.swift */,
+				1B88D4E11E027E6A0069A8AC /* meta.swift */,
+				1BE090DC1E06538400A82473 /* p.swift */,
+				1BAAB6D91E00D2560009BA87 /* title.swift */,
 			);
 			path = html;
 			sourceTree = "<group>";
@@ -232,10 +232,10 @@
 			isa = PBXGroup;
 			children = (
 				1B71C0DA1DF2A98F006492D5 /* JW.swift */,
+				1B8FACC11E173D4900641934 /* JWInsertContent.swift */,
 				1B1CE2E61DF0127E00DD2561 /* charset.swift */,
 				1B88D4E31E027FF40069A8AC /* globaDef.swift */,
 				1B1CE2E41DF0117200DD2561 /* language.swift */,
-				1B8FACC11E173D4900641934 /* JWInsertContent.swift */,
 			);
 			path = global;
 			sourceTree = "<group>";
