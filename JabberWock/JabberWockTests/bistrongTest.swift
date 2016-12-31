@@ -123,4 +123,18 @@ class bistrongTest: XCTestCase {
          */
 
     }
+    
+    // <backquote>
+    func test_backquote () {
+        let bq = BACKQUOTE()
+        bq.content = "test"
+        bq.press()
+        
+        /* answer
+
+         <blockquote>test</blockquote>
+         
+         */
+
+    }
 }

@@ -8,31 +8,11 @@
 
 import Foundation
 
-class BACKQUOTE : JW {
+class BLOCKQUOTE : JWInsertContent {
     
-    
-    
-    override init() {
-        super.init()
-        initilizer()
-        
-    }
-    
-    init(content: String) {
-        super.init()
-        self.initilizer()
-        self.content = content
-        
-    }
-    
-    private func initilizer () {
+    override func initilizer () {
         self.openString = "<blockquote>"
         self.closeString = "</blockquote>"
     }
     
-    
-    override func assemble() {
-        insertContent()
-        assemble()
-    }
 }
