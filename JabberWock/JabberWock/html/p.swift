@@ -14,15 +14,25 @@ class P: JW {
     
     override init() {
         super.init()
+        initialize()
     }
     
     init(contents: [String]) {
         super.init()
+        initialize()
         self.contents = contents
         
     }
-
+    
+    private func initialize () {
+        self.isMultiLine = false
+        
+    }
+    
     private func makeSentence () {
+        if content != "" {
+            childString.append(content)
+        }
         
         childString.append(contentsOf: contents)
         
@@ -40,21 +50,20 @@ class P: JW {
 
 private class Pp: JW {
 
-//    var content :  String  = ""
-
     override init() {
         super.init()
+        initialize()
         
-        self.openString = "<p>"
-        self.closeString = "</p>"
     }
     
-//    func insertContent () {
-//        childString.append(content)
-//    }
-//    
+    private func initialize () {
+        self.openString = "<p>"
+        self.closeString = "</p>"
+        self.isMultiLine = false
+        
+    }
+
     override func assemble() {
-        insertContent()
-        assemble()
+        assembleWithContent()
     }
 }

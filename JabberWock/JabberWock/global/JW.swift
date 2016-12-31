@@ -69,6 +69,11 @@ class JW {
         makeResult()
     }
     
+    func assembleWithContent() {
+        insertContent()
+        makeResult()
+    }
+    
     func makeResult() {
 
         resultString += openString

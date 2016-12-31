@@ -31,8 +31,7 @@ class B : JW {
 
    
     override func assemble() {
-        insertContent()
-        assemble()
+        assembleWithContent()
     }
 }
 
@@ -59,8 +58,7 @@ class I : JW {
     
    
     override func assemble() {
-        insertContent()
-        assemble()
+        assembleWithContent()
     }
 
    
@@ -90,8 +88,7 @@ class STRONG : JW {
  
     
     override func assemble() {
-        insertContent()
-        assemble()
+        assembleWithContent()
     }
     
 }
@@ -119,8 +116,7 @@ class BR : JW {
     
     
     override func assemble() {
-        insertContent()
-        assemble()
+        assembleWithContent()
     }
     
 }
