@@ -29,11 +29,20 @@ class headingTest: XCTestCase {
         h1.level = 0 // h1 tag
         h1.press()
         
+        /* answer
+         <h1></h1>
+         
+         */
+        
     }
     func test_headings_h6 (){
         let h1 = HEADING()
         h1.level = 10 // h6 tag
         h1.press()
+        
+        /* answer
+         <h6></h6>
+         */
     }
     
     func test_heading_contents () {
@@ -41,6 +50,20 @@ class headingTest: XCTestCase {
         h1.level = 1
         h1.content = "test"
         h1.press()
+        /* answer
+         <h1>test</h1>c
+         
+         */
+    }
+    
+    func test_heading_init(){
+        let h2 = HEADING(level: 2, content: "init test")
+        h2.press()
+        
+        /* answer
+         <h2>init test</h2>
+         */
+        
     }
     
     func test_heading_h1_h2 () {
@@ -55,6 +78,13 @@ class headingTest: XCTestCase {
         dctype.addMember(member: h1)
         dctype.addMember(member: h2)
         dctype.press()
+        /* answer
+         <!DOCTYPE html>
+         <h1>test h1</h1>
+         <h2>test h2</h2>
+
+         
+         */
     }
 
 }

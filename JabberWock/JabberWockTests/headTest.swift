@@ -57,7 +57,14 @@ class headTest: XCTestCase {
         
         /* answer
          
-         
+         <!DOCTYPE html>
+         <html lang="en">
+            <head>
+                <meta charset="UTF-8""/>
+                <title>task</title>
+            </head>
+         </html>
+
          */
         
     }

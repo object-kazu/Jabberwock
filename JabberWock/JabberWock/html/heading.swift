@@ -14,16 +14,22 @@ class HEADING : JW {
   
     override init() {
         super.init()
-        
-        self.openString = "<h" + INSERTSTRING + ">"
-        self.closeString = "</h" + INSERTSTRING + ">"
+        initialize()
         
     }
 
     init(level: Int, content: String) {
         super.init()
+        initialize()
         self.content = content
         self.level = level
+        
+    }
+    
+    private func initialize () {
+        self.openString     = "<h" + INSERTSTRING + ">"
+        self.closeString    = "</h" + INSERTSTRING + ">"
+        self.isMultiLine    = false
         
     }
 
@@ -46,7 +52,7 @@ class HEADING : JW {
     override func assemble() {
         insertLevel()
         insertContent()
-        assemble()
+        makeResult()
     }
 
     
