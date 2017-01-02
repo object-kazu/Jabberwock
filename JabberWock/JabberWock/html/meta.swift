@@ -10,13 +10,12 @@ import Foundation
 
 //<meta charset="UTF-8"/>
 
-class META:JW {
+class META:JWSingle {
     private var charset : CHARSET = CHARSET.utf8
     
     override init() {
         super.init()
-        self.isMultiLine    = false
-        self.openString     = "<meta" + SPC + INSERTSTRING + "\"/>"
+        self.openString     = "<meta" + SPC + INSERTSTRING + "/>"
         self.closeString    = NO_CLOSETAG
     }
     

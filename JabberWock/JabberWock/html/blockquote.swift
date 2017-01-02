@@ -8,7 +8,7 @@
 
 import Foundation
 
-class BLOCKQUOTE : JWInsertContent {
+class BLOCKQUOTE : JWSingle {
     
     override func initilizer () {
         self.openString = "<blockquote>"

@@ -20,6 +20,15 @@ class metaTest: XCTestCase {
         super.tearDown()
     }
     
-   
+    func test_mata () {
+        let m = META()
+        m.press()
+        
+        /* answer
+            <meta charset="UTF-8"/>
+         
+         */
+
+    }
     
 }

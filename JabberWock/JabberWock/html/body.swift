@@ -8,11 +8,10 @@
 
 import Foundation
 
-class BODY:JW {
+class BODY:JWMulti {
     
     override init() {
         super.init()
-        self.isMultiLine    = true
         self.openString     = "<body>"
         self.closeString    = "</body>"
     }

@@ -9,12 +9,11 @@
 import Foundation
 
 
-class HTML:JW {
+class HTML:JWMulti {
     var lang            : LANG!
     
     override init() {
         super.init()
-        self.isMultiLine = true
         
         lang = LANG.en
         self.openString     = "<html" + SPC + INSERTSTRING + ">"

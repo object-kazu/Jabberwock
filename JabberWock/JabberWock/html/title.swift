@@ -8,21 +8,20 @@
 
 import Foundation
 
-class TITLE: JW {
+class TITLE: JWSingle {
    
     override init() {
         super.init()
         initilizer()
     }
     
-    init(content: String) {
+    override init(content: String) {
         super.init()
         self.initilizer()
         setTile(content : content)
     }
     
-    private func initilizer () {
-        self.isMultiLine = false
+    override func initilizer () {
         self.openString = "<title>"
         self.closeString = "</title>"
     }
@@ -30,7 +29,6 @@ class TITLE: JW {
     
     func setTile(content : String) {
         self.content = content
-        self.insertContent()
     }
     
 

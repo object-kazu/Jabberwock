@@ -68,30 +68,4 @@ class htmlTest: XCTestCase {
          */
         
     }
-    
-    
-    // title test
-    func test_add_title () {
-        let title = TITLE()
-        title.setTile(content:"task")
-
-        dctype.addMember(member: title)
-        dctype.press()
-        
-        /* answer
-         <!DOCTYPE html>
-         <title>task</title>
-         */
-    }
-    
-    func test_title_init() {
-        let t = TITLE(content: "testest")
-        t.press()
-        /* answer
-         <title>testest</title>
-         
-         
-         */
-    }
-      
 }

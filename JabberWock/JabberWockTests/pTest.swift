@@ -32,46 +32,6 @@ class pTest: XCTestCase {
          <p>test</p>
          */
     }
-    func test_p()  {
-        let p = P()
-        p.contents = ["this is test","next is example"]
-        p.press()
-        /* answer
-         <p>this is test</p>
-         <p>next is example</p>
-         
-         */
-        
-    }
-    
-    func test_p_init()  {
-        let p = P(contents: ["this is test","next is example"])
-        p.press()
-
-        /* answer
-         <p>this is test</p>
-         <p>next is example</p>
-         
-         */
-        
-    }
-    func test_p_content_contents()  {
-        let p = P(contents: ["this is test","next is example"])
-        p.content = "add new test"
-        p.press()
-        
-        ///CAUTION! content > contents
-        
-        /* answer
-         <p>add new test</p>
-         <p>this is test</p>
-         <p>next is example</p>
-
-         
-         */
-        
-    }
-    
 
     
 }

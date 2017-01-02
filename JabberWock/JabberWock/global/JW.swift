@@ -12,47 +12,74 @@ let EXPORT_TEST_Dir = "/Users/shimizukazuyuki/Desktop/index/"
 let EXPORT_TEST_File = "result.txt"
 
 
-class JW {
-    var isMultiLine     : Bool!
-    var openString      : String = ""
-    var closeString     : String = ""
-    
-    var resultString: String   = ""
-    var childString : [String] = []
+/*
+ 
+ <tag> content </tag>
+
+ <member> xxxx </member>
+ <member> xxxx </member>
+ <member> xxxx </member>
+ 
+ 
+ */
+
+class JWSingle: JW {
     
     var content :  String  = ""
 
+    override init() {
+        super.init()
+        initilizer()
+
+    }
+
+    init(content: String) {
+        super.init()
+        self.initilizer()
+        self.content = content
+    }
+
     
-    //export string
-    func tgStr () -> String {
-        assemble()
-        return resultString
+    func initilizer () {
+        self.openString = ""
+        self.closeString = ""
+    }
+
+    override func assemble(){
+        makeResult()
     }
     
-    //insert content
-    func insertContent () {
-        childString.append(content)
-    }
-    
-    
-    // add member
-    func addMember(member:String)  {
-        resultString += member
-        resultString += RET
+    override func makeResult() {
+        
+        resultString = openString + content
+        
+        if closeString != NO_CLOSETAG {
+            resultString += closeString
+        }
         
     }
     
-    func addMember (member: JW){
-        member.assemble()
-        addMember(member: member.resultString)
-        
-    }
+}
+
+/*
+ 
+ <tag>
+    child
+    child
+    child
+    child
+ </tag>
+
+ <member> xxxx </member>
+ <member> xxxx </member>
+ <member> xxxx </member>
+
+ 
+ */
+
+class JWMulti: JW {
     
-    // add tab for indent
-    func addTab (str: String) -> String {
-        return TAB + str
-    }
-    
+    var childString: [String] = []
     
     // add child
     func addChild (child : JW){
@@ -62,60 +89,101 @@ class JW {
     
     func addCihld (child: String) {
         let t = child.replacingOccurrences(of: RET, with: RET + TAB)
-        childString.append(addTab(str: t))
+        childString.append(t)
     }
 
-    func assemble(){
-        makeResult()
+    
+    override func assemble() {
+            makeResult()
     }
     
-    func assembleWithContent() {
-        insertContent()
-        makeResult()
-    }
-    
-    func makeResult() {
-
-        resultString += openString
-
-        if isMultiLine! {
-                resultString += RET
-        }
+    override func makeResult() {
+        resultString += openString + RET
         
-        if !isMultiLine! {
-            childAssemble()
-        }else{
-            childrenAssemble()
-            //resultString += RET
-        }
+        childAssemble()
         
         if closeString != NO_CLOSETAG {
             resultString += closeString
         }
-
-    }
         
-
-    
-    private func childrenAssemble () {
-        for str in childString {
-            resultString += str
-            resultString += RET
-           }
-
+        // 最後のRETを取り除く
+        resultString = removeLastRET(str: resultString)
+        
+        
     }
     
-    private func childAssemble () {
-        if childString.count != 1 {
-            return
+    func childAssemble () {
+        for str in childString {
+            resultString += TAB + str
+            resultString += TAB + RET
+           }
+    }
+
+    
+    
+}
+
+class JW {
+    
+    var openString      : String = ""
+    var closeString     : String = ""
+    var resultString    : String = ""
+    var memberString: [String]  = []
+
+    // remove last \n
+    func removeLastRET (str: String) -> String {
+        if str.hasSuffix("\n") {
+            return str.substring(to: str.index(before: str.endIndex))
         }
-        resultString += childString.first!
+        return str
+    }
+    
+    //export string
+    func tgStr () -> String {
+        assemble()
+        return resultString
+    }
+    
+    // add member
+    func addMember(member:String)  {
+        memberString.append(member)
+    }
+    
+    func addMember (member: JW){
+        member.assemble()
+        addMember(member: member.resultString)
+        
+    }
+    func addMember (members: [JW]) {
+        for m: JW in members {
+            m.addMember(member: m)
+        }
+    }
+    
+    
+    func assemble(){}
+    func makeResult(){}
+    
+    func memberAssemble () {
+        
+        if memberString.count > 0 {
+            resultString += RET
+            
+            var m: String = ""
+            for t: String in memberString {
+                m += t
+                m += RET
+            }
+            
+            resultString += m
+        }
     }
     
     // ファイルに書き出す
     func press(name: String, dist : String){
         
         assemble()
+        memberAssemble()
         
         // ドキュメントパス
         let documentsPath = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true)[0] as String

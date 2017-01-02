@@ -9,7 +9,7 @@
 import Foundation
 
 
-class B : JWInsertContent {
+class B : JWSingle {
 
     override func initilizer () {
         self.openString = "<b>"
@@ -18,7 +18,7 @@ class B : JWInsertContent {
 
 }
 
-class I : JWInsertContent {
+class I : JWSingle {
     
     override func initilizer () {
         self.openString = "<i>"
@@ -27,7 +27,7 @@ class I : JWInsertContent {
  
 }
 
-class STRONG : JWInsertContent {
+class STRONG : JWSingle {
    
     
     override func initilizer () {
@@ -37,7 +37,7 @@ class STRONG : JWInsertContent {
     
 }
 
-class BR : JWInsertContent {
+class BR : JWSingle {
  
     
     override func initilizer () {

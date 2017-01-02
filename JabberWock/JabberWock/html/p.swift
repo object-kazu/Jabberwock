@@ -8,47 +8,7 @@
 
 import Foundation
 
-class P: JW {
-
-    var contents :  [String]  = []
-    
-    override init() {
-        super.init()
-        initialize()
-    }
-    
-    init(contents: [String]) {
-        super.init()
-        initialize()
-        self.contents = contents
-        
-    }
-    
-    private func initialize () {
-        self.isMultiLine = false
-        
-    }
-    
-    private func makeSentence () {
-        if content != "" {
-            childString.append(content)
-        }
-        
-        childString.append(contentsOf: contents)
-        
-        for s in childString {
-            let p = Pp()
-            p.content = s
-            self.addMember(member: p)
-        }
-    }
-    
-    override func assemble() {
-        makeSentence()
-    }
-}
-
-private class Pp: JWInsertContent {
+class P: JWSingle {
 
     override func initilizer() {
         self.openString = "<p>"

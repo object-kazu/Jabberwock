@@ -11,7 +11,7 @@ import XCTest
 class headingTest: XCTestCase {
     
     var dctype = DOCTYPE()
-    var html = HTML()
+  
     
     override func setUp() {
         super.setUp()
@@ -51,7 +51,7 @@ class headingTest: XCTestCase {
         h1.content = "test"
         h1.press()
         /* answer
-         <h1>test</h1>c
+         <h1>test</h1>
          
          */
     }

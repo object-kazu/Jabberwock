@@ -110,31 +110,31 @@ class bistrongTest: XCTestCase {
 
     }
     
-    func test_p_and_br () {
-        let br = BR(content: "this is test")
-        let p = P()
-        p.contents = ["test1", "test2" + br.tgStr() + "yes!" , "test3"]
-        p.press()
-        /* answer
-         <p>test1</p>
-         <p>test2this is test<br>yes!</p>
-         <p>test3</p>
-         
-         */
-
-    }
-    
-    // <backquote>
-    func test_backquote () {
-        let bq = BACKQUOTE()
-        bq.content = "test"
-        bq.press()
-        
-        /* answer
-
-         <blockquote>test</blockquote>
-         
-         */
-
-    }
+//    func test_p_and_br () {
+//        let br = BR(content: "this is test")
+//        let p = P()
+//        p.contents = ["test1", "test2" + br.tgStr() + "yes!" , "test3"]
+//        p.press()
+//        /* answer
+//         <p>test1</p>
+//         <p>test2this is test<br>yes!</p>
+//         <p>test3</p>
+//         
+//         */
+//
+//    }
+//    
+//    // <backquote>
+//    func test_backquote () {
+//        let bq = BLOCKQUOTE()
+//        bq.content = "test"
+//        bq.press()
+//        
+//        /* answer
+//
+//         <blockquote>test</blockquote>
+//         
+//         */
+//
+//    }
 }

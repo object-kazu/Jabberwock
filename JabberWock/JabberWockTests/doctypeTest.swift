@@ -32,9 +32,22 @@ class doctypeTest: XCTestCase {
 
     }
     
+    func test_add_member(){
+        let hello = "my first task"
+        dctype.addMember(member: hello)
+        dctype.press()
+        
+        /* answer
+         <!DOCTYPE html>
+         my first task
+         
+         */
+        
+    }
+
     func test_addchild_string() {
         let hello = "my first task"
-        dctype.addCihld(child: hello)
+        dctype.addMember(member: hello)
         dctype.press()
         
         /* answer
@@ -45,19 +58,7 @@ class doctypeTest: XCTestCase {
         
     }
     
-    func test_add_member(){
-        let hello = "my first task"
-        dctype.addMember(member: hello)
-        dctype.press()
-
-        /* answer
-         <!DOCTYPE html>
-         my first task
-         
-         */
-
-    }
-    func test_add_members(){
+      func test_add_members(){
         let hello = "my first task"
         let again = "second task"
         dctype.addMember(member: hello)
@@ -72,51 +73,6 @@ class doctypeTest: XCTestCase {
         
     }
     
-    func test_add_members_child(){
-        let hello = "my first task"
-        let again = "second task"
-        let forever = "third task"
-        dctype.addMember(member: hello)
-        dctype.addMember(member: again)
-        dctype.addCihld(child: forever)
-        dctype.press()
-        
-        
-        /* answer
-         <!DOCTYPE html>
-         my first task
-         second task
-            third task
-         
-         */
-        
-    }
-
-    func test_add_child_member(){
-        
-        // check the priority
-        // member > child
-        
-        let hello = "my first task"
-        let again = "second task"
-        let forever = "third task"
-       
-        dctype.addMember(member: hello)
-        dctype.addCihld(child: forever)
-        dctype.addMember(member: again)
-        dctype.press()
-        
-        
-        /* answer
-         <!DOCTYPE html>
-         my first task
-         second task
-            third task
-         
-         */
-        
-    }
-
 
 
 }

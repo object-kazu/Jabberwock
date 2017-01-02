@@ -20,11 +20,68 @@ class listTest: XCTestCase {
         super.tearDown()
     }
     
+    // listItem
+    func test_listItem() {
+        let li = ListItem(content: "test")
+        li.press()
+        
+        /* answer
+            <li>test
+         
+         */
+
+    }
+    
+    //list
+    func test_list () {
+        let st = ["test1","test2","test3"]
+        let list = List(contents: st)
+        list.press()
+        /* answer
+        
+         <li>test1
+         <li>test2
+         <li>test3
+         
+         */
+
+    }
+    func test_list_content () {
+        let st = ["test1","test2","test3"]
+        let list = List(contents: st)
+        list.content = "new test add"
+        list.press()
+
+        /// CAUTION: content > contents
+        
+        /* answer
+         
+         <li>new test add
+         <li>test1
+         <li>test2
+         <li>test3
+
+         
+         */
+
+    }
+    
+    
    // list = ol, ul
-    func test_list() {
-        let s = ["test", "llist", "done"]
-        let l = ListCore(contents: s)
-        l.press()
+    func test_list_core() {
+        let s = ["test", "list", "done"]
+        let lc = ListCore(contents: s)
+        lc.press()
+        
+        /* answer
+         <>
+            <li>test
+            <li>llist
+            <li>done
+         <>
+         
+         */
+
     }
     
     func test_unoderList()  {
@@ -32,41 +89,87 @@ class listTest: XCTestCase {
         let s = ["test", "llist", "done"]
         u.contents = s
         u.press()
+        
+        
+        /* answer
+         <ul>
+            <li>test
+            <li>llist
+            <li>done
+         </ul>
+         
+         */
+
     }
     
-    func test_unorderList_2()  {
-        let s = ["test", "llist", "done"]
-        let u = UL(contents: s)
-        u.press()
-    }
-    
+   
     func test_orderList () {
         let s = ["test", "llist", "done"]
         let o = OL(contents: s)
         o.press()
+        
+        /* answer
+         <ol>
+            <li>test
+            <li>llist
+            <li>done
+         </ol>
+         
+         */
+
     }
     
 
-    // dt
-    func test_dLItem () {
-        let d = DLItem()
+
+    // dl, dt, dd
+    /*
+     <dl>
+     <dt>HTML</dt>
+     <dd>HyperText Markup Language の略で・・・</dd>
+     <dt>WWW</dt>
+     <dd>World Wide Web の略で・・・</dd>
+     </dl>
+     */
+
+    func test_dt () {
+        let d = DT()
         d.content = "test"
         d.press()
+        
+        /* answer
+        <dt>test</dt>
+         
+         */
+
     }
-    
-    func test_dlist () {
-        let s = ["test", "llist", "done"]
-        let d = dList(contents: s)
+    func test_dd () {
+        let d = DD()
+        d.content = "test"
         d.press()
+        
+        /* answer
+         <dd>test</dd>
+         
+         */
+        
     }
     
-    func test_DL()  {
-        let s = ["test", "llist", "done"]
-        let dl = DL(contents: s)
-        dl.press()
+    func test_dl () {
+        let d = DL()
+        d.dList = [("test 1", "ans 1"),("test 2", "ans 2"), ]
+        d.press()
+        /* answer
+         <dl>
+            <dt>test 1</dt>
+            <dd>ans 1</dd>
+            <dt>test 2</dt>
+            <dd>ans 2</dd>	
+         </dl>
+         
+         */
+
     }
-    
-    
+
     
     
     

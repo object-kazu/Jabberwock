@@ -1,22 +1,22 @@
+////
+////  footer.swift
+////  JabberWock
+////
+////  Created by 清水 一征 on 2016/12/20.
+////  Copyright © 2016年 momiji-mac. All rights reserved.
+////
 //
-//  footer.swift
-//  JabberWock
+//import Foundation
 //
-//  Created by 清水 一征 on 2016/12/20.
-//  Copyright © 2016年 momiji-mac. All rights reserved.
+//class FOOTER:JW {
+//    
+//    override init() {
+//        super.init()
+//        self.openString = "<footer>"
+//        self.closeString = "</footer>"
+//    }
+//    
+//    
 //
-
-import Foundation
-
-class FOOTER:JW {
-    
-    override init() {
-        super.init()
-        self.openString = "<footer>"
-        self.closeString = "</footer>"
-    }
-    
-    
-
-    
-}
+//    
+//}

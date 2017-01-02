@@ -8,52 +8,38 @@
 
 import Foundation
 
-// order list
-class OL : ListCore {
-    
-    override func initilizer () {
-        self.openString = "<ol>"
-        self.closeString = "</ol>"
-    }
-    
-}
 
-
-// unorder list
-class UL : ListCore {
-    
-    override func initilizer () {
-        self.openString = "<ul>"
-        self.closeString = "</ul>"
-    }
-    
-    
-}
-
-class ListCore : JW {
+class ListCore : JWMulti {
     var contents :  [String]  = []
     
     override init() {
         super.init()
-        initilizer()
+        initList()
     }
     
     init(contents: [String]) {
         super.init()
-        self.initilizer()
+        initList()
         self.contents = contents
         
     }
     
-    func initilizer () {
-        openString = "<>"
+    func initList () {
+        openString  = "<>"
         closeString = "<>"
+    }
+
+    func makeListItem () {
+        for s in contents {
+            let i = ListItem(content: s)
+            self.addChild(child: i)
+        }
     }
 
     
     override func assemble() {
-        addChild(child: List(contents: contents))
-        assemble()
+        makeListItem()
+        makeResult()
     }
 }
 
@@ -64,26 +50,33 @@ class ListCore : JW {
  <li> xxx
  */
 
-class  List: JW {
+class  List: JWSingle {
     
     var contents :  [String]  = []
     
     override init() {
         super.init()
+        initialize()
     }
     
     
     init(contents: [String]) {
         super.init()
+        initialize()
         self.contents = contents
         
     }
     
-    private func makeListItem () {
-        
-        childString.append(contentsOf: contents)
-        
-        for s in childString {
+    func initialize()  {}
+    
+    func makeListItem () {
+        var t : [String] = []
+        if content != "" {
+            t.append(content)
+        }
+        t.append(contentsOf: contents)
+
+        for s in t {
             let i = ListItem(content: s)
             self.addMember(member: i)
         }
@@ -91,35 +84,15 @@ class  List: JW {
     
     override func assemble() {
         makeListItem()
-        
     }
-
-    
 }
 
 // <li> xxx
-class ListItem : JW {
-    
-    override init() {
-        super.init()
-        self.initilizer()
-    }
-    
-    init(content: String) {
-        super.init()
-        self.initilizer()
-        self.content = content
-        
-    }
-    
-    func initilizer () {
+class ListItem : JWSingle {
+
+    override func initilizer () {
         self.openString = "<li>"
         self.closeString = ""
     }
 
-    override func assemble() {
-        insertContent()
-        assemble()
-    }
-    
 }

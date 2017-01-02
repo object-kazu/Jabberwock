@@ -8,13 +8,12 @@
 
 import Foundation
 
-class HEAD:JW {
+class HEAD:JWMulti {
     
     override init() {
         super.init()
         self.openString     = "<head>"
         self.closeString    = "</head>"
-        self.isMultiLine    = true
     }
     
     // title

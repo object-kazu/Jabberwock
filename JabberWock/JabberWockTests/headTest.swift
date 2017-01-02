@@ -10,10 +10,6 @@ import XCTest
 
 class headTest: XCTestCase {
     
-    var dctype = DOCTYPE()
-    var html = HTML()
-    
-
     override func setUp() {
         super.setUp()
         // Put setup code here. This method is called before the invocation of each test method in the class.
@@ -28,45 +24,78 @@ class headTest: XCTestCase {
         // head
         let head = HEAD()
         head.setTitle(of:"task")
-        html.addChild(child: head)
-        
-        dctype.addMember(member: html)
-        dctype.press()
+        head.press()
         
         /* answer
-         <!DOCTYPE html>
-         <html lang="en">
-            <head>
-                <title>task</title>
-            </head>
-         </html>
+         <head>
+            <title>task</title>
+         </head>
+         
+         */
+    }
+    func test_add_header_meta(){
+        // head
+        let head = HEAD()
+        head.setTitle(of:"task")
+        head.setCharset(of: CHARSET.utf8)
+        head.press()
+        
+        /* answer
+         <head>
+            <title>task</title>
+            <meta charset="UTF-8"/>
+         </head>
          
          */
     }
     
-    func test_add_header_meta (){
+    func test_add_doctype () {
+        // doctype
+        let doc = DOCTYPE()
+        
+        
         // head
         let head = HEAD()
+        head.setTitle(of:"task")
         head.setCharset(of: CHARSET.utf8)
-        head.setTitle(of: "task")
-        html.addChild(child: head)
         
-        // body
-        dctype.addMember(member: html)
-        dctype.press()
+        doc.addMember(member: head)
+        doc.press()
         
         /* answer
-         
          <!DOCTYPE html>
-         <html lang="en">
-            <head>
-                <meta charset="UTF-8""/>
-                <title>task</title>
-            </head>
-         </html>
-
+         <head>
+            <title>task</title>
+            <meta charset="UTF-8""/>
+         </head>
+         
          */
-        
+
     }
+    
+//    func test_add_header_meta (){
+//        // head
+//        let head = HEAD()
+//        head.setCharset(of: CHARSET.utf8)
+//        head.setTitle(of: "task")
+//        html.addChild(child: head)
+//        
+//        // body
+//        dctype.addMember(member: html)
+//        dctype.press()
+//        
+//        /* answer
+//         
+//         <!DOCTYPE html>
+//         <html lang="en">
+//            <head>
+//                <meta charset="UTF-8""/>
+//                <title>task</title>
+//            </head>
+//         </html>
+//
+//         */
+//        
+//    }
    
 }

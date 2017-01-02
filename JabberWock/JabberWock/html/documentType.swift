@@ -8,16 +8,13 @@
 
 import Foundation
 
-class DOCTYPE:JW {
+class DOCTYPE:JWSingle {
     var docType:String = "<!DOCTYPE html>"
 
     override init() {
         super.init()
-        
-        self.isMultiLine = false
-        
-        resultString = docType
-        resultString += RET
+        self.openString = docType
+        self.closeString = ""
         
     }
     

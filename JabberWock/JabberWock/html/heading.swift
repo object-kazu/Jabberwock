@@ -8,7 +8,7 @@
 
 import Foundation
 
-class HEADING : JW {
+class HEADING : JWSingle {
     // h1 ~ h6
     var level:      Int     = 1
   
@@ -29,7 +29,6 @@ class HEADING : JW {
     private func initialize () {
         self.openString     = "<h" + INSERTSTRING + ">"
         self.closeString    = "</h" + INSERTSTRING + ">"
-        self.isMultiLine    = false
         
     }
 
@@ -51,7 +50,6 @@ class HEADING : JW {
     
     override func assemble() {
         insertLevel()
-        insertContent()
         makeResult()
     }
 
