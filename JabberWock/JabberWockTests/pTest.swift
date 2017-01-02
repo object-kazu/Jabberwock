@@ -23,7 +23,7 @@ class pTest: XCTestCase {
         super.tearDown()
     }
     
-    func test_Pp() {
+    func test_p() {
         let p = P()
         p.content = "test"
         p.press()
