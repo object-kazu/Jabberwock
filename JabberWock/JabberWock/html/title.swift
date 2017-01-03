@@ -30,6 +30,4 @@ class TITLE: JWSingle {
     func setTile(content : String) {
         self.content = content
     }
-    
-
 }
