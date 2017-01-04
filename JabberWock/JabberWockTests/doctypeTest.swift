@@ -45,18 +45,7 @@ class doctypeTest: XCTestCase {
         
     }
 
-    func test_addchild_string() {
-        let hello = "my first task"
-        dctype.addMember(member: hello)
-        dctype.press()
-        
-        /* answer
-         <!DOCTYPE html>	
-                my first task
-         
-         */
-        
-    }
+
     
       func test_add_members(){
         let hello = "my first task"

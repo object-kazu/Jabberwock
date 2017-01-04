@@ -66,6 +66,16 @@ class headingTest: XCTestCase {
         
     }
     
+    func test_heading_id(){
+        let h2 = HEADING(level: 2, content: "init test")
+        h2.setID(id: "header2")
+        h2.press()
+        
+        /* answer
+         <h2 id="header2">init test</h2>
+         */
+        
+    }
     func test_heading_h1_h2 () {
         let h1 = HEADING()
         h1.level = 1

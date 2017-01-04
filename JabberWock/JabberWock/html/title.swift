@@ -22,8 +22,7 @@ class TITLE: JWSingle {
     }
     
     override func initilizer () {
-        self.openString = "<title>"
-        self.closeString = "</title>"
+        setName(name: "title")
     }
 
     

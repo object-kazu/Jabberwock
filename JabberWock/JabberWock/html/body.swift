@@ -12,8 +12,7 @@ class BODY:JWMulti {
     
     override init() {
         super.init()
-        self.openString     = "<body>"
-        self.closeString    = "</body>"
+        setName(name: "body")
     }
     
     

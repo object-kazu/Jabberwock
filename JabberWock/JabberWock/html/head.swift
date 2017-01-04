@@ -12,8 +12,7 @@ class HEAD:JWMulti {
     
     override init() {
         super.init()
-        self.openString     = "<head>"
-        self.closeString    = "</head>"
+        setName(name: "head")
     }
     
     // title

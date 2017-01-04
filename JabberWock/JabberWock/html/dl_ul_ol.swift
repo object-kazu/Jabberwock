@@ -13,8 +13,7 @@ import Foundation
 class OL : ListCore {
     
     override func initList() {
-        self.openString = "<ol>"
-        self.closeString = "</ol>"
+        setName(name: "ol")
     }
     
 }
@@ -24,8 +23,7 @@ class OL : ListCore {
 class UL : ListCore {
     
     override func initList() {
-        self.openString = "<ul>"
-        self.closeString = "</ul>"
+        setName(name: "ul")
     }
     
     
@@ -38,8 +36,7 @@ class  DL : ListCore {
    
     
     override func initList() {
-        self.openString = "<dl>"
-        self.closeString = "</dl>"
+        setName(name: "dl")
     
     }
     
@@ -54,6 +51,7 @@ class  DL : ListCore {
     
     
     override func assemble() {
+        makeTag()
         makeListItem()
         makeResult()
     }
@@ -73,8 +71,7 @@ class  DL : ListCore {
 class DT : JWSingle {
 
     override func initilizer () {
-        self.openString = "<dt>"
-        self.closeString = "</dt>"
+        setName(name: "dt")
     }
 }
 
@@ -82,8 +79,7 @@ class DT : JWSingle {
 class DD : JWSingle {
     
     override func initilizer () {
-        self.openString = "<dd>"
-        self.closeString = "</dd>"
+        setName(name: "dd")
     }
 }
 

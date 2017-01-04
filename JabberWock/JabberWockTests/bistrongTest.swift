@@ -24,7 +24,8 @@ class bistrongTest: XCTestCase {
     func test_b (){
         let bb = B()
         bb.content = "bold"
-        bb.press()
+        //bb.press()
+        XCTAssertEqual(bb.tgStr(), "<b>bold</b>")
         
         /* answer
          <b>bold</b>
@@ -34,10 +35,24 @@ class bistrongTest: XCTestCase {
     
     func test_b_init () {
         let bb = B(content: "bold")
-        bb.press()
+        //bb.press()
+        XCTAssertEqual(bb.tgStr(), "<b>bold</b>")
+        
         /* answer
          <b>bold</b>
          
+         */
+
+    }
+    
+    func test_b_id (){
+        let bb = B(content: "bold")
+        bb.setID(id: "test")
+        //bb.press()
+        XCTAssertEqual(bb.tgStr(), "<b id=\"test\">bold</b>")
+        
+        /* answer
+         <B id="test">bold</B>
          */
 
     }
@@ -102,7 +117,9 @@ class bistrongTest: XCTestCase {
     func test_br () {
         let br = BR()
         br.content = "this is br testing"
-        br.press()
+        XCTAssertEqual(br.tgStr(), "this is br testing<br>")
+        
+        //br.press()
         /* answer
 
          this is br testing<br>

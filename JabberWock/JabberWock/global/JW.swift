@@ -46,6 +46,7 @@ class JWSingle: JW {
     }
 
     override func assemble(){
+        makeTag()
         makeResult()
     }
     
@@ -53,7 +54,7 @@ class JWSingle: JW {
         
         resultString = openString + content
         
-        if closeString != NO_CLOSETAG {
+        if closeString != "" {
             resultString += closeString
         }
         
@@ -94,15 +95,17 @@ class JWMulti: JW {
 
     
     override func assemble() {
-            makeResult()
+        makeTag()
+        makeResult()
     }
     
     override func makeResult() {
+        
         resultString += openString + RET
         
         childAssemble()
         
-        if closeString != NO_CLOSETAG {
+        if closeString != "" {
             resultString += closeString
         }
         
@@ -125,10 +128,13 @@ class JWMulti: JW {
 
 class JW {
     
-    var openString      : String = ""
-    var closeString     : String = ""
-    var resultString    : String = ""
-    var memberString: [String]  = []
+    private var tagManager      : TagString = TagString()
+    var openString              : String!
+    var closeString             : String!
+    
+    var resultString    : String    = ""
+    var memberString: [String]      = []
+    
 
     // remove last \n
     func removeLastRET (str: String) -> String {
@@ -142,6 +148,35 @@ class JW {
     func tgStr () -> String {
         assemble()
         return resultString
+    }
+    
+    // tag
+    func isBRTag (single: Bool) {
+        tagManager.isBRTag = single
+    }
+    func isSingleTag (single: Bool) {
+        tagManager.isSingleTag = single
+    }
+    
+    func setID(id:String) {
+        tagManager.id = id
+    }
+    
+    func setCls(cls:String) {
+        tagManager.cls = cls
+    }
+    func setName(name:String) {
+        tagManager.name = name
+    }
+    func setLang(lang:LANG) {
+        tagManager.lang = lang
+    }
+    
+    
+    // tagの変更時には必ず呼び出しアップデート
+    func makeTag() {
+        openString = tagManager.openString()
+        closeString = tagManager.closeString()
     }
     
     // add member

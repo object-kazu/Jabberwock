@@ -24,10 +24,7 @@ class ListCore : JWMulti {
         
     }
     
-    func initList () {
-        openString  = "<>"
-        closeString = "<>"
-    }
+    func initList () {}
 
     func makeListItem () {
         for s in contents {
@@ -38,61 +35,20 @@ class ListCore : JWMulti {
 
     
     override func assemble() {
+        makeTag()
         makeListItem()
         makeResult()
     }
 }
 
 
-/*
- <li> xxx
- <li> xxx
- <li> xxx
- */
-
-class  List: JWSingle {
-    
-    var contents :  [String]  = []
-    
-    override init() {
-        super.init()
-        initialize()
-    }
-    
-    
-    init(contents: [String]) {
-        super.init()
-        initialize()
-        self.contents = contents
-        
-    }
-    
-    func initialize()  {}
-    
-    func makeListItem () {
-        var t : [String] = []
-        if content != "" {
-            t.append(content)
-        }
-        t.append(contentsOf: contents)
-
-        for s in t {
-            let i = ListItem(content: s)
-            self.addMember(member: i)
-        }
-    }
-    
-    override func assemble() {
-        makeListItem()
-    }
-}
 
 // <li> xxx
 class ListItem : JWSingle {
 
     override func initilizer () {
-        self.openString = "<li>"
-        self.closeString = ""
+        setName(name: "li")
+        isSingleTag(single: true)
     }
 
 }

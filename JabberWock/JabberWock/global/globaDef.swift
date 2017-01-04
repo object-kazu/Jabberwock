@@ -13,7 +13,6 @@ let TAB: String     = "\t"
 let SPC: String     = " "
 let COMMA: String   = ","
 
-let NO_CLOSETAG : String = ""
 let INSERTSTRING: String    = "%%"
 
 // Table

@@ -11,6 +11,7 @@ import Foundation
 enum LANG :String{
     case en
     case ja
+    case NO_LANG
     
     func str() -> String {
         let charStrOpen = "lang=" + "\""
@@ -25,6 +26,8 @@ enum LANG :String{
             return charsetStr(char: "en")
         case .ja:
             return charsetStr(char: "ja")
+        case .NO_LANG:
+            return ""
         }
     }
     

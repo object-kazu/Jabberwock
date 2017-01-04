@@ -40,8 +40,7 @@ class TABLE : JWMulti {
 
     override init() {
         super.init()
-        self.openString     = "<table>"
-        self.closeString    = "</table>"
+        setName(name: "table")
     }
     
     private func addCation () {
@@ -90,6 +89,7 @@ class TABLE : JWMulti {
     }
     
     override func assemble() {
+        makeTag()
         addCation()
         addTableHeader()
         for i in 0..<dataList.count {
@@ -106,8 +106,7 @@ class TABLE : JWMulti {
 class TableCaption: JWSingle {
     
     override func initilizer() {
-        self.openString = "<captiom>"
-        self.closeString = "</caption>"
+        setName(name: "caption")
         
     }
     
@@ -116,8 +115,7 @@ class TableCaption: JWSingle {
 class TableRow: JWSingle {
     
     override func initilizer() {
-        self.openString = "<tr>"
-        self.closeString = "</tr>"
+        setName(name: "tr")
 
     }
     
@@ -128,11 +126,16 @@ class TableHeader: JWSingle {
     
     
     override func initilizer() {
-        self.openString = "<th>"
-        self.closeString = "</th>"
+        setName(name: "th")
         
     }
 }
+
+/*
+ td tagは今後複雑になる可能性があるので、
+ TagStringクラスを使用しない仕様にしてある。
+ 
+ */
 
 class TableData: JWSingle {
     
@@ -143,7 +146,7 @@ class TableData: JWSingle {
     let INS_COL_SPAN = "insert col span"
     
     override func initilizer() {
-        self.openString = "<td" + INS_ROW_SPAN + SPC + INS_COL_SPAN + ">"
+        self.openString = "<td" + INS_ROW_SPAN + INS_COL_SPAN + ">"
         self.closeString = "</td>"
     }
     
@@ -189,13 +192,13 @@ class TableData: JWSingle {
     
         
         if rowSpan > 0 {
-            openString = openString.replacingOccurrences(of: INS_ROW_SPAN, with: " rowspan=\(rowSpan)")
+            openString = openString.replacingOccurrences(of: INS_ROW_SPAN, with: SPC + "rowspan=\(rowSpan)")
         }else{
             openString = openString.replacingOccurrences(of: INS_ROW_SPAN, with: "")
         }
         
         if colSpan > 0 {
-            openString = openString.replacingOccurrences(of: INS_COL_SPAN, with: " colspan=\(colSpan)")
+            openString = openString.replacingOccurrences(of: INS_COL_SPAN, with: SPC + "colspan=\(colSpan)")
         }else{
             openString = openString.replacingOccurrences(of: INS_COL_SPAN, with: "")
         }

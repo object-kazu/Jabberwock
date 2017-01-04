@@ -12,8 +12,7 @@ import Foundation
 class B : JWSingle {
 
     override func initilizer () {
-        self.openString = "<b>"
-        self.closeString = "</b>"
+        setName(name: "b")
     }
 
 }
@@ -21,8 +20,7 @@ class B : JWSingle {
 class I : JWSingle {
     
     override func initilizer () {
-        self.openString = "<i>"
-        self.closeString = "</i>"
+        setName(name: "i")
     }
  
 }
@@ -31,8 +29,7 @@ class STRONG : JWSingle {
    
     
     override func initilizer () {
-        self.openString = "<strong>"
-        self.closeString = "</strong>"
+        setName(name: "strong")
     }
     
 }
@@ -41,8 +38,8 @@ class BR : JWSingle {
  
     
     override func initilizer () {
-        self.openString = ""
-        self.closeString = "<br>"
+        isBRTag(single: true)
+        setName(name: "br")
     }
     
 }

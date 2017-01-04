@@ -9,12 +9,12 @@
 import Foundation
 
 class DOCTYPE:JWSingle {
-    var docType:String = "<!DOCTYPE html>"
+    var docType:String = "!DOCTYPE html"
 
     override init() {
         super.init()
-        self.openString = docType
-        self.closeString = ""
+        isSingleTag(single: true)
+        setName(name: docType)
         
     }
     

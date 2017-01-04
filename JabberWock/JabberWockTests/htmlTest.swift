@@ -37,6 +37,7 @@ class htmlTest: XCTestCase {
     
     
     func test_add_html (){
+        html.setLang(lang: LANG.en)
         dctype.addMember(member: html)
         dctype.press()
         
@@ -53,6 +54,7 @@ class htmlTest: XCTestCase {
         // header
         let head = HEAD()
         html.addChild(child: head)
+        html.setLang(lang: LANG.en)
         
         // html
         dctype.addMember(member: html)

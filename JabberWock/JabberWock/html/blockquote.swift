@@ -11,8 +11,7 @@ import Foundation
 class BLOCKQUOTE : JWSingle {
     
     override func initilizer () {
-        self.openString = "<blockquote>"
-        self.closeString = "</blockquote>"
+        setName(name:"blockquote" )
     }
     
 }

@@ -11,24 +11,23 @@ import Foundation
 class HEADING : JWSingle {
     // h1 ~ h6
     var level:      Int     = 1
-  
+    private var name = "h"
+    
     override init() {
         super.init()
-        initialize()
         
     }
 
     init(level: Int, content: String) {
         super.init()
-        initialize()
         self.content = content
         self.level = level
         
     }
     
     private func initialize () {
-        self.openString     = "<h" + INSERTSTRING + ">"
-        self.closeString    = "</h" + INSERTSTRING + ">"
+        insertLevel()
+        setName(name: self.name)
         
     }
 
@@ -41,15 +40,14 @@ class HEADING : JWSingle {
         if level > 6 {
             level = 6
         }
-        
-        openString = openString.replacingOccurrences(of: INSERTSTRING, with: "\(self.level)")
-        closeString = closeString.replacingOccurrences(of: INSERTSTRING, with: "\(self.level)")
+        name = "h" + "\(level)"
         
     }
     
     
     override func assemble() {
-        insertLevel()
+        initialize()
+        makeTag()
         makeResult()
     }
 

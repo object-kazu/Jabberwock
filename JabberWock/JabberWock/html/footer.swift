@@ -12,8 +12,7 @@ class FOOTER:JWMulti {
     
     override init() {
         super.init()
-        self.openString = "<footer>"
-        self.closeString = "</footer>"
+        setName(name: "footer")
     }
     
     

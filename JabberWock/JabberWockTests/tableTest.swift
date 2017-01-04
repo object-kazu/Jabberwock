@@ -130,6 +130,12 @@ class tableTest: XCTestCase {
         
         //add data
         
+        /*
+         insert span
+         
+         "line2, ROW_SPAN11, COL_SPAN22"
+         */
+        
         let data = ["line1", "shi", "tokyo", "03000000"]
         let data2 = ["line2," + ROW_SPAN + "10", "shi2", "tokyo2", "030000002"]
         t.setData(d: [data, data2])
@@ -141,7 +147,7 @@ class tableTest: XCTestCase {
             <captiom>test</caption>
             <tr><th></th><th>name</th><th>address</th><th>tel</th></tr>
             <tr><td >line1</td><td >shi</td><td >tokyo</td><td >03000000</td></tr>
-            <tr><tdrowspan=10 >line2</td><td >shi2</td><td >tokyo2</td><td >030000002</td></tr>
+            <tr><td rowspan=10 >line2</td><td >shi2</td><td >tokyo2</td><td >030000002</td></tr>
          </table>
          */
         

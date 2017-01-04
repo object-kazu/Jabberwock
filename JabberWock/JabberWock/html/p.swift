@@ -11,8 +11,7 @@ import Foundation
 class P: JWSingle {
 
     override func initilizer() {
-        self.openString = "<p>"
-        self.closeString = "</p>"
+        setName(name: "p")
         
     }
     

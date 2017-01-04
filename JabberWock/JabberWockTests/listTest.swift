@@ -26,63 +26,63 @@ class listTest: XCTestCase {
         li.press()
         
         /* answer
-            <li>test
+            <li>test</li>
          
          */
 
     }
     
     //list
-    func test_list () {
-        let st = ["test1","test2","test3"]
-        let list = List(contents: st)
-        list.press()
-        /* answer
-        
-         <li>test1
-         <li>test2
-         <li>test3
-         
-         */
-
-    }
-    func test_list_content () {
-        let st = ["test1","test2","test3"]
-        let list = List(contents: st)
-        list.content = "new test add"
-        list.press()
-
-        /// CAUTION: content > contents
-        
-        /* answer
-         
-         <li>new test add
-         <li>test1
-         <li>test2
-         <li>test3
-
-         
-         */
-
-    }
+//    func test_list () {
+//        let st = ["test1","test2","test3"]
+//        let list = List(contents: st)
+//        list.press()
+//        /* answer
+//        
+//         <li>test1
+//         <li>test2
+//         <li>test3
+//         
+//         */
+//
+//    }
+//    func test_list_content () {
+//        let st = ["test1","test2","test3"]
+//        let list = List(contents: st)
+//        list.content = "new test add"
+//        list.press()
+//
+//        /// CAUTION: content > contents
+//        
+//        /* answer
+//         
+//         <li>new test add
+//         <li>test1
+//         <li>test2
+//         <li>test3
+//
+//         
+//         */
+//
+//    }
     
     
    // list = ol, ul
-    func test_list_core() {
-        let s = ["test", "list", "done"]
-        let lc = ListCore(contents: s)
-        lc.press()
-        
-        /* answer
-         <>
-            <li>test
-            <li>llist
-            <li>done
-         <>
-         
-         */
-
-    }
+//    func test_list_core() {
+//        let s = ["test", "list", "done"]
+//        let lc = ListCore(contents: s)
+//        lc.press()
+//        
+//        /* answer
+//         <>
+//            <li>test
+//            <li>llist
+//            <li>done
+//         <>
+//         
+//         */
+//
+//    }
     
     func test_unoderList()  {
         let u = UL ()

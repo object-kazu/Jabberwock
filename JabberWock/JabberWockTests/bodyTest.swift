@@ -79,6 +79,28 @@ class bodyTest: XCTestCase {
          */
     }
     
+    func test_body_addchild_B_id (){
+        let bo = BODY()
+        let b1 = B(content: "test 1")
+        b1.setID(id: "next")
+        bo.addChild(child: b1)
+        bo.addChild(child: B(content: "test 2"))
+        bo.addChild(child: B(content: "test 3"))
+        
+        
+        bo.press()
+        
+        /* answer
+         <body>
+            <b id="next">test 1</b>
+            <b>test 2</b>
+            <b>test 3</b>
+         </body>
+         
+         */
+    }
+
+    
     func test_body_addchild_member (){
         let bo = BODY()
         bo.addChild(child: B(content: "test 1"))

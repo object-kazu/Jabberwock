@@ -10,32 +10,11 @@ import Foundation
 
 
 class HTML:JWMulti {
-    var lang            : LANG!
+    
     
     override init() {
         super.init()
-        
-        lang = LANG.en
-        self.openString     = "<html" + SPC + INSERTSTRING + ">"
-        self.closeString    = "</html>"
+        setName(name: "html")
     }
-    
-    private func insertLang () {
-        // html tagでlangを設定しない場合
-        if lang.str() == "" {
-            openString = "<html>"
-            return
-        }
-        
-        openString  = openString.replacingOccurrences(of: INSERTSTRING, with: self.lang.str())
-
-    }
-    
-    override func assemble() {
-        insertLang()
-        makeResult()
-    }
-    
-    
     
 }
