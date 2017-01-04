@@ -209,6 +209,7 @@
 				1B19979C1E08F1C600C41C69 /* b_i_strong_br.swift */,
 				1BAAE56E1E0B77F300A13637 /* blockquote.swift */,
 				1B1CE2EA1DF0185C00DD2561 /* body.swift */,
+				1BB619CA1E1DBDCC008D7261 /* div.swift */,
 				1BCB14EE1E0CE80F009949A9 /* dl_ul_ol.swift */,
 				1B7F1C731DF9265C006F570B /* documentType.swift */,
 				1BCA4BA71E0953F50089772A /* footer.swift */,
@@ -218,9 +219,8 @@
 				1BCB14E91E0CDC1B009949A9 /* list.swift */,
 				1B88D4E11E027E6A0069A8AC /* meta.swift */,
 				1BE090DC1E06538400A82473 /* p.swift */,
-				1BAAB6D91E00D2560009BA87 /* title.swift */,
 				1B55D29C1E1A1C7D00F98E27 /* table.swift */,
-				1BB619CA1E1DBDCC008D7261 /* div.swift */,
+				1BAAB6D91E00D2560009BA87 /* title.swift */,
 			);
 			path = html;
 			sourceTree = "<group>";
@@ -243,10 +243,10 @@
 			isa = PBXGroup;
 			children = (
 				1B71C0DA1DF2A98F006492D5 /* JW.swift */,
+				1B282C361E1C69C00098ED40 /* TagString.swift */,
 				1B1CE2E61DF0127E00DD2561 /* charset.swift */,
 				1B88D4E31E027FF40069A8AC /* globaDef.swift */,
 				1B1CE2E41DF0117200DD2561 /* language.swift */,
-				1B282C361E1C69C00098ED40 /* TagString.swift */,
 			);
 			path = global;
 			sourceTree = "<group>";
@@ -258,7 +258,10 @@
 				1B1CE2D31DEFF8D000DD2561 /* JabberWockTests.swift */,
 				1B19979E1E08FEAF00C41C69 /* bistrongTest.swift */,
 				1B19979A1E08A5E500C41C69 /* bodyTest.swift */,
+				1BB619CD1E1DBDF9008D7261 /* divTest.swift */,
+				1B227D7F1E17445900787172 /* dlTest.swift */,
 				1B7F1C751DF927FE006F570B /* doctypeTest.swift */,
+				1B55D2991E1A1A9A00F98E27 /* footerTest.swift */,
 				1B447C0A1E040F7F009C1BB8 /* headTest.swift */,
 				1B447C0C1E04102F009C1BB8 /* headingTest.swift */,
 				1BD05B4D1DF6CB3000AFAABD /* htmlTest.swift */,
@@ -266,14 +269,12 @@
 				1B8FACBF1E16964900641934 /* metaTest.swift */,
 				1B08131E1E0E7AD400C0A8DD /* mixHtmlTest.swift */,
 				1BE090DA1E06536800A82473 /* pTest.swift */,
-				1B227D7F1E17445900787172 /* dlTest.swift */,
+				1B55D29F1E1A308500F98E27 /* tableTest.swift */,
 				1B227D811E17691600787172 /* tagSetTest.swift */,
 				1B7A692D1E19E4EB0030FF2D /* titleTest.swift */,
-				1B55D2991E1A1A9A00F98E27 /* footerTest.swift */,
-				1B55D29F1E1A308500F98E27 /* tableTest.swift */,
-				1BB619CD1E1DBDF9008D7261 /* divTest.swift */,
 			);
 			name = HTML_TEST;
+			path = HTML_TEST;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
