@@ -34,6 +34,13 @@ class HEAD:JWMulti {
         addChild(child: c)
     }
     
+    override func assemble() {
+        makeTag()
+        
+        makeResult()
+    }
+
+    
 }
 
 
