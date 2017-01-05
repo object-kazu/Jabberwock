@@ -70,6 +70,14 @@
 		1BD05B511DF6CDC100AFAABD /* html.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B1CE2DE1DF0086500DD2561 /* html.swift */; };
 		1BD05B521DF6CF8400AFAABD /* language.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B1CE2E41DF0117200DD2561 /* language.swift */; };
 		1BD05B531DF6CF8800AFAABD /* charset.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B1CE2E61DF0127E00DD2561 /* charset.swift */; };
+		1BD1C1601E1DDDAE00679590 /* css_JW_TEST.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BD1C15F1E1DDDAE00679590 /* css_JW_TEST.swift */; };
+		1BD1C1621E1DDDC700679590 /* CSS.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BD1C1611E1DDDC700679590 /* CSS.swift */; };
+		1BD1C1631E1DDDC700679590 /* CSS.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BD1C1611E1DDDC700679590 /* CSS.swift */; };
+		1BD1C1651E1DE1B100679590 /* CSS_Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BD1C1641E1DE1B100679590 /* CSS_Color.swift */; };
+		1BD1C1661E1DE1B100679590 /* CSS_Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BD1C1641E1DE1B100679590 /* CSS_Color.swift */; };
+		1BD1C1681E1DE2B800679590 /* CSSItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BD1C1671E1DE2B800679590 /* CSSItem.swift */; };
+		1BD1C1691E1DE2B800679590 /* CSSItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BD1C1671E1DE2B800679590 /* CSSItem.swift */; };
+		1BD1C16B1E1DF92200679590 /* css_Color_Test.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BD1C16A1E1DF92200679590 /* css_Color_Test.swift */; };
 		1BE090DB1E06536800A82473 /* pTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BE090DA1E06536800A82473 /* pTest.swift */; };
 		1BE090DD1E06538400A82473 /* p.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BE090DC1E06538400A82473 /* p.swift */; };
 		1BE090DE1E06545C00A82473 /* p.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BE090DC1E06538400A82473 /* p.swift */; };
@@ -134,6 +142,11 @@
 		1BCB14EC1E0CDC52009949A9 /* listTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = listTest.swift; sourceTree = "<group>"; };
 		1BCB14EE1E0CE80F009949A9 /* dl_ul_ol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = dl_ul_ol.swift; sourceTree = "<group>"; };
 		1BD05B4D1DF6CB3000AFAABD /* htmlTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = htmlTest.swift; sourceTree = "<group>"; };
+		1BD1C15F1E1DDDAE00679590 /* css_JW_TEST.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = css_JW_TEST.swift; sourceTree = "<group>"; };
+		1BD1C1611E1DDDC700679590 /* CSS.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CSS.swift; path = JabberWockTests/CSS.swift; sourceTree = SOURCE_ROOT; };
+		1BD1C1641E1DE1B100679590 /* CSS_Color.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CSS_Color.swift; path = JabberWockTests/CSS_Color.swift; sourceTree = SOURCE_ROOT; };
+		1BD1C1671E1DE2B800679590 /* CSSItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CSSItem.swift; path = JabberWockTests/CSSItem.swift; sourceTree = SOURCE_ROOT; };
+		1BD1C16A1E1DF92200679590 /* css_Color_Test.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = css_Color_Test.swift; sourceTree = "<group>"; };
 		1BE090DA1E06536800A82473 /* pTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = pTest.swift; sourceTree = "<group>"; };
 		1BE090DC1E06538400A82473 /* p.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = p.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -197,6 +210,7 @@
 		1B1CE2D21DEFF8D000DD2561 /* JabberWockTests */ = {
 			isa = PBXGroup;
 			children = (
+				1BD1C15E1E1DDB4300679590 /* CSS_TEST */,
 				1BB619CF1E1DBE04008D7261 /* HTML_TEST */,
 				1B1CE2D51DEFF8D000DD2561 /* Info.plist */,
 			);
@@ -228,6 +242,9 @@
 		1B1CE2E11DF0089700DD2561 /* css */ = {
 			isa = PBXGroup;
 			children = (
+				1BD1C1611E1DDDC700679590 /* CSS.swift */,
+				1BD1C1641E1DE1B100679590 /* CSS_Color.swift */,
+				1BD1C1671E1DE2B800679590 /* CSSItem.swift */,
 			);
 			path = css;
 			sourceTree = "<group>";
@@ -273,8 +290,16 @@
 				1B227D811E17691600787172 /* tagSetTest.swift */,
 				1B7A692D1E19E4EB0030FF2D /* titleTest.swift */,
 			);
-			name = HTML_TEST;
 			path = HTML_TEST;
+			sourceTree = "<group>";
+		};
+		1BD1C15E1E1DDB4300679590 /* CSS_TEST */ = {
+			isa = PBXGroup;
+			children = (
+				1BD1C15F1E1DDDAE00679590 /* css_JW_TEST.swift */,
+				1BD1C16A1E1DF92200679590 /* css_Color_Test.swift */,
+			);
+			name = CSS_TEST;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -385,10 +410,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				1B1CE2BE1DEFF8D000DD2561 /* ViewController.swift in Sources */,
+				1BD1C1651E1DE1B100679590 /* CSS_Color.swift in Sources */,
 				1BCA4BA81E0953F50089772A /* footer.swift in Sources */,
 				1B19979D1E08F1C600C41C69 /* b_i_strong_br.swift in Sources */,
 				1BB619CB1E1DBDCC008D7261 /* div.swift in Sources */,
 				1B1CE2E51DF0117200DD2561 /* language.swift in Sources */,
+				1BD1C1621E1DDDC700679590 /* CSS.swift in Sources */,
 				1B7F1C741DF9265C006F570B /* documentType.swift in Sources */,
 				1BE090DD1E06538400A82473 /* p.swift in Sources */,
 				1B71C0DB1DF2A98F006492D5 /* JW.swift in Sources */,
@@ -400,6 +427,7 @@
 				1B88D4E21E027E6A0069A8AC /* meta.swift in Sources */,
 				1B282C371E1C69C00098ED40 /* TagString.swift in Sources */,
 				1B88D4E41E027FF40069A8AC /* globaDef.swift in Sources */,
+				1BD1C1681E1DE2B800679590 /* CSSItem.swift in Sources */,
 				1B1CE2E71DF0127E00DD2561 /* charset.swift in Sources */,
 				1B1CE2E91DF017F000DD2561 /* head.swift in Sources */,
 				1B9946ED1E02A07D00BA13B4 /* heading.swift in Sources */,
@@ -422,6 +450,7 @@
 				1B447C0D1E04102F009C1BB8 /* headingTest.swift in Sources */,
 				1BD05B531DF6CF8800AFAABD /* charset.swift in Sources */,
 				1B71C0DF1DF2B24B006492D5 /* JWTest.swift in Sources */,
+				1BD1C1601E1DDDAE00679590 /* css_JW_TEST.swift in Sources */,
 				1B227D7E1E1742EF00787172 /* blockquote.swift in Sources */,
 				1BCB14ED1E0CDC52009949A9 /* listTest.swift in Sources */,
 				1BD05B511DF6CDC100AFAABD /* html.swift in Sources */,
@@ -429,15 +458,18 @@
 				1B8FACC01E16964900641934 /* metaTest.swift in Sources */,
 				1BAAB6DB1E00D2DF0009BA87 /* head.swift in Sources */,
 				1B1CE2D41DEFF8D000DD2561 /* JabberWockTests.swift in Sources */,
+				1BD1C16B1E1DF92200679590 /* css_Color_Test.swift in Sources */,
 				1B7F1C761DF927FE006F570B /* doctypeTest.swift in Sources */,
 				1B1997A01E090FEB00C41C69 /* b_i_strong_br.swift in Sources */,
 				1BB619CE1E1DBDF9008D7261 /* divTest.swift in Sources */,
 				1BD05B4E1DF6CB3000AFAABD /* htmlTest.swift in Sources */,
 				1B282C381E1C69C00098ED40 /* TagString.swift in Sources */,
+				1BD1C1661E1DE1B100679590 /* CSS_Color.swift in Sources */,
 				1BAAB6DC1E00FD730009BA87 /* title.swift in Sources */,
 				1B7F1C771DF92804006F570B /* documentType.swift in Sources */,
 				1B55D29E1E1A1C7E00F98E27 /* table.swift in Sources */,
 				1B08131F1E0E7AD400C0A8DD /* mixHtmlTest.swift in Sources */,
+				1BD1C1691E1DE2B800679590 /* CSSItem.swift in Sources */,
 				1B55D29B1E1A1ABD00F98E27 /* footer.swift in Sources */,
 				1B71C0E21DF2B2D9006492D5 /* JW.swift in Sources */,
 				1B9946EE1E02A07D00BA13B4 /* heading.swift in Sources */,
@@ -450,6 +482,7 @@
 				1BCB14EB1E0CDC1B009949A9 /* list.swift in Sources */,
 				1BD05B521DF6CF8400AFAABD /* language.swift in Sources */,
 				1BAAB6DD1E00FD7A0009BA87 /* body.swift in Sources */,
+				1BD1C1631E1DDDC700679590 /* CSS.swift in Sources */,
 				1B7A692E1E19E4EB0030FF2D /* titleTest.swift in Sources */,
 				1B88D4E61E02825A0069A8AC /* globaDef.swift in Sources */,
 			);

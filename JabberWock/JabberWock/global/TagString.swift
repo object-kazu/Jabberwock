@@ -28,12 +28,12 @@ class TagString{
     }
     
     func addID (){
-        if id == "" {return}
+        if id.isEmpty {return}
         id = SPC + "id=" + "\"" +  id + "\""
     }
     
     func addCls (){
-        if cls == "" {return}
+        if cls.isEmpty {return}
         cls = SPC + "class=" + "\"" + cls + "\""
     }
     

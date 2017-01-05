@@ -45,7 +45,7 @@ class TABLE : JWMulti {
     
     private func addCation () {
         
-        if caption != "" {
+        if !caption.isEmpty {
             let c = TableCaption()
             c.content = caption
             childString.append(c.tgStr())

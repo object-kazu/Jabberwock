@@ -33,7 +33,5 @@ class JWTest: XCTestCase {
         jw.press()
     }
     
-  
-    
-   
+     
 }

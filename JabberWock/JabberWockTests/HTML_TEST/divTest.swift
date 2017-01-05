@@ -40,4 +40,23 @@ class divTest: XCTestCase {
 
     }
     
+    func test_div_addchildren (){
+        let d = DIV()
+        let p1 = P(content: "test 1")
+        let p2 = P(content: "test 2")
+        
+        d.addChildren(children: [p1,p2])
+        d.press()
+        
+        /* answer
+         <div>
+            <p>test 1</p>
+            <p>test 2</p>
+         </div>
+         
+         
+         */
+        
+    }
+
 }

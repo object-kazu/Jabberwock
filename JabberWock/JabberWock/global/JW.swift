@@ -54,7 +54,7 @@ class JWSingle: JW {
         
         resultString = openString + content
         
-        if closeString != "" {
+        if !closeString.isEmpty {
             resultString += closeString
         }
         
@@ -84,9 +84,22 @@ class JWMulti: JW {
     
     // add child
     func addChild (child : JW){
+        // html
         child.assemble()
         self.addCihld(child: child.resultString)
+        
+        // css
+        styleStrings.append(child.styleStr())
+        
     }
+    
+    func addChildren (children : [JW]){
+        for c: JW in children {
+            c.assemble()
+            self.addCihld(child: c.resultString)
+        }
+    }
+    
     
     func addCihld (child: String) {
         let t = child.replacingOccurrences(of: RET, with: RET + TAB)
@@ -105,7 +118,7 @@ class JWMulti: JW {
         
         childAssemble()
         
-        if closeString != "" {
+        if !closeString.isEmpty {
             resultString += closeString
         }
         
@@ -126,7 +139,10 @@ class JWMulti: JW {
     
 }
 
+
+
 class JW {
+    
     
     private var tagManager      : TagString = TagString()
     var openString              : String!
@@ -134,8 +150,29 @@ class JW {
     
     var resultString    : String    = ""
     var memberString: [String]      = []
-    
 
+    /// css
+    var style :CSS = CSS(name: "")
+    var styleString: String = ""
+    var styleStrings: [String] = []
+    
+    func styleStringInit () {
+        styleString = "" // initilize
+    }
+    
+    private func styleAssemble () {
+  
+        styleString += style.Str() + RET
+        for sty in styleStrings {
+            styleString += sty
+            styleString += RET
+        }
+        
+        styleString = removeLastRET(str: styleString)
+        
+    }
+    
+    
     // remove last \n
     func removeLastRET (str: String) -> String {
         if str.hasSuffix("\n") {
@@ -148,6 +185,12 @@ class JW {
     func tgStr () -> String {
         assemble()
         return resultString
+    }
+    
+    func styleStr () -> String {
+        styleStringInit()
+        styleAssemble()
+        return styleString
     }
     
     // tag
@@ -185,11 +228,15 @@ class JW {
     }
     
     func addMember (member: JW){
+        // html
         member.assemble()
         addMember(member: member.resultString)
         
+        // css
+        styleStrings.append(member.styleStr())
+        
     }
-    func addMember (members: [JW]) {
+    func addMembers (members: [JW]) {
         for m: JW in members {
             m.addMember(member: m)
         }
