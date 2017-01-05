@@ -27,6 +27,10 @@ class CSS {
     
     func Str() -> String  {
         
+        if cssName.isEmpty {
+            return ""
+        }
+        
         var cssResultString: String = ""
         // 接頭句
         cssResultString += cssName + SPC + "{" + RET

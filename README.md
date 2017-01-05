@@ -1,4 +1,4 @@
-# JabberWock
+# JabverWock ( rename:JabberWock )
 ## > 何がしたい?
 	どうしてWebページを作成するのにHTMLとCSSとJavaScripを
 	書かなければいけないのか？

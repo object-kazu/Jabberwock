@@ -84,6 +84,7 @@ class JWMulti: JW {
     
     // add child
     func addChild (child : JW){
+       
         // html
         child.assemble()
         self.addCihld(child: child.resultString)
@@ -95,8 +96,7 @@ class JWMulti: JW {
     
     func addChildren (children : [JW]){
         for c: JW in children {
-            c.assemble()
-            self.addCihld(child: c.resultString)
+            addChild(child: c)
         }
     }
     
@@ -161,15 +161,32 @@ class JW {
     }
     
     private func styleAssemble () {
-  
-        styleString += style.Str() + RET
+        
+        if style.Str().isEmpty {
+            styleString += ""
+        }else{
+            styleString += style.Str() + RET
+        }
+        
         for sty in styleStrings {
-            styleString += sty
-            styleString += RET
+            if sty.isEmpty {
+                styleString += ""
+            }else{
+                styleString += sty
+                styleString += RET
+            }
         }
         
         styleString = removeLastRET(str: styleString)
         
+    }
+    
+    func applyStyle() {
+        let s = STYLE()
+        s.makeTag()
+        if resultString.contains(s.openString) && resultString.contains(s.closeString) {
+            STYLE_CONTENT.replacingOccurrences(of: <#T##String#>, with: <#T##String#>)
+        }
     }
     
     

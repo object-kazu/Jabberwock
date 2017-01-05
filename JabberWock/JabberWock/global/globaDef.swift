@@ -17,6 +17,7 @@ let SEMI_COLON  : String    = ";"
 
 
 let INSERTSTRING: String    = "%%"
+let STYLE_CONTENT: String   = "##STYLE##"
 
 // Table
 let BLA: String = "<br>"

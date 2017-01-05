@@ -1,5 +1,5 @@
 //
-//  div.swift
+//  style.swift
 //  JabberWock
 //
 //  Created by kazuyuki shimizu on 2017/01/05.
@@ -8,14 +8,14 @@
 
 import Foundation
 
-class DIV:JWMulti {
+class STYLE:JWMulti {
     
     override init() {
         super.init()
-        setName(name: "div")
+        setName(name: "style")
+        self.addCihld(child: STYLE_CONTENT)
     }
     
-    
-    
+
     
 }

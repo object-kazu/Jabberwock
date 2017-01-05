@@ -80,4 +80,42 @@ class mixHtmlTest: XCTestCase {
 
     }
     
+    func test_html_css () {
+        //head
+        let head = HEAD()
+        
+        let meta = META()
+        meta.setCharset(of: CHARSET.utf8)
+        
+        let title = TITLE(content: "task")
+        let css = CSS(name: "title")
+        css.color.value = "red"
+        title.style = css
+        let style = STYLE()
+        
+        head.addChildren(children: [meta, title, style])
+      
+        
+        
+        //body
+        let body = BODY()
+        let h1 = HEADING(level: 1, content: "This is TODO")
+        let a = "My first task"
+        let b = B(content: "Next TODO").tgStr()
+        let c = STRONG(content: "1. html").tgStr()
+        let pa = P(content: a)
+        let pb = P(content: b)
+        let pc = P(content: c)
+        
+        body.addChildren(children: [h1,pa,pb,pc])
+        html.addChildren(children: [head,body])
+        doc.addMember(member: html)
+        print(doc.styleStr())
+        
+        //style.addCihld(child: doc.styleStr())
+        doc.press()
+
+        
+    }
+    
 }
