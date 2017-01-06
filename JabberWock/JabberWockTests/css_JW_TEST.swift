@@ -95,6 +95,21 @@ class css_JW_TEST: XCTestCase {
         )
     }
 
-    
+    func test_JW_css_repeat() {
+        let jw = JW()
+        let css = CSS(name: "jw")
+        css.color.value = "red"
+        jw.style = css
+        
+
+        let jw2 = JW()
+        jw2.style = css
+        
+        jw.addMember(member: jw2)
+        
+        XCTAssertEqual(jw.styleStr(), "jw {" + RET + "color: red;" + RET + "}")
+        
+    }
+
        
 }

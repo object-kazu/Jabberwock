@@ -90,7 +90,10 @@ class JWMulti: JW {
         self.addCihld(child: child.resultString)
         
         // css
-        styleStrings.append(child.styleStr())
+        if child.styleArray.count > 0{
+            styleArray.append(contentsOf: child.styleArray)
+        }
+        styleArray.append(child.style)
         
     }
     
@@ -152,9 +155,10 @@ class JW {
     var memberString: [String]      = []
 
     /// css
-    var style :CSS = CSS(name: "")
+    var style :CSS          = CSS(name: "")
+    var styleArray : [CSS]  = []
     var styleString: String = ""
-    var styleStrings: [String] = []
+    //var styleStrings: [String] = []
     
     func styleStringInit () {
         styleString = "" // initilize
@@ -162,37 +166,124 @@ class JW {
     
     private func styleAssemble () {
         
-        if style.Str().isEmpty {
-            styleString += ""
-        }else{
-            styleString += style.Str() + RET
-        }
+        var tempStyle : [CSS] = []
+        tempStyle.append( style )
+        tempStyle.append(contentsOf: styleArray)
         
-        for sty in styleStrings {
-            if sty.isEmpty {
-                styleString += ""
-            }else{
-                styleString += sty
-                styleString += RET
+        for sty in tempStyle {
+            /// スタイルがない（｛｝のみ）なら標示しない
+            /// 同じ名前のスタイルは書き込まない（重複書き込み禁止）
+            if sty.Str().isEmpty {
+                continue
             }
+            
+            if isSameCSSName(name: sty.cssName) {
+                continue
+            }
+            styleString += sty.Str()
+            styleString += RET
+            
+            
         }
         
         styleString = removeLastRET(str: styleString)
         
     }
     
+    
+    private func isSameCSSName (name: String) -> Bool {
+        return styleString.contains(name) ? true : false
+    }
+    
     func applyStyle() {
+        styleAssemble()
+
+        
+        
+        ///検索のためにStyle tag生成
         let s = STYLE()
         s.makeTag()
         if resultString.contains(s.openString) && resultString.contains(s.closeString) {
-            STYLE_CONTENT.replacingOccurrences(of: <#T##String#>, with: <#T##String#>)
+            // insert tab
+            let tn = getTabNumber(testStr: resultString, targetStr: STYLE_CONTENT)
+            let tabedString = addTab(str: styleString, tabMax: tn)
+
+            // replace text
+            // 余分なTabを削除しておく
+            var target = ""
+            for _ in 0..<tn {
+                target += TAB
+            }
+            target += STYLE_CONTENT
+            resultString = resultString.replacingOccurrences(of: target, with: STYLE_CONTENT) // TAB + TAB + STYLE_CONTENT -> STYLE_CONTENT
+            resultString = resultString.replacingOccurrences(of: STYLE_CONTENT, with: tabedString)
         }
     }
     
+    // tab揃え
+    private func tabNumber (str: String) -> Int {
+        let last = removeLastTAB(str: str) //余分なTabを除く
+        let a = last.components(separatedBy: "\t")
+        return a.count - 1
+    }
+   
+    
+    
+    private func addTab (str: String, tabMax : Int) -> String {
+        var ans = ""
+        let l = str.lines
+        for e:String in l {
+            let tn = tabNumber(str: e)
+            let a = tabMax - tn
+            let s = addheadTab(str: e, num: a)
+            ans += s
+            ans += "\n"
+        }
+        
+        return ans
+    }
+    
+    private func addheadTab (str: String, num:Int) -> String {
+        var t = ""
+        for _ in 0..<num {
+            t += "\t"
+        }
+        t += str
+        return t
+    }
+    
+    private func getTabNumber (testStr:String, targetStr: String ) -> Int {
+        let lin = testStr.lines
+        for l in lin {
+            if l.contains(targetStr) {
+                return tabNumber(str: l)
+            }
+        }
+        return 0
+    }
+    
+    private func getTabMax (testStr:String) -> Int {
+        var max = 0
+        let lin = testStr.lines
+        for l in lin {
+            let n = tabNumber(str: l)
+            if n > max {
+                max = n
+            }
+        }
+        return max
+        
+    }
     
     // remove last \n
     func removeLastRET (str: String) -> String {
         if str.hasSuffix("\n") {
+            return str.substring(to: str.index(before: str.endIndex))
+        }
+        return str
+    }
+    func removeLastTAB (str: String) -> String {
+        if str.hasSuffix("\t") {
             return str.substring(to: str.index(before: str.endIndex))
         }
         return str
@@ -250,7 +341,11 @@ class JW {
         addMember(member: member.resultString)
         
         // css
-        styleStrings.append(member.styleStr())
+        if member.styleArray.count > 0{
+            styleArray.append(contentsOf: member.styleArray)
+        }
+
+        styleArray.append(member.style)
         
     }
     func addMembers (members: [JW]) {
@@ -283,6 +378,8 @@ class JW {
         
         assemble()
         memberAssemble()
+        applyStyle()
+        
         
         // ドキュメントパス
         let documentsPath = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true)[0] as String

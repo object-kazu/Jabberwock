@@ -12,6 +12,8 @@ import Foundation
 class CSS {
     
     var cssName : String!
+    var cssResultString: String = ""
+
     
     // color
     var color       : csColor    = csColor()
@@ -27,28 +29,37 @@ class CSS {
     
     func Str() -> String  {
         
+        cssResultString = "" // init
+        
+        /// nameがないものは出力しない
         if cssName.isEmpty {
             return ""
         }
         
-        var cssResultString: String = ""
         // 接頭句
         cssResultString += cssName + SPC + "{" + RET
         
         
         // color
-        cssResultString += color.cssItemStr()
-        cssResultString += opacity.cssItemStr()
+        addCSS(css: color.cssItemStr())
+        addCSS(css: opacity.cssItemStr())
         
         
         // background
-        cssResultString += background.cssItemStr()
+        addCSS(css: background.cssItemStr())
         
         
         // 接尾句
         cssResultString += "}"
         return cssResultString
     }
+    
+    private func addCSS (css: String) {
+        
+        cssResultString += css
+    }
+
+   
     
     // todo universal selector
     //var universalSelector
