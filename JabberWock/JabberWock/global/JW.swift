@@ -23,7 +23,7 @@ let EXPORT_TEST_File = "result.txt"
  
  */
 
-class JWSingle: JW {
+class JWSingle: JWObject {
     
     var content :  String  = ""
 
@@ -78,12 +78,12 @@ class JWSingle: JW {
  
  */
 
-class JWMulti: JW {
+class JWMulti: JWObject {
     
     var childString: [String] = []
     
     // add child
-    func addChild (child : JW){
+    func addChild (child : JWObject){
        
         // html
         child.assemble()
@@ -97,8 +97,8 @@ class JWMulti: JW {
         
     }
     
-    func addChildren (children : [JW]){
-        for c: JW in children {
+    func addChildren (children : [JWObject]){
+        for c: JWObject in children {
             addChild(child: c)
         }
     }
@@ -142,23 +142,16 @@ class JWMulti: JW {
     
 }
 
-
-
-class JW {
+class JWObject : JWCSS {
     
-    
-    private var tagManager      : TagString = TagString()
-    var openString              : String!
-    var closeString             : String!
-    
-    var resultString    : String    = ""
-    var memberString: [String]      = []
+}
 
-    /// css
+class JWCSS: JW { // add css functions
+    
     var style :CSS          = CSS(name: "")
     var styleArray : [CSS]  = []
     var styleString: String = ""
-    //var styleStrings: [String] = []
+  
     
     func styleStringInit () {
         styleString = "" // initilize
@@ -195,9 +188,17 @@ class JW {
         return styleString.contains(name) ? true : false
     }
     
+
+    func styleStr () -> String {
+        styleStringInit()
+        styleAssemble()
+        return styleString
+    }
+
+    
     func applyStyle() {
         styleAssemble()
-
+        
         
         
         ///検索のためにStyle tag生成
@@ -207,7 +208,7 @@ class JW {
             // insert tab
             let tn = getTabNumber(testStr: resultString, targetStr: STYLE_CONTENT)
             let tabedString = addTab(str: styleString, tabMax: tn)
-
+            
             // replace text
             // 余分なTabを削除しておく
             var target = ""
@@ -220,60 +221,90 @@ class JW {
         }
     }
     
-    // tab揃え
-    private func tabNumber (str: String) -> Int {
-        let last = removeLastTAB(str: str) //余分なTabを除く
-        let a = last.components(separatedBy: "\t")
-        return a.count - 1
+    
+    // add member
+    func addMember(member:String)  {
+        memberString.append(member)
     }
-   
-    
-    
-    private func addTab (str: String, tabMax : Int) -> String {
-        var ans = ""
-        let l = str.lines
-        for e:String in l {
-            let tn = tabNumber(str: e)
-            let a = tabMax - tn
-            let s = addheadTab(str: e, num: a)
-            ans += s
-            ans += "\n"
+
+    func addMember (member: JWObject){
+        // html
+        member.assemble()
+        addMember(member: member.resultString)
+        
+        // css
+        if member.styleArray.count > 0{
+            styleArray.append(contentsOf: member.styleArray)
         }
         
-        return ans
-    }
-    
-    private func addheadTab (str: String, num:Int) -> String {
-        var t = ""
-        for _ in 0..<num {
-            t += "\t"
-        }
-        t += str
-        return t
-    }
-    
-    private func getTabNumber (testStr:String, targetStr: String ) -> Int {
-        let lin = testStr.lines
-        for l in lin {
-            if l.contains(targetStr) {
-                return tabNumber(str: l)
-            }
-        }
-        return 0
-    }
-    
-    private func getTabMax (testStr:String) -> Int {
-        var max = 0
-        let lin = testStr.lines
-        for l in lin {
-            let n = tabNumber(str: l)
-            if n > max {
-                max = n
-            }
-        }
-        return max
+        styleArray.append(member.style)
         
     }
+    func addMembers (members: [JWObject]) {
+        for m: JWObject in members {
+            m.addMember(member: m)
+        }
+    }
+
+    override func press(name: String, dist : String){
+        
+        assemble()
+        memberAssemble()
+        applyStyle()
+        
+        
+        // ドキュメントパス
+        let documentsPath = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true)[0] as String
+        // 保存するもの
+        let fileObject = resultString
+        // ファイル名
+        let fileName = name
+        // 保存する場所
+        let filePath = documentsPath + fileName
+        
+        // 保存処理
+        do {
+            try fileObject.write(toFile: filePath, atomically: true, encoding: String.Encoding.utf8)
+        } catch {
+            print("Fail to write result at text file")
+            
+        }
+        
+        
+        
+        //file exist
+        let fileManager = FileManager.default
+        let path = dist + name
+        
+        if fileManager.fileExists(atPath: path){
+            // remove file
+            print("file remove!")
+            removeFile(path: path)
+        }
+        
+        // file move
+        do{
+            try fileManager.moveItem(atPath: filePath, toPath:path)
+        } catch {
+            assertionFailure("move error")
+        }
+        
+        
+    }
+
+}
+
+class JW {
+    
+    
+    private var tagManager      : TagString = TagString()
+    var openString              : String!
+    var closeString             : String!
+    
+    var resultString    : String    = ""
+    var memberString: [String]      = []
+
+    
     
     // remove last \n
     func removeLastRET (str: String) -> String {
@@ -295,11 +326,6 @@ class JW {
         return resultString
     }
     
-    func styleStr () -> String {
-        styleStringInit()
-        styleAssemble()
-        return styleString
-    }
     
     // tag
     func isBRTag (single: Bool) {
@@ -330,29 +356,61 @@ class JW {
         closeString = tagManager.closeString()
     }
     
-    // add member
-    func addMember(member:String)  {
-        memberString.append(member)
+    // tab揃え
+    func tabNumber (str: String) -> Int {
+        let last = removeLastTAB(str: str) //余分なTabを除く
+        let a = last.components(separatedBy: "\t")
+        return a.count - 1
     }
     
-    func addMember (member: JW){
-        // html
-        member.assemble()
-        addMember(member: member.resultString)
-        
-        // css
-        if member.styleArray.count > 0{
-            styleArray.append(contentsOf: member.styleArray)
+    
+    
+    func addTab (str: String, tabMax : Int) -> String {
+        var ans = ""
+        let l = str.lines
+        for e:String in l {
+            let tn = tabNumber(str: e)
+            let a = tabMax - tn
+            let s = addheadTab(str: e, num: a)
+            ans += s
+            ans += "\n"
         }
+        
+        return ans
+    }
+    
+    func addheadTab (str: String, num:Int) -> String {
+        var t = ""
+        for _ in 0..<num {
+            t += "\t"
+        }
+        t += str
+        return t
+    }
+    
+    func getTabNumber (testStr:String, targetStr: String ) -> Int {
+        let lin = testStr.lines
+        for l in lin {
+            if l.contains(targetStr) {
+                return tabNumber(str: l)
+            }
+        }
+        return 0
+    }
+    
+    func getTabMax (testStr:String) -> Int {
+        var max = 0
+        let lin = testStr.lines
+        for l in lin {
+            let n = tabNumber(str: l)
+            if n > max {
+                max = n
+            }
+        }
+        return max
+        
+    }
 
-        styleArray.append(member.style)
-        
-    }
-    func addMembers (members: [JW]) {
-        for m: JW in members {
-            m.addMember(member: m)
-        }
-    }
     
     
     func assemble(){}
@@ -374,53 +432,7 @@ class JW {
     }
     
     // ファイルに書き出す
-    func press(name: String, dist : String){
-        
-        assemble()
-        memberAssemble()
-        applyStyle()
-        
-        
-        // ドキュメントパス
-        let documentsPath = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true)[0] as String
-        // 保存するもの
-        let fileObject = resultString
-        // ファイル名
-        let fileName = name
-        // 保存する場所
-        let filePath = documentsPath + fileName
-        
-        // 保存処理
-        do {
-            try fileObject.write(toFile: filePath, atomically: true, encoding: String.Encoding.utf8)
-        } catch {
-            print("Fail to write result at text file")
-            
-        }
-        
-       
-        
-        //file exist
-        let fileManager = FileManager.default
-        let path = dist + name
-        
-        if fileManager.fileExists(atPath: path){
-            // remove file
-            print("file remove!")
-            removeFile(path: path)
-        }
-        
-        // file move
-        do{
-            try fileManager.moveItem(atPath: filePath, toPath:path)
-        } catch {
-            assertionFailure("move error")
-        }
-
-        
-    }
-    
-    
+    func press(name: String, dist : String){}
     
     func press ()  {
         self.press(name: EXPORT_TEST_File, dist: EXPORT_TEST_Dir)

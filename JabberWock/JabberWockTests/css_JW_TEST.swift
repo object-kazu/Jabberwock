@@ -21,7 +21,7 @@ class css_JW_TEST: XCTestCase {
     }
     
     func test_JW_css() {
-        let jw = JW()
+        let jw = JWObject()
         let css = CSS(name: "jw")
         css.color.value = "red"
         jw.style = css
@@ -31,7 +31,7 @@ class css_JW_TEST: XCTestCase {
     }
     
     func test_JW_css2() {
-        let jw = JW()
+        let jw = JWObject()
         let css = CSS(name: "jw")
         css.color.value = "red"
         css.opacity.value = "0.5"
@@ -44,13 +44,13 @@ class css_JW_TEST: XCTestCase {
     }
     
     func test_JW_css_addMember() {
-        let jw = JW()
+        let jw = JWObject()
         let css = CSS(name: "jw")
         css.color.value = "red"
         css.opacity.value = "0.5"
         jw.style = css
         
-        let jw2 = JW()
+        let jw2 = JWObject()
         let css2 = CSS(name: "jw2")
         css2.color.value = "blue"
         css2.opacity.value = "0.1"
@@ -76,7 +76,7 @@ class css_JW_TEST: XCTestCase {
         css.opacity.value = "0.5"
         jw.style = css
         
-        let jw2 = JW()
+        let jw2 = JWObject()
         let css2 = CSS(name: "jw2")
         css2.color.value = "blue"
         css2.opacity.value = "0.1"
@@ -96,13 +96,13 @@ class css_JW_TEST: XCTestCase {
     }
 
     func test_JW_css_repeat() {
-        let jw = JW()
+        let jw = JWObject()
         let css = CSS(name: "jw")
         css.color.value = "red"
         jw.style = css
         
 
-        let jw2 = JW()
+        let jw2 = JWObject()
         jw2.style = css
         
         jw.addMember(member: jw2)

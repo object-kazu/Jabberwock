@@ -11,6 +11,7 @@ import Foundation
 
 class CSS {
     
+    
     var cssName : String!
     var cssResultString: String = ""
 
@@ -23,6 +24,10 @@ class CSS {
     // background
     var background  : CSSItem   = CSSItem()
     
+    
+    // init
+    
+    //todo init(id), init(class), init(by:tag)
     init(name:String) {
         self.cssName = name
     }

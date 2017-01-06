@@ -23,7 +23,7 @@ class HEAD:JWMulti {
         
     }
     
-    func setTitle (of:JW){
+    func setTitle (of:JWObject){
         addChild(child: of)
     }
     
