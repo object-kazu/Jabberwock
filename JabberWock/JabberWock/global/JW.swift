@@ -142,16 +142,22 @@ class JWMulti: JWObject {
     
 }
 
+ // 今後、基底クラスのインターフェイスとする
 class JWObject : JWCSS {
     
 }
+// class JWCSSScript : JWCSS {} ...
 
 class JWCSS: JW { // add css functions
     
     var style :CSS          = CSS(name: "")
     var styleArray : [CSS]  = []
     var styleString: String = ""
-  
+    
+    func prepStyleByTag()  { // 自分のTag（p, head, body, etc）のCSSを作成
+        let mystyle = CSS(name: self.getTagName())
+        self.style = mystyle
+    }
     
     func styleStringInit () {
         styleString = "" // initilize
@@ -198,8 +204,6 @@ class JWCSS: JW { // add css functions
     
     func applyStyle() {
         styleAssemble()
-        
-        
         
         ///検索のためにStyle tag生成
         let s = STYLE()
@@ -347,6 +351,9 @@ class JW {
     }
     func setLang(lang:LANG) {
         tagManager.lang = lang
+    }
+    func getTagName() -> String {
+        return tagManager.name
     }
     
     

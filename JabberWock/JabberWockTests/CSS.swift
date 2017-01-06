@@ -28,9 +28,21 @@ class CSS {
     // init
     
     //todo init(id), init(class), init(by:tag)
+    
     init(name:String) {
         self.cssName = name
     }
+    init(id:String){
+        self.cssName = "#" + id
+    }
+    init(cls:String) {
+        self.cssName = "." + cls
+    }
+    
+    func initUniverse () { // universe
+        self.cssName = "*"
+    }
+    
     
     func Str() -> String  {
         

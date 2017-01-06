@@ -111,5 +111,13 @@ class css_JW_TEST: XCTestCase {
         
     }
 
-       
+    func test_myCSS (){
+        let t = P(content: "test")
+        t.prepStyleByTag()
+        t.style.color.value = "red"
+        
+        XCTAssertEqual(t.styleStr(), "p {" + RET + "color: red;" + RET + "}")
+
+    }
+    
 }
