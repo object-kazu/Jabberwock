@@ -159,6 +159,23 @@ class JWCSS: JW { // add css functions
         self.style = mystyle
     }
     
+    func prepStyleByID () {
+        let ID = self.getTagID()
+        if !ID.isEmpty {
+            let mystyle = CSS(id: ID)
+            self.style = mystyle
+        }
+    }
+    
+    func prepStyleByCls(){
+        let CLS = getTagCls()
+        if !CLS.isEmpty {
+            let mystyle = CSS(cls: self.getTagCls())
+            self.style = mystyle
+        }
+    }
+    
+    
     func styleStringInit () {
         styleString = "" // initilize
     }
@@ -354,6 +371,13 @@ class JW {
     }
     func getTagName() -> String {
         return tagManager.name
+    }
+    func getTagID() -> String {
+        return tagManager.id
+    }
+    
+    func getTagCls() -> String {
+        return tagManager.cls
     }
     
     

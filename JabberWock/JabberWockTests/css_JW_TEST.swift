@@ -120,4 +120,25 @@ class css_JW_TEST: XCTestCase {
 
     }
     
+    func test_css_no_id () {
+        let t = P(content: "test")
+        t.prepStyleByID()
+        t.style.color.value = "red"
+        
+        // no id
+        XCTAssertEqual(t.styleStr(), "")
+
+    }
+    
+    func test_css_no_id () {
+        let t = P(content: "test")
+        t.prepStyleByID()
+        t.style.color.value = "red"
+        
+        // no id
+        XCTAssertEqual(t.styleStr(), "p {" + RET + "color: red;" + RET + "}")
+        
+    }
+
+    
 }
