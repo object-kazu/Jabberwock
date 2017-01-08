@@ -150,13 +150,13 @@
 		1BCB14EE1E0CE80F009949A9 /* dl_ul_ol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = dl_ul_ol.swift; sourceTree = "<group>"; };
 		1BD05B4D1DF6CB3000AFAABD /* htmlTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = htmlTest.swift; sourceTree = "<group>"; };
 		1BD1C15F1E1DDDAE00679590 /* css_JW_TEST.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = css_JW_TEST.swift; sourceTree = "<group>"; };
-		1BD1C1611E1DDDC700679590 /* CSS.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CSS.swift; path = JabberWockTests/CSS.swift; sourceTree = SOURCE_ROOT; };
-		1BD1C1641E1DE1B100679590 /* CSS_Color.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CSS_Color.swift; path = JabberWockTests/CSS_Color.swift; sourceTree = SOURCE_ROOT; };
-		1BD1C1671E1DE2B800679590 /* CSSItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CSSItem.swift; path = JabberWockTests/CSSItem.swift; sourceTree = SOURCE_ROOT; };
+		1BD1C1611E1DDDC700679590 /* CSS.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CSS.swift; path = CSS.swift; sourceTree = "<group>"; };
+		1BD1C1641E1DE1B100679590 /* CSS_Color.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CSS_Color.swift; path = CSS_Color.swift; sourceTree = "<group>"; };
+		1BD1C1671E1DE2B800679590 /* CSSItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CSSItem.swift; path = CSSItem.swift; sourceTree = "<group>"; };
 		1BD1C16A1E1DF92200679590 /* css_Color_Test.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = css_Color_Test.swift; sourceTree = "<group>"; };
 		1BE090DA1E06536800A82473 /* pTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = pTest.swift; sourceTree = "<group>"; };
 		1BE090DC1E06538400A82473 /* p.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = p.swift; sourceTree = "<group>"; };
-		1BFB03AB1E222B1F0022041D /* CSS_Font.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CSS_Font.swift; path = JabberWockTests/CSS_Font.swift; sourceTree = SOURCE_ROOT; };
+		1BFB03AB1E222B1F0022041D /* CSS_Font.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CSS_Font.swift; path = CSS_Font.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -241,9 +241,9 @@
 				1BCB14E91E0CDC1B009949A9 /* list.swift */,
 				1B88D4E11E027E6A0069A8AC /* meta.swift */,
 				1BE090DC1E06538400A82473 /* p.swift */,
+				1B8F6FCC1E1E2AD300553871 /* style.swift */,
 				1B55D29C1E1A1C7D00F98E27 /* table.swift */,
 				1BAAB6D91E00D2560009BA87 /* title.swift */,
-				1B8F6FCC1E1E2AD300553871 /* style.swift */,
 			);
 			path = html;
 			sourceTree = "<group>";
@@ -252,8 +252,8 @@
 			isa = PBXGroup;
 			children = (
 				1BD1C1611E1DDDC700679590 /* CSS.swift */,
-				1BD1C1641E1DE1B100679590 /* CSS_Color.swift */,
 				1BD1C1671E1DE2B800679590 /* CSSItem.swift */,
+				1BD1C1641E1DE1B100679590 /* CSS_Color.swift */,
 				1BFB03AB1E222B1F0022041D /* CSS_Font.swift */,
 			);
 			path = css;
@@ -306,11 +306,12 @@
 		1BD1C15E1E1DDB4300679590 /* CSS_TEST */ = {
 			isa = PBXGroup;
 			children = (
-				1BD1C15F1E1DDDAE00679590 /* css_JW_TEST.swift */,
-				1BD1C16A1E1DF92200679590 /* css_Color_Test.swift */,
 				1B30787D1E21A1D20042BDCC /* CSS_Study.swift */,
+				1BD1C16A1E1DF92200679590 /* css_Color_Test.swift */,
+				1BD1C15F1E1DDDAE00679590 /* css_JW_TEST.swift */,
 			);
 			name = CSS_TEST;
+			path = CSS_TEST;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
