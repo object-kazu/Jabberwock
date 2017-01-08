@@ -93,7 +93,9 @@ class JWMulti: JWObject {
         if child.styleArray.count > 0{
             styleArray.append(contentsOf: child.styleArray)
         }
-        styleArray.append(child.style)
+        if child.style != nil{
+            styleArray.append(child.style)
+        }
         
     }
     
@@ -150,30 +152,36 @@ class JWObject : JWCSS {
 
 class JWCSS: JW { // add css functions
     
-    var style :CSS          = CSS(name: "")
+    var style :CSS!
     var styleArray : [CSS]  = []
     var styleString: String = ""
     
-    func prepStyleByTag()  { // 自分のTag（p, head, body, etc）のCSSを作成
-        let mystyle = CSS(name: self.getTagName())
-        self.style = mystyle
+    // basic selector
+    private func tagSelector () -> CSS { // 自分のTag（p, head, body, etc）のCSSを作成
+        return CSS(name: self.getTagName())
     }
     
-    func prepStyleByID () {
+    private func idSelector () -> CSS {
         let ID = self.getTagID()
-        if !ID.isEmpty {
-            let mystyle = CSS(id: ID)
-            self.style = mystyle
+        if ID.isEmpty {
+            assertionFailure("no id, need to set id")
         }
+        return CSS(id: ID)
     }
     
-    func prepStyleByCls(){
+    private func clsSelector () -> CSS {
         let CLS = getTagCls()
-        if !CLS.isEmpty {
-            let mystyle = CSS(cls: self.getTagCls())
-            self.style = mystyle
+        if CLS.isEmpty {
+            assertionFailure("no cls, need to set cls")
         }
+        return CSS(cls: self.getTagCls())
     }
+    
+    // complex selector
+    
+  
+    
+    
     
     
     func styleStringInit () {
@@ -183,7 +191,9 @@ class JWCSS: JW { // add css functions
     private func styleAssemble () {
         
         var tempStyle : [CSS] = []
-        tempStyle.append( style )
+        if style != nil{
+            tempStyle.append( style )
+        }
         tempStyle.append(contentsOf: styleArray)
         
         for sty in tempStyle {
@@ -257,8 +267,9 @@ class JWCSS: JW { // add css functions
         if member.styleArray.count > 0{
             styleArray.append(contentsOf: member.styleArray)
         }
-        
-        styleArray.append(member.style)
+        if member.style != nil {
+            styleArray.append(member.style)
+        }
         
     }
     func addMembers (members: [JWObject]) {
