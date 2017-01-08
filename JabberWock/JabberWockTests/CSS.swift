@@ -20,6 +20,8 @@ class CSS {
     var color       : csColor    = csColor()
     var opacity     : csOpacity  = csOpacity()
 
+    // font
+    var fontSize    : csFontSize = csFontSize()
     
     // background
     var background  : CSSItem   = CSSItem()
@@ -32,15 +34,24 @@ class CSS {
     init(name:String) {
         self.cssName = name
     }
+    
     init(id:String){
         self.cssName = "#" + id
     }
-    init(cls:String) {
-        self.cssName = "." + cls
+    
+//    init(cls:String) {
+//        self.cssName = "." + cls
+//    }
+    init(cls:JWObject) {
+        self.cssName = "." + cls.getTagCls()
     }
     
-    func initUniverse () { // universe
-        self.cssName = "*"
+    init(tag:JWObject){
+        self.cssName = tag.getTagName()
+    }
+    
+    init(tag: JWObject, with: String) {
+        self.cssName = tag.getTagName() + SPC + with
     }
     
     
@@ -61,6 +72,8 @@ class CSS {
         addCSS(css: color.cssItemStr())
         addCSS(css: opacity.cssItemStr())
         
+        //font
+        addCSS(css: fontSize.cssItemStr())
         
         // background
         addCSS(css: background.cssItemStr())

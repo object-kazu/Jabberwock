@@ -84,6 +84,8 @@
 		1BE090DB1E06536800A82473 /* pTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BE090DA1E06536800A82473 /* pTest.swift */; };
 		1BE090DD1E06538400A82473 /* p.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BE090DC1E06538400A82473 /* p.swift */; };
 		1BE090DE1E06545C00A82473 /* p.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BE090DC1E06538400A82473 /* p.swift */; };
+		1BFB03AC1E222B1F0022041D /* CSS_Font.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BFB03AB1E222B1F0022041D /* CSS_Font.swift */; };
+		1BFB03AD1E222C0A0022041D /* CSS_Font.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BFB03AB1E222B1F0022041D /* CSS_Font.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -154,6 +156,7 @@
 		1BD1C16A1E1DF92200679590 /* css_Color_Test.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = css_Color_Test.swift; sourceTree = "<group>"; };
 		1BE090DA1E06536800A82473 /* pTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = pTest.swift; sourceTree = "<group>"; };
 		1BE090DC1E06538400A82473 /* p.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = p.swift; sourceTree = "<group>"; };
+		1BFB03AB1E222B1F0022041D /* CSS_Font.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CSS_Font.swift; path = JabberWockTests/CSS_Font.swift; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -251,6 +254,7 @@
 				1BD1C1611E1DDDC700679590 /* CSS.swift */,
 				1BD1C1641E1DE1B100679590 /* CSS_Color.swift */,
 				1BD1C1671E1DE2B800679590 /* CSSItem.swift */,
+				1BFB03AB1E222B1F0022041D /* CSS_Font.swift */,
 			);
 			path = css;
 			sourceTree = "<group>";
@@ -420,6 +424,7 @@
 				1BD1C1651E1DE1B100679590 /* CSS_Color.swift in Sources */,
 				1BCA4BA81E0953F50089772A /* footer.swift in Sources */,
 				1B19979D1E08F1C600C41C69 /* b_i_strong_br.swift in Sources */,
+				1BFB03AC1E222B1F0022041D /* CSS_Font.swift in Sources */,
 				1BB619CB1E1DBDCC008D7261 /* div.swift in Sources */,
 				1B1CE2E51DF0117200DD2561 /* language.swift in Sources */,
 				1BD1C1621E1DDDC700679590 /* CSS.swift in Sources */,
@@ -490,6 +495,7 @@
 				1B55D29A1E1A1A9A00F98E27 /* footerTest.swift in Sources */,
 				1BCB14EB1E0CDC1B009949A9 /* list.swift in Sources */,
 				1BD05B521DF6CF8400AFAABD /* language.swift in Sources */,
+				1BFB03AD1E222C0A0022041D /* CSS_Font.swift in Sources */,
 				1BAAB6DD1E00FD7A0009BA87 /* body.swift in Sources */,
 				1BD1C1631E1DDDC700679590 /* CSS.swift in Sources */,
 				1B7A692E1E19E4EB0030FF2D /* titleTest.swift in Sources */,

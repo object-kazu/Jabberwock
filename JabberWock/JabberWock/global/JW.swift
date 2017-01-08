@@ -155,41 +155,20 @@ class JWCSS: JW { // add css functions
     var style :CSS!
     var styleArray : [CSS]  = []
     var styleString: String = ""
+    private var nameList :[String] = [] // 重複判定に利用
     
-    // basic selector
-    private func tagSelector () -> CSS { // 自分のTag（p, head, body, etc）のCSSを作成
-        return CSS(name: self.getTagName())
+
+    func prepStyle(name: String) {
+        let css = CSS(name: name)
+        self.style = css
     }
-    
-    private func idSelector () -> CSS {
-        let ID = self.getTagID()
-        if ID.isEmpty {
-            assertionFailure("no id, need to set id")
-        }
-        return CSS(id: ID)
-    }
-    
-    private func clsSelector () -> CSS {
-        let CLS = getTagCls()
-        if CLS.isEmpty {
-            assertionFailure("no cls, need to set cls")
-        }
-        return CSS(cls: self.getTagCls())
-    }
-    
-    // complex selector
-    
-  
-    
-    
-    
     
     func styleStringInit () {
         styleString = "" // initilize
     }
     
     private func styleAssemble () {
-        
+        nameList = []
         var tempStyle : [CSS] = []
         if style != nil{
             tempStyle.append( style )
@@ -198,7 +177,6 @@ class JWCSS: JW { // add css functions
         
         for sty in tempStyle {
             /// スタイルがない（｛｝のみ）なら標示しない
-            /// 同じ名前のスタイルは書き込まない（重複書き込み禁止）
             if sty.Str().isEmpty {
                 continue
             }
@@ -206,6 +184,8 @@ class JWCSS: JW { // add css functions
             if isSameCSSName(name: sty.cssName) {
                 continue
             }
+            /// 同じ名前のスタイルは書き込まない（重複書き込み禁止）
+            nameList.append(sty.cssName)
             styleString += sty.Str()
             styleString += RET
             
@@ -218,7 +198,13 @@ class JWCSS: JW { // add css functions
     
     
     private func isSameCSSName (name: String) -> Bool {
-        return styleString.contains(name) ? true : false
+        for n in nameList {
+            if n == name {
+                return true
+            }
+        }
+        
+        return false
     }
     
 
@@ -336,7 +322,11 @@ class JW {
     var resultString    : String    = ""
     var memberString: [String]      = []
 
-    
+    // 　自分のClass名を得る
+    func callClassName() -> String {
+        return String(describing: self).components(separatedBy: ".").last!
+    }
+
     
     // remove last \n
     func removeLastRET (str: String) -> String {
@@ -384,11 +374,24 @@ class JW {
         return tagManager.name
     }
     func getTagID() -> String {
+        if tagManager.id.isEmpty {
+            assertionFailure("set id")
+        }
         return tagManager.id
+    }
+    func getSelectorID () -> String {
+        return "#" + getTagID()
     }
     
     func getTagCls() -> String {
+        if tagManager.cls.isEmpty {
+            assertionFailure("set cls")
+        }
         return tagManager.cls
+    }
+
+    func getSelectorCls () -> String {
+        return "." + getTagCls()
     }
     
     
