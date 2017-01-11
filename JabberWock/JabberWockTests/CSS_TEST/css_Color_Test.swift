@@ -20,19 +20,19 @@ class css_Color_Test: XCTestCase {
         super.tearDown()
     }
     
-    func test_css_color() {
-        let css = CSS(name: "")
-        css.color.value = "red"
-        XCTAssertTrue(css.Str() == "color: red;" + RET)
-        
-    }
+//    func test_css_color() {
+//        let css = CSS(name: "")
+//        css.color.value = "red"
+//        XCTAssertTrue(css.Str() == "color: red;" + RET)
+//        
+//    }
     
-    func test_css_color_opacity() {
-        let css = CSS(name: "")
-        css.color.value = "red"
-        css.opacity.value = "0.3"
-        XCTAssertTrue(css.Str() == "color: red;" + RET + "opacity: 0.3;" + RET)
-        
-    }
+//    func test_css_color_opacity() {
+//        let css = CSS(name: "")
+//        css.color.value = "red"
+//        css.opacity.value = "0.3"
+//        XCTAssertTrue(css.Str() == "color: red;" + RET + "opacity: 0.3;" + RET)
+//        
+//    }
     
 }

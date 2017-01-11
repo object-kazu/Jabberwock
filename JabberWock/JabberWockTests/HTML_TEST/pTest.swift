@@ -33,22 +33,22 @@ class pTest: XCTestCase {
          */
     }
     
-    func test_p_with_css()  {
-        let p = P()
-        p.content = "test"
-        
-        let css = CSS(name: "p")
-        css.color.value = "red"
-        p.style = css
-        XCTAssertEqual(p.styleStr(), "p {" + RET + "color: red;" + RET + "}")
-                
-        p.press()
-        
-        /* answer
-         <p>test</p>
-         */
-        
-    }
+//    func test_p_with_css()  {
+//        let p = P()
+//        p.content = "test"
+//        
+//        let css = CSS(name: "p")
+//        css.color.value = "red"
+//        p.style = css
+//        XCTAssertEqual(p.styleStr(), "p {" + RET + "color: red;" + RET + "}")
+//                
+//        p.press()
+//        
+//        /* answer
+//         <p>test</p>
+//         */
+//        
+//    }
     
    
     

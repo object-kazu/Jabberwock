@@ -80,89 +80,89 @@ class mixHtmlTest: XCTestCase {
 
     }
     
-    func test_html_css () {
-        //head
-        let head = HEAD()
-        
-        let meta = META()
-        meta.setCharset(of: CHARSET.utf8)
-        
-        let title = TITLE(content: "task")
-        let css = CSS(name: "title")
-        css.color.value = "red"
-        title.style = css
-        let style = STYLE()
-        
-        head.addChildren(children: [meta, title, style])
-      
-
-        
-        //body
-        let body = BODY()
-        let h1 = HEADING(level: 1, content: "This is TODO")
-        let a = "My first task"
-        let b = B(content: "Next TODO").tgStr()
-        let c = STRONG(content: "1. html").tgStr()
-        let pa = P(content: a)
-        let pb = P(content: b)
-        let pc = P(content: c)
-        
-        body.addChildren(children: [h1,pa,pb,pc])
-        html.addChildren(children: [head,body])
-        
-        doc.addMember(member: html)
-        doc.press()
-        
-        XCTAssertEqual(doc.styleStr(), "title {" + RET + "color: red;" + RET + "}")
-
-        
-    }
+//    func test_html_css () {
+//        //head
+//        let head = HEAD()
+//        
+//        let meta = META()
+//        meta.setCharset(of: CHARSET.utf8)
+//        
+//        let title = TITLE(content: "task")
+//        let css = CSS(name: "title")
+//        css.color.value = "red"
+//        title.style = css
+//        let style = STYLE()
+//        
+//        head.addChildren(children: [meta, title, style])
+//      
+//
+//        
+//        //body
+//        let body = BODY()
+//        let h1 = HEADING(level: 1, content: "This is TODO")
+//        let a = "My first task"
+//        let b = B(content: "Next TODO").tgStr()
+//        let c = STRONG(content: "1. html").tgStr()
+//        let pa = P(content: a)
+//        let pb = P(content: b)
+//        let pc = P(content: c)
+//        
+//        body.addChildren(children: [h1,pa,pb,pc])
+//        html.addChildren(children: [head,body])
+//        
+//        doc.addMember(member: html)
+//        doc.press()
+//        
+//        XCTAssertEqual(doc.styleStr(), "title {" + RET + "color: red;" + RET + "}")
+//
+//        
+//    }
     
-    func test_html_css_2 () {
-        //head
-        let head = HEAD()
-        
-        let meta = META()
-        meta.setCharset(of: CHARSET.utf8)
-        
-        let title = TITLE(content: "task")
-        let css = CSS(name: "title")
-        css.color.value = "red"
-        title.style = css
-        let style = STYLE()
-        
-        head.addChildren(children: [meta, title, style])
-        
-        
-        
-        //body
-        let body = BODY()
-        let css2 = CSS(name: "body")
-        css2.color.value = "red"
-        body.style = css2
-        
-        let h1 = HEADING(level: 1, content: "This is TODO")
-        let a = "My first task"
-        let b = B(content: "Next TODO").tgStr()
-        let c = STRONG(content: "1. html").tgStr()
-        let pa = P(content: a)
-        let pb = P(content: b)
-        let pc = P(content: c)
-        
-        body.addChildren(children: [h1,pa,pb,pc])
-        html.addChildren(children: [head,body])
-        
-        doc.addMember(member: html)
-        doc.press()
-        
-        XCTAssertEqual(doc.styleStr(), "title {" + RET +
-            "color: red;" + RET +
-            "}" + RET +
-            "body {" + RET +
-            "color: red;" + RET +
-            "}"
-        )
-        
-    }
+//    func test_html_css_2 () {
+//        //head
+//        let head = HEAD()
+//        
+//        let meta = META()
+//        meta.setCharset(of: CHARSET.utf8)
+//        
+//        let title = TITLE(content: "task")
+//        let css = CSS(name: "title")
+//        css.color.value = "red"
+//        title.style = css
+//        let style = STYLE()
+//        
+//        head.addChildren(children: [meta, title, style])
+//        
+//        
+//        
+//        //body
+//        let body = BODY()
+//        let css2 = CSS(name: "body")
+//        css2.color.value = "red"
+//        body.style = css2
+//        
+//        let h1 = HEADING(level: 1, content: "This is TODO")
+//        let a = "My first task"
+//        let b = B(content: "Next TODO").tgStr()
+//        let c = STRONG(content: "1. html").tgStr()
+//        let pa = P(content: a)
+//        let pb = P(content: b)
+//        let pc = P(content: c)
+//        
+//        body.addChildren(children: [h1,pa,pb,pc])
+//        html.addChildren(children: [head,body])
+//        
+//        doc.addMember(member: html)
+//        doc.press()
+//        
+//        XCTAssertEqual(doc.styleStr(), "title {" + RET +
+//            "color: red;" + RET +
+//            "}" + RET +
+//            "body {" + RET +
+//            "color: red;" + RET +
+//            "}"
+//        )
+//        
+//    }
     
 }

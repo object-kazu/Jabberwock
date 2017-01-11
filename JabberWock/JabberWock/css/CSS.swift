@@ -8,85 +8,282 @@
 
 import Foundation
 
+let EMPTY   = ""
 
 class CSS {
     
+    // property
+    public struct property {
+        var Font        : FONT!
+        var Padding     : PADDING!
+        
+        var Color       : String
+        var Opacity     : String
+        
+        // FONT
+        public struct FONT {
+            var size : String
+            
+            public init(fSize:String = EMPTY){
+                self.size = fSize
+            }
+            
+            func para() -> [(String,String)]{
+                return [("font-size", size)]
+            }
+        }
+        
+        // PADDING
+        public struct PADDING {
+            var padding         : String
+            var padding_top     : String
+            var padding_bottom  : String
+            var padding_left    : String
+            var padding_right   : String
+
+            public init (pd:String          = EMPTY,
+                         pd_top:String      = EMPTY,
+                         pd_bottom:String   = EMPTY,
+                         pd_left:String     = EMPTY,
+                         pd_right:String    = EMPTY){
+                
+                self.padding        = pd
+                self.padding_top    = pd_top
+                self.padding_bottom = pd_bottom
+                self.padding_left   = pd_left
+                self.padding_right  = pd_right
+                
+            }
+            func para() -> [(String,String)]{
+                return [("padding", padding),
+                        ("padding-top", padding_top),
+                        ("padding-bottom", padding_bottom),
+                        ("padding-left", padding_left),
+                        ("padding-right", padding_right)]
+            }
+        }
+        
+        // property variable
+        var paras : [(String, String)] = []
+        
+        // property init
+        public init(kFontSize:String = EMPTY, kColor:String = EMPTY,kOpacity:String = EMPTY,
+                    kPadding:String = EMPTY){
+            self.Font       = FONT(fSize: kFontSize)
+            self.Color      = kColor
+            self.Opacity    = kOpacity
+            self.Padding    = PADDING()
     
-    var cssName : String!
+        }
+        
+        mutating func prepParams (){
+            let c: [(String,String)] = [("color", Color), ("opacity", Opacity)]
+            let f: [(String,String)] = Font.para()
+            let p: [(String,String)] = Padding.para()
+            
+            paras.append(contentsOf: c)
+            paras.append(contentsOf: f)
+            paras.append(contentsOf: p)
+            
+        }
+        
+        mutating func resetParams () {
+            paras = []
+        }
+    }
+    
+
+    
+    var property    : property!
+    var cssName     : String!
+
     var cssResultString: String = ""
 
+    init(){
+        self.cssName = ""
+        self.property = property()
+    }
     
-    // color
-    var color       : csColor    = csColor()
-    var opacity     : csOpacity  = csOpacity()
-
-    // font
-    var fontSize    : csFontSize = csFontSize()
-    
-    // background
-    var background  : CSSItem   = CSSItem()
-    
-    
-    // init
-    
-    //todo init(id), init(class), init(by:tag)
-    
-    init(name:String) {
+    init(name: String) {
         self.cssName = name
+        self.property = property()
     }
     
-    init(id:String){
-        self.cssName = "#" + id
+    init(property: property) {
+        self.cssName = ""
+        self.property = property
     }
     
-//    init(cls:String) {
-//        self.cssName = "." + cls
-//    }
-    init(cls:JWObject) {
-        self.cssName = "." + cls.getTagCls()
+    init(name:String, property: property) {
+        self.cssName = name
+        self.property = property
+    }
+    init(tag: JWObject) {
+        self.cssName = tag.tagName()
+        self.property = tag.style.property
     }
     
-    init(tag:JWObject){
-        self.cssName = tag.getTagName()
-    }
     
-    init(tag: JWObject, with: String) {
-        self.cssName = tag.getTagName() + SPC + with
-    }
     
     
     func Str() -> String  {
-        
-        cssResultString = "" // init
-        
+        var cssResultString = "" // init
+
         /// nameがないものは出力しない
         if cssName.isEmpty {
+            assertionFailure("no name")
             return ""
         }
-        
+
         // 接頭句
         cssResultString += cssName + SPC + "{" + RET
         
-        
-        // color
-        addCSS(css: color.cssItemStr())
-        addCSS(css: opacity.cssItemStr())
-        
-        //font
-        addCSS(css: fontSize.cssItemStr())
-        
-        // background
-        addCSS(css: background.cssItemStr())
-        
-        
+        self.property.resetParams()
+        self.property.prepParams()
+        for i in self.property.paras{
+            cssResultString += itemStr(name: i.0, value: i.1)
+        }
+
         // 接尾句
         cssResultString += "}"
         return cssResultString
     }
-    
-    private func addCSS (css: String) {
+
+
+    private func itemStr (name:String, value:String) -> String {
+        if value.isEmpty {
+            return ""
+        }
         
-        cssResultString += css
+        //exp)  background: #ffffff;
+        return name + COLON + SPC + value + SEMI_COLON + RET
     }
 
+    
 }
+
+//class CSS {
+//
+//    public struct cssProperty {
+//        var kFontSize   : String = ""
+//        var kColor      : String = ""
+//        
+////        public init(kFontSize:String = EMPTY, kColor:String = EMPTY){
+////            self.kFontSize = kFontSize
+////            self.kColor     = kColor
+////        }
+//        
+//    }
+//
+//    var cssproperty: cssProperty
+//
+//    var cssName : String!
+//    var cssResultString: String = ""
+//
+//    
+//    // color
+////    var color       : csColor    = csColor()
+////    var opacity     : csOpacity  = csOpacity()
+//
+//    // font
+////    var fontSize    : csFontSize = csFontSize()
+//    
+//    // background
+////    var background  : CSSItem   = CSSItem()
+//    
+//    
+//    // init
+//    
+//    
+//    init(name:String) {
+//        self.cssName = name
+//        self.cssproperty = cssProperty()
+//    }
+//    
+//    init(id:String){
+//        self.cssproperty = cssProperty()
+//        self.cssName = "#" + id
+//    }
+//    
+//    init(cls:JWObject) {
+//        self.cssproperty = cssProperty()
+//        self.cssName = "." + cls.tagCls()
+//    }
+//    
+//    init(tag:JWObject){
+//        self.cssproperty = cssProperty()
+//        self.cssName = tag.tagName()
+//    }
+//    
+//    init(tag: JWObject, with: String) {
+//        self.cssproperty = cssProperty()
+//        self.cssName = tag.tagName() + SPC + with
+//    }
+//    
+//    func Str() -> String  {
+//        var cssResultString = "" // init
+//        
+//        /// nameがないものは出力しない
+//        if cssName.isEmpty {
+//            return ""
+//        }
+//        
+//        // 接頭句
+//        cssResultString += cssName + SPC + "{" + RET
+//        
+//        
+//        // color
+//        cssResultString += itemStr(name: "font-size", value: self.cssproperty.kFontSize)
+//        cssResultString += itemStr(name: "color", value: self.cssproperty.kColor)
+//        
+//        
+//        // 接尾句
+//        cssResultString += "}"
+//        return cssResultString
+//    }
+//    
+//    
+//    private func itemStr (name:String, value:String) -> String {
+//        if value.isEmpty {
+//            return ""
+//        }
+//        
+//        //exp)  background: #ffffff;
+//        return name + COLON + SPC + value + SEMI_COLON + RET
+//    }
+//
+////    func Str() -> String  {
+////        
+////        cssResultString = "" // init
+////        
+////        /// nameがないものは出力しない
+////        if cssName.isEmpty {
+////            return ""
+////        }
+////        
+////        // 接頭句
+////        cssResultString += cssName + SPC + "{" + RET
+////        
+////        
+////        // color
+////        addCSS(css: color.cssItemStr())
+////        addCSS(css: opacity.cssItemStr())
+////        
+////        //font
+////        addCSS(css: fontSize.cssItemStr())
+////        
+////        // background
+////        addCSS(css: background.cssItemStr())
+////        
+////        
+////        // 接尾句
+////        cssResultString += "}"
+////        return cssResultString
+////    }
+////    
+////    private func addCSS (css: String) {
+////        
+////        cssResultString += css
+////    }
+//
+//}

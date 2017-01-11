@@ -6,6 +6,13 @@
 //  Copyright © 2016年 momiji-mac. All rights reserved.
 //
 
+/*
+ TODO
+ > addした後にcontentにアクセスできるか？アクセスしたい
+ > JSを組み込めるか
+ 
+ */
+
 import Foundation
 
 let RET         : String    = "\n"

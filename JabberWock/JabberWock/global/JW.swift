@@ -159,8 +159,10 @@ class JWCSS: JW { // add css functions
     
 
     func prepStyle(name: String) {
-        let css = CSS(name: name)
-        self.style = css
+        style = CSS(name: name)
+    }
+    func prepStyle(property: CSS.property){
+        style = CSS(property: property)
     }
     
     func styleStringInit () {
@@ -370,28 +372,28 @@ class JW {
     func setLang(lang:LANG) {
         tagManager.lang = lang
     }
-    func getTagName() -> String {
+    func tagName() -> String {
         return tagManager.name
     }
-    func getTagID() -> String {
+    func tagID() -> String {
         if tagManager.id.isEmpty {
             assertionFailure("set id")
         }
         return tagManager.id
     }
-    func getSelectorID () -> String {
-        return "#" + getTagID()
+    func selectorID () -> String {
+        return "#" + tagID()
     }
     
-    func getTagCls() -> String {
+    func tagCls() -> String {
         if tagManager.cls.isEmpty {
             assertionFailure("set cls")
         }
         return tagManager.cls
     }
 
-    func getSelectorCls () -> String {
-        return "." + getTagCls()
+    func selectorCls () -> String {
+        return "." + tagCls()
     }
     
     
