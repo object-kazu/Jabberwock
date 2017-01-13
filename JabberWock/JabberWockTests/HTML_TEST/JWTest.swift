@@ -33,6 +33,22 @@ class JWTest: XCTestCase {
         jw.press()
     }
     
+    // label
+    func test_label_case1 (){
+        let j = JWSingle()
+        j.content = "test" + j.V(label: "a")
+        j.press()
+        XCTAssertEqual(j.resultString, "<>test</>")
+    }
+    
+    func test_label_case2 (){
+        let j = JWSingle()
+        j.content = "test" + j.V(label: "a")
+        j.press()
+        j.insertPress(_data_: [("a", " is done")])
+        XCTAssertEqual(j.resultString, "<>test is done</>")
+        
+    }
     
     
      

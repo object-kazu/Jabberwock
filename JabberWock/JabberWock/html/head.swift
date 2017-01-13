@@ -36,7 +36,6 @@ class HEAD:JWMulti {
     
     override func assemble() {
         makeTag()
-        
         makeResult()
     }
 

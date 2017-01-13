@@ -38,13 +38,17 @@ class JWSingle: JWObject {
         self.initilizer()
         self.content = content
     }
-
     
     func initilizer () {
         self.openString = ""
         self.closeString = ""
     }
 
+    
+    func addContentAt(label:String, data:String) -> String{
+        return LABEL_INSERT_START + label + LABEL_INSERT_END + data
+    }
+    
     override func assemble(){
         makeTag()
         makeResult()
@@ -52,12 +56,12 @@ class JWSingle: JWObject {
     
     override func makeResult() {
         
-        resultString = openString + content
+        templeteString = openString + content
         
         if !closeString.isEmpty {
-            resultString += closeString
+            templeteString += closeString
         }
-        
+        initResutString()
     }
     
 }
@@ -87,7 +91,7 @@ class JWMulti: JWObject {
        
         // html
         child.assemble()
-        self.addCihld(child: child.resultString)
+        self.addCihld(child: child.templeteString)
         
         // css
         if child.styleArray.count > 0{
@@ -119,24 +123,23 @@ class JWMulti: JWObject {
     
     override func makeResult() {
         
-        resultString += openString + RET
+        templeteString += openString + RET
         
         childAssemble()
         
         if !closeString.isEmpty {
-            resultString += closeString
+            templeteString += closeString
         }
         
         // 最後のRETを取り除く
-        resultString = removeLastRET(str: resultString)
-        
-        
+        templeteString = removeLastRET(str: templeteString)
+        initResutString()
     }
     
     func childAssemble () {
         for str in childString {
-            resultString += TAB + str
-            resultString += TAB + RET
+            templeteString += TAB + str
+            templeteString += TAB + RET
            }
     }
 
@@ -156,6 +159,7 @@ class JWCSS: JW { // add css functions
     var styleArray : [CSS]  = []
     var styleString: String = ""
     private var nameList :[String] = [] // 重複判定に利用
+    
     
 
     func prepStyle(name: String) {
@@ -223,9 +227,9 @@ class JWCSS: JW { // add css functions
         ///検索のためにStyle tag生成
         let s = STYLE()
         s.makeTag()
-        if resultString.contains(s.openString) && resultString.contains(s.closeString) {
+        if templeteString.contains(s.openString) && templeteString.contains(s.closeString) {
             // insert tab
-            let tn = getTabNumber(testStr: resultString, targetStr: STYLE_CONTENT)
+            let tn = getTabNumber(testStr: templeteString, targetStr: STYLE_CONTENT)
             let tabedString = addTab(str: styleString, tabMax: tn)
             
             // replace text
@@ -235,8 +239,8 @@ class JWCSS: JW { // add css functions
                 target += TAB
             }
             target += STYLE_CONTENT
-            resultString = resultString.replacingOccurrences(of: target, with: STYLE_CONTENT) // TAB + TAB + STYLE_CONTENT -> STYLE_CONTENT
-            resultString = resultString.replacingOccurrences(of: STYLE_CONTENT, with: tabedString)
+            templeteString = templeteString.replacingOccurrences(of: target, with: STYLE_CONTENT) // TAB + TAB + STYLE_CONTENT -> STYLE_CONTENT
+            templeteString = templeteString.replacingOccurrences(of: STYLE_CONTENT, with: tabedString)
         }
     }
     
@@ -249,7 +253,7 @@ class JWCSS: JW { // add css functions
     func addMember (member: JWObject){
         // html
         member.assemble()
-        addMember(member: member.resultString)
+        addMember(member: member.templeteString)
         
         // css
         if member.styleArray.count > 0{
@@ -265,13 +269,38 @@ class JWCSS: JW { // add css functions
             m.addMember(member: m)
         }
     }
+    
+    // press
+    func insertPress(_data_: [(label:String, data :String)]) {
+        
+        initResutString()
+        insertData(_data_: _data_)
+        removeAllLabel()
+        pressCore(name: EXPORT_TEST_File, dist: EXPORT_TEST_Dir)
+        
+    }
+    
+    func insertPress(label:String, data :String){
+        initResutString()
+        insertData(lebel: label, Data: data)
+        removeAllLabel()
+        pressCore(name: EXPORT_TEST_File, dist: EXPORT_TEST_Dir)
+    }
 
-    override func press(name: String, dist : String){
+    
+    
+    override func press(name: String, dist : String) -> String{
         
         assemble()
         memberAssemble()
+        removeAllLabel()
         applyStyle()
+        pressCore(name: name, dist: dist)
         
+        return resultString
+    }
+    
+    func pressCore (name: String, dist : String) {
         
         // ドキュメントパス
         let documentsPath = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true)[0] as String
@@ -308,27 +337,39 @@ class JWCSS: JW { // add css functions
         } catch {
             assertionFailure("move error")
         }
-        
-        
     }
 
 }
 
-class JW {
+class JW{
     
     
     private var tagManager      : TagString = TagString()
     var openString              : String!
     var closeString             : String!
     
-    var resultString    : String    = ""
-    var memberString: [String]      = []
+    var aData:(label:String, data :String)!
+    var data: [(label:String, data :String)] = []
+    
+    var variableLabel            : String!
+    var vLabel                   : String {
+        get {
+            return LABEL_INSERT_START + variableLabel + LABEL_INSERT_END
+        }
+    }
 
-    // 　自分のClass名を得る
+    var templeteString  : String    = "" // Labelによる書き換え前のString
+    var resultString    : String    = "" // Labelによる書き換え後の最終String
+    
+    var memberString: [String]      = []
+    
+
+    // 自分のClass名を得る
     func callClassName() -> String {
         return String(describing: self).components(separatedBy: ".").last!
     }
 
+    
     
     // remove last \n
     func removeLastRET (str: String) -> String {
@@ -347,8 +388,9 @@ class JW {
     //export string
     func tgStr () -> String {
         assemble()
-        return resultString
+        return templeteString
     }
+
     
     
     // tag
@@ -395,6 +437,116 @@ class JW {
     func selectorCls () -> String {
         return "." + tagCls()
     }
+    
+    
+    
+    /*
+     press後、変更可能とする仕組み
+     ================================================================================
+     set)
+     => let p1 = P()
+     => p1.content = "insert data: " + V("j") + "is made for" + V("i")
+     
+     => press
+     
+     <p> insert data: ##LABELSTART##j##LABELSTART## is made for ##LABELSTART##i##LABELSTART##<p>
+     
+     => insertPress([(label:String,data:String)])
+     
+     <p> insert data: hogehoge is made for fofofofofofo<p>
+     
+     
+     ================================================================================
+     
+     
+     
+     
+     */
+    
+    func V(label:String) -> String {
+        self.variableLabel = label
+        return self.vLabel
+    }
+
+    // templeteStringにDataを挿入してresultStringに更新する
+    /*
+     
+     => assemble // templeteStringとresultStringを用意する
+     
+     == temprateString ==
+     <p> ##LABEL## conten ## LABEL## </p>
+     <p> ##LABEL## conten1 ## LABEL## </p>
+     
+     == templeteString ==
+     <p> ##LABEL## conten ## LABEL## </p>
+     <p> ##LABEL## conten1 ## LABEL## </p>
+
+     => initResultString　// resultStringを初期化し直す
+     
+     == temprateString ==
+     <p> ##LABEL## conten ## LABEL## </p>
+     <p> ##LABEL## conten1 ## LABEL## </p>
+     
+     == templeteString ==
+     <p> ##LABEL## conten ## LABEL## </p>
+     <p> ##LABEL## conten1 ## LABEL## </p>
+
+     
+     => insertPress(label: conten, Data: "hellow")
+     
+     == temprateString ==
+     <p> ##LABEL## conten ## LABEL## </p>
+     <p> ##LABEL## conten1 ## LABEL## </p>
+     
+     == resultString ==
+     <p> ##LABEL## conten ## LABEL##hellow </p>
+     <p> ##LABEL## conten1 ## LABEL## </p>
+     
+     => removeLabel() // 全てのラベルを削除してresultStringとして出力する
+     <p> hellow </p>
+     <p> </p>
+     
+     
+     
+     */
+//    func insertPress(_data_: [(label:String, data :String)]) {
+//        
+//        initResutString()
+//        insertData(_data_: _data_)
+//        removeAllLabel()
+//        
+//    }
+//    
+//    func insertPress(label:String, data :String){
+//        initResutString()
+//        insertData(lebel: label, Data: data)
+//        removeAllLabel()
+//    }
+    
+    func initResutString () {
+        // templeteString -> keep
+        // resultString -> copy templeteString
+        resultString = ""
+        resultString = templeteString
+    }
+    
+    fileprivate func insertData (_data_: [(label:String, data :String)]) {
+        for d in _data_ {
+            insertData(lebel: d.label, Data: d.data)
+        }
+    }
+    
+    fileprivate func insertData (lebel: String, Data :String) {
+        let targetString = vLabel
+        let dataPlusTargetString = targetString + Data
+        resultString = resultString.replacingOccurrences(of: targetString, with: dataPlusTargetString)
+    }
+    
+    func removeAllLabel () {
+        let a = resultString.pregReplace(pattern: "##LABELSTART##.*?##LABELEND##", with: "")
+        resultString = a
+    }
+    
     
     
     // tagの変更時には必ず呼び出しアップデート
@@ -466,7 +618,7 @@ class JW {
     func memberAssemble () {
         
         if memberString.count > 0 {
-            resultString += RET
+            templeteString += RET
             
             var m: String = ""
             for t: String in memberString {
@@ -474,15 +626,17 @@ class JW {
                 m += RET
             }
             
-            resultString += m
+            templeteString += m
         }
     }
     
-    // ファイルに書き出す
-    func press(name: String, dist : String){}
+    // resultStringをファイルに書き出す
+    @discardableResult
+    func press(name: String, dist : String) ->String{return ""}
     
-    func press ()  {
-        self.press(name: EXPORT_TEST_File, dist: EXPORT_TEST_Dir)
+    @discardableResult
+    func press () -> String  {
+       return self.press(name: EXPORT_TEST_File, dist: EXPORT_TEST_Dir)
     }
     
     
