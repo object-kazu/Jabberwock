@@ -23,8 +23,8 @@ class titleTest: XCTestCase {
 
     func test_title () {
         let t = TITLE(content: "test")
-        t.press()
-        
+        let ans = t.press()
+        XCTAssertEqual(ans, "<title>test</title>")
         /* answer
             <title>test</title>
          
@@ -35,7 +35,8 @@ class titleTest: XCTestCase {
     func test_title_setTitle () {
         let t = TITLE()
         t.setTile(content: "test")
-        t.press()
+        let ans = t.press()
+        XCTAssertEqual(ans, "<title>test</title>")
         
         /* answer
          <title>test</title>

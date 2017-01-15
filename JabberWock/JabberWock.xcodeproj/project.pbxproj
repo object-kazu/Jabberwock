@@ -25,7 +25,6 @@
 		1B1CE2EB1DF0185C00DD2561 /* body.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B1CE2EA1DF0185C00DD2561 /* body.swift */; };
 		1B227D7E1E1742EF00787172 /* blockquote.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BAAE56E1E0B77F300A13637 /* blockquote.swift */; };
 		1B227D801E17445900787172 /* dlTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B227D7F1E17445900787172 /* dlTest.swift */; };
-		1B227D821E17691600787172 /* tagSetTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B227D811E17691600787172 /* tagSetTest.swift */; };
 		1B282C371E1C69C00098ED40 /* TagString.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B282C361E1C69C00098ED40 /* TagString.swift */; };
 		1B282C381E1C69C00098ED40 /* TagString.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B282C361E1C69C00098ED40 /* TagString.swift */; };
 		1B30787E1E21A1D20042BDCC /* CSS_Study.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B30787D1E21A1D20042BDCC /* CSS_Study.swift */; };
@@ -84,6 +83,8 @@
 		1BE090DB1E06536800A82473 /* pTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BE090DA1E06536800A82473 /* pTest.swift */; };
 		1BE090DD1E06538400A82473 /* p.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BE090DC1E06538400A82473 /* p.swift */; };
 		1BE090DE1E06545C00A82473 /* p.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BE090DC1E06538400A82473 /* p.swift */; };
+		1BE378EE1E2B49D10078A89A /* Press.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BE378ED1E2B49D10078A89A /* Press.swift */; };
+		1BE378EF1E2B49D10078A89A /* Press.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BE378ED1E2B49D10078A89A /* Press.swift */; };
 		1BFB03AC1E222B1F0022041D /* CSS_Font.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BFB03AB1E222B1F0022041D /* CSS_Font.swift */; };
 		1BFB03AD1E222C0A0022041D /* CSS_Font.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BFB03AB1E222B1F0022041D /* CSS_Font.swift */; };
 /* End PBXBuildFile section */
@@ -119,7 +120,6 @@
 		1B1CE2E81DF017F000DD2561 /* head.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = head.swift; sourceTree = "<group>"; };
 		1B1CE2EA1DF0185C00DD2561 /* body.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = body.swift; sourceTree = "<group>"; };
 		1B227D7F1E17445900787172 /* dlTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = dlTest.swift; sourceTree = "<group>"; };
-		1B227D811E17691600787172 /* tagSetTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = tagSetTest.swift; sourceTree = "<group>"; };
 		1B282C361E1C69C00098ED40 /* TagString.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TagString.swift; sourceTree = "<group>"; };
 		1B30787D1E21A1D20042BDCC /* CSS_Study.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CSS_Study.swift; sourceTree = "<group>"; };
 		1B447C0A1E040F7F009C1BB8 /* headTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = headTest.swift; sourceTree = "<group>"; };
@@ -150,13 +150,14 @@
 		1BCB14EE1E0CE80F009949A9 /* dl_ul_ol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = dl_ul_ol.swift; sourceTree = "<group>"; };
 		1BD05B4D1DF6CB3000AFAABD /* htmlTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = htmlTest.swift; sourceTree = "<group>"; };
 		1BD1C15F1E1DDDAE00679590 /* css_JW_TEST.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = css_JW_TEST.swift; sourceTree = "<group>"; };
-		1BD1C1611E1DDDC700679590 /* CSS.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CSS.swift; path = CSS.swift; sourceTree = "<group>"; };
-		1BD1C1641E1DE1B100679590 /* CSS_Color.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CSS_Color.swift; path = CSS_Color.swift; sourceTree = "<group>"; };
-		1BD1C1671E1DE2B800679590 /* CSSItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CSSItem.swift; path = CSSItem.swift; sourceTree = "<group>"; };
+		1BD1C1611E1DDDC700679590 /* CSS.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CSS.swift; sourceTree = "<group>"; };
+		1BD1C1641E1DE1B100679590 /* CSS_Color.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CSS_Color.swift; sourceTree = "<group>"; };
+		1BD1C1671E1DE2B800679590 /* CSSItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CSSItem.swift; sourceTree = "<group>"; };
 		1BD1C16A1E1DF92200679590 /* css_Color_Test.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = css_Color_Test.swift; sourceTree = "<group>"; };
 		1BE090DA1E06536800A82473 /* pTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = pTest.swift; sourceTree = "<group>"; };
 		1BE090DC1E06538400A82473 /* p.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = p.swift; sourceTree = "<group>"; };
-		1BFB03AB1E222B1F0022041D /* CSS_Font.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CSS_Font.swift; path = CSS_Font.swift; sourceTree = "<group>"; };
+		1BE378ED1E2B49D10078A89A /* Press.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Press.swift; sourceTree = "<group>"; };
+		1BFB03AB1E222B1F0022041D /* CSS_Font.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CSS_Font.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -274,6 +275,7 @@
 				1B1CE2E61DF0127E00DD2561 /* charset.swift */,
 				1B88D4E31E027FF40069A8AC /* globaDef.swift */,
 				1B1CE2E41DF0117200DD2561 /* language.swift */,
+				1BE378ED1E2B49D10078A89A /* Press.swift */,
 			);
 			path = global;
 			sourceTree = "<group>";
@@ -297,7 +299,6 @@
 				1B08131E1E0E7AD400C0A8DD /* mixHtmlTest.swift */,
 				1BE090DA1E06536800A82473 /* pTest.swift */,
 				1B55D29F1E1A308500F98E27 /* tableTest.swift */,
-				1B227D811E17691600787172 /* tagSetTest.swift */,
 				1B7A692D1E19E4EB0030FF2D /* titleTest.swift */,
 			);
 			path = HTML_TEST;
@@ -310,7 +311,6 @@
 				1BD1C16A1E1DF92200679590 /* css_Color_Test.swift */,
 				1BD1C15F1E1DDDAE00679590 /* css_JW_TEST.swift */,
 			);
-			name = CSS_TEST;
 			path = CSS_TEST;
 			sourceTree = "<group>";
 		};
@@ -359,7 +359,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0810;
-				LastUpgradeCheck = 0810;
+				LastUpgradeCheck = 0820;
 				ORGANIZATIONNAME = "momiji-mac";
 				TargetAttributes = {
 					1B1CE2B71DEFF8D000DD2561 = {
@@ -436,6 +436,7 @@
 				1B1CE2C41DEFF8D000DD2561 /* JabberWock.xcdatamodeld in Sources */,
 				1B1CE2EB1DF0185C00DD2561 /* body.swift in Sources */,
 				1B1CE2DF1DF0086500DD2561 /* html.swift in Sources */,
+				1BE378EE1E2B49D10078A89A /* Press.swift in Sources */,
 				1BAAB6DA1E00D2560009BA87 /* title.swift in Sources */,
 				1B88D4E21E027E6A0069A8AC /* meta.swift in Sources */,
 				1B282C371E1C69C00098ED40 /* TagString.swift in Sources */,
@@ -460,7 +461,6 @@
 				1BE090DB1E06536800A82473 /* pTest.swift in Sources */,
 				1BB619CC1E1DBDCC008D7261 /* div.swift in Sources */,
 				1BCB14F01E0CE80F009949A9 /* dl_ul_ol.swift in Sources */,
-				1B227D821E17691600787172 /* tagSetTest.swift in Sources */,
 				1B447C0D1E04102F009C1BB8 /* headingTest.swift in Sources */,
 				1BD05B531DF6CF8800AFAABD /* charset.swift in Sources */,
 				1B71C0DF1DF2B24B006492D5 /* JWTest.swift in Sources */,
@@ -494,6 +494,7 @@
 				1B88D4E51E0282550069A8AC /* meta.swift in Sources */,
 				1B19979F1E08FEAF00C41C69 /* bistrongTest.swift in Sources */,
 				1B55D29A1E1A1A9A00F98E27 /* footerTest.swift in Sources */,
+				1BE378EF1E2B49D10078A89A /* Press.swift in Sources */,
 				1BCB14EB1E0CDC1B009949A9 /* list.swift in Sources */,
 				1BD05B521DF6CF8400AFAABD /* language.swift in Sources */,
 				1BFB03AD1E222C0A0022041D /* CSS_Font.swift in Sources */,
@@ -546,6 +547,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_SUSPICIOUS_MOVES = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
@@ -596,6 +598,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_SUSPICIOUS_MOVES = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;

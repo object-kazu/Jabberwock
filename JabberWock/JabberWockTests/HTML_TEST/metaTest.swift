@@ -22,8 +22,8 @@ class metaTest: XCTestCase {
     
     func test_mata () {
         let m = META()
-        m.press()
-        
+        let ans = m.press()
+        XCTAssertEqual(ans, "<meta charset=\"UTF-8\"/>")
         /* answer
             <meta charset="UTF-8"/>
          

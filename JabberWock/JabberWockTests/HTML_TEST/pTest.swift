@@ -26,7 +26,8 @@ class pTest: XCTestCase {
     func test_p() {
         let p = P()
         p.content = "test"
-        p.press()
+        let ans = p.press()
+        XCTAssertEqual(ans, "<p>test</p>")
         
         /* answer
          <p>test</p>

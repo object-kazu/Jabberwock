@@ -15,6 +15,9 @@ class TagString{
     var cls: String     = ""
     var lang: LANG      = LANG.NO_LANG
     private var language    = ""
+    
+    var tempOpenString = ""
+    var tempCloseString = ""
   
     // br 場合＝True
     var isBRTag     = false
@@ -25,6 +28,7 @@ class TagString{
     func initialize() {
         id = ""
         cls = ""
+        name = ""
     }
     
     func addID (){
@@ -41,9 +45,21 @@ class TagString{
         if lang == LANG.NO_LANG {return}
         language = SPC + lang.str()
     }
-    
-    
-    func openString () -> String {
+        
+    @discardableResult
+    func openString (spec:String) -> String {
+        
+        tempOpenString = ""
+        
+        if name.isEmpty {
+            return ""
+        }
+        
+        
+        if !spec.isEmpty {
+            tempOpenString = "<" + name + spec + ">"
+            return tempOpenString
+        }
         
         // br
         if isBRTag {return ""}
@@ -52,14 +68,50 @@ class TagString{
         addCls()
         addLang()
         
-        return "<" + name + id + cls + language + ">"
+        tempOpenString = "<" + name + id + cls + language + ">"
+        return tempOpenString
     }
     
-    func closeString () -> String {
+    @discardableResult
+    func openStringReplace (of : String, with:String) -> String {
+        tempOpenString = tempOpenString.replacingOccurrences(of: of,  with: with)
+        return tempOpenString
+    }
+    
+    @discardableResult
+    func closeString (spec:String) -> String {
+        tempCloseString = ""
+
+        if name.isEmpty {
+            return ""
+        }
+
+        // meta
+        if name == "meta" {
+            return ""
+        }
+
+        
+        if !spec.isEmpty {
+            tempCloseString = "</" + spec + ">"
+            return tempCloseString
+        }
+        
         // br
         if isBRTag {return "<" + name + ">"}
         if isSingleTag {return ""}
 
-        return "</" + name + ">"
+        
+        tempCloseString = "</" + name + ">"
+        return tempCloseString
     }
+    
+    @discardableResult
+    func closeStringReplace (of : String, with:String) -> String {
+        tempCloseString = tempCloseString.replacingOccurrences(of: of,  with: with)
+        return tempCloseString
+    }
+
+    
+    
 }

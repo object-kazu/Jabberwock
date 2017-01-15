@@ -52,7 +52,7 @@ class mixHtmlTest: XCTestCase {
         body.addChild(child: pb)
         body.addChild(child: pc)
         
-        
+        html.setLang(lang: LANG.en)
         html.addChild(child: head)
         html.addChild(child: body)
         

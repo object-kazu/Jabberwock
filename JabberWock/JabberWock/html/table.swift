@@ -142,12 +142,13 @@ class TableData: JWSingle {
     private var rowSpan = 0
     private var colSpan = 0
     
-    let INS_ROW_SPAN = "insert row span"
-    let INS_COL_SPAN = "insert col span"
+    let INS_ROW_SPAN = "insert_row_span"
+    let INS_COL_SPAN = "insert_col_span"
     
     override func initilizer() {
-        self.openString = "<td" + INS_ROW_SPAN + INS_COL_SPAN + ">"
-        self.closeString = "</td>"
+        setName(name: "td")
+        self.tagManager.openString(spec: INS_ROW_SPAN + INS_COL_SPAN )
+        self.tagManager.closeString(spec: "")
     }
     
     
@@ -192,15 +193,19 @@ class TableData: JWSingle {
     
         
         if rowSpan > 0 {
-            openString = openString.replacingOccurrences(of: INS_ROW_SPAN, with: SPC + "rowspan=\(rowSpan)")
+            tagManager.openStringReplace(of: INS_ROW_SPAN, with: SPC + "rowspan=\(rowSpan)")
+//            openString = openString.replacingOccurrences(of: INS_ROW_SPAN, with: SPC + "rowspan=\(rowSpan)")
         }else{
-            openString = openString.replacingOccurrences(of: INS_ROW_SPAN, with: "")
+            tagManager.openStringReplace(of: INS_ROW_SPAN, with: "")
+//            openString = openString.replacingOccurrences(of: INS_ROW_SPAN, with: "")
         }
         
         if colSpan > 0 {
-            openString = openString.replacingOccurrences(of: INS_COL_SPAN, with: SPC + "colspan=\(colSpan)")
+            tagManager.openStringReplace(of: INS_COL_SPAN, with: SPC + "colspan=\(colSpan)")
+//            openString = openString.replacingOccurrences(of: INS_COL_SPAN, with: SPC + "colspan=\(colSpan)")
         }else{
-            openString = openString.replacingOccurrences(of: INS_COL_SPAN, with: "")
+            tagManager.openStringReplace(of: INS_COL_SPAN, with: "")
+//            openString = openString.replacingOccurrences(of: INS_COL_SPAN, with: "")
         }
     }
     

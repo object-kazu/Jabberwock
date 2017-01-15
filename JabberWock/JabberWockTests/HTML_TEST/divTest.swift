@@ -58,5 +58,17 @@ class divTest: XCTestCase {
          */
         
     }
+    
+    func test_div_id()  {
+        let d = DIV()
+        d.setID(id: "d1")
+        d.press()
+        
+        /* answer
+         <div id="d1">
+         </div>
+         */
+        
+    }
 
 }

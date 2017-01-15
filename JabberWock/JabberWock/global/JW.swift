@@ -40,8 +40,7 @@ class JWSingle: JWObject {
     }
     
     func initilizer () {
-        self.openString = ""
-        self.closeString = ""
+        tagManager.initialize()
     }
 
     
@@ -55,13 +54,11 @@ class JWSingle: JWObject {
     }
     
     override func makeResult() {
-        
-        templeteString = openString + content
-        
-        if !closeString.isEmpty {
-            templeteString += closeString
+        templeteString = tagManager.tempOpenString + content
+       
+        if !tagManager.tempCloseString.isEmpty {
+            templeteString += tagManager.tempCloseString
         }
-        initResutString()
     }
     
 }
@@ -122,18 +119,16 @@ class JWMulti: JWObject {
     }
     
     override func makeResult() {
-        
-        templeteString += openString + RET
+        templeteString += tagManager.tempOpenString + RET
         
         childAssemble()
         
-        if !closeString.isEmpty {
-            templeteString += closeString
+        if !tagManager.tempCloseString.isEmpty {
+            templeteString += tagManager.tempCloseString
         }
         
         // 最後のRETを取り除く
         templeteString = removeLastRET(str: templeteString)
-        initResutString()
     }
     
     func childAssemble () {
@@ -227,7 +222,7 @@ class JWCSS: JW { // add css functions
         ///検索のためにStyle tag生成
         let s = STYLE()
         s.makeTag()
-        if templeteString.contains(s.openString) && templeteString.contains(s.closeString) {
+        if templeteString.contains(s.tagManager.tempOpenString) && templeteString.contains(s.tagManager.tempCloseString) {
             // insert tab
             let tn = getTabNumber(testStr: templeteString, targetStr: STYLE_CONTENT)
             let tabedString = addTab(str: styleString, tabMax: tn)
@@ -271,95 +266,25 @@ class JWCSS: JW { // add css functions
     }
     
     // press
-    func insertPress(_data_: [(label:String, data :String)]) {
-        
-        initResutString()
-        insertData(_data_: _data_)
-        removeAllLabel()
-        pressCore(name: EXPORT_TEST_File, dist: EXPORT_TEST_Dir)
-        
-    }
     
-    func insertPress(label:String, data :String){
-        initResutString()
-        insertData(lebel: label, Data: data)
-        removeAllLabel()
-        pressCore(name: EXPORT_TEST_File, dist: EXPORT_TEST_Dir)
-    }
-
-    
-    
-    override func press(name: String, dist : String) -> String{
-        
+    override func prepTempString() {
         assemble()
         memberAssemble()
-        removeAllLabel()
         applyStyle()
-        pressCore(name: name, dist: dist)
-        
-        return resultString
     }
-    
-    func pressCore (name: String, dist : String) {
-        
-        // ドキュメントパス
-        let documentsPath = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true)[0] as String
-        // 保存するもの
-        let fileObject = resultString
-        // ファイル名
-        let fileName = name
-        // 保存する場所
-        let filePath = documentsPath + fileName
-        
-        // 保存処理
-        do {
-            try fileObject.write(toFile: filePath, atomically: true, encoding: String.Encoding.utf8)
-        } catch {
-            print("Fail to write result at text file")
-            
-        }
-        
-        
-        
-        //file exist
-        let fileManager = FileManager.default
-        let path = dist + name
-        
-        if fileManager.fileExists(atPath: path){
-            // remove file
-            print("file remove!")
-            removeFile(path: path)
-        }
-        
-        // file move
-        do{
-            try fileManager.moveItem(atPath: filePath, toPath:path)
-        } catch {
-            assertionFailure("move error")
-        }
-    }
-
 }
 
 class JW{
     
-    
-    private var tagManager      : TagString = TagString()
-    var openString              : String!
-    var closeString             : String!
+    var tagManager      : TagString = TagString()
+    private var openString              : String!
+    private var closeString             : String!
     
     var aData:(label:String, data :String)!
     var data: [(label:String, data :String)] = []
     
-    var variableLabel            : String!
-    var vLabel                   : String {
-        get {
-            return LABEL_INSERT_START + variableLabel + LABEL_INSERT_END
-        }
-    }
-
     var templeteString  : String    = "" // Labelによる書き換え前のString
-    var resultString    : String    = "" // Labelによる書き換え後の最終String
+    var pressTreatment  : Press!
     
     var memberString: [String]      = []
     
@@ -438,121 +363,10 @@ class JW{
         return "." + tagCls()
     }
     
-    
-    
-    /*
-     press後、変更可能とする仕組み
-     ================================================================================
-     set)
-     => let p1 = P()
-     => p1.content = "insert data: " + V("j") + "is made for" + V("i")
-     
-     => press
-     
-     <p> insert data: ##LABELSTART##j##LABELSTART## is made for ##LABELSTART##i##LABELSTART##<p>
-     
-     => insertPress([(label:String,data:String)])
-     
-     <p> insert data: hogehoge is made for fofofofofofo<p>
-     
-     
-     ================================================================================
-     
-     
-     
-     
-     */
-    
-    func V(label:String) -> String {
-        self.variableLabel = label
-        return self.vLabel
-    }
-
-    // templeteStringにDataを挿入してresultStringに更新する
-    /*
-     
-     => assemble // templeteStringとresultStringを用意する
-     
-     == temprateString ==
-     <p> ##LABEL## conten ## LABEL## </p>
-     <p> ##LABEL## conten1 ## LABEL## </p>
-     
-     == templeteString ==
-     <p> ##LABEL## conten ## LABEL## </p>
-     <p> ##LABEL## conten1 ## LABEL## </p>
-
-     => initResultString　// resultStringを初期化し直す
-     
-     == temprateString ==
-     <p> ##LABEL## conten ## LABEL## </p>
-     <p> ##LABEL## conten1 ## LABEL## </p>
-     
-     == templeteString ==
-     <p> ##LABEL## conten ## LABEL## </p>
-     <p> ##LABEL## conten1 ## LABEL## </p>
-
-     
-     => insertPress(label: conten, Data: "hellow")
-     
-     == temprateString ==
-     <p> ##LABEL## conten ## LABEL## </p>
-     <p> ##LABEL## conten1 ## LABEL## </p>
-     
-     == resultString ==
-     <p> ##LABEL## conten ## LABEL##hellow </p>
-     <p> ##LABEL## conten1 ## LABEL## </p>
-     
-     => removeLabel() // 全てのラベルを削除してresultStringとして出力する
-     <p> hellow </p>
-     <p> </p>
-     
-     
-     
-     */
-//    func insertPress(_data_: [(label:String, data :String)]) {
-//        
-//        initResutString()
-//        insertData(_data_: _data_)
-//        removeAllLabel()
-//        
-//    }
-//    
-//    func insertPress(label:String, data :String){
-//        initResutString()
-//        insertData(lebel: label, Data: data)
-//        removeAllLabel()
-//    }
-    
-    func initResutString () {
-        // templeteString -> keep
-        // resultString -> copy templeteString
-        resultString = ""
-        resultString = templeteString
-    }
-    
-    fileprivate func insertData (_data_: [(label:String, data :String)]) {
-        for d in _data_ {
-            insertData(lebel: d.label, Data: d.data)
-        }
-    }
-    
-    fileprivate func insertData (lebel: String, Data :String) {
-        let targetString = vLabel
-        let dataPlusTargetString = targetString + Data
-        resultString = resultString.replacingOccurrences(of: targetString, with: dataPlusTargetString)
-    }
-    
-    func removeAllLabel () {
-        let a = resultString.pregReplace(pattern: "##LABELSTART##.*?##LABELEND##", with: "")
-        resultString = a
-    }
-    
-    
-    
     // tagの変更時には必ず呼び出しアップデート
     func makeTag() {
-        openString = tagManager.openString()
-        closeString = tagManager.closeString()
+        tagManager.openString(spec: "")
+        tagManager.closeString(spec: "")
     }
     
     // tab揃え
@@ -612,8 +426,21 @@ class JW{
 
     
     
-    func assemble(){}
-    func makeResult(){}
+    func assemble(){
+        makeTag()
+        makeResult()
+    }
+    
+    func makeResult(){
+        templeteString += tagManager.tempOpenString + RET
+        
+        if !tagManager.tempCloseString.isEmpty {
+            templeteString += tagManager.tempCloseString
+        }
+        
+        // 最後のRETを取り除く
+        templeteString = removeLastRET(str: templeteString)
+    }
     
     func memberAssemble () {
         
@@ -630,24 +457,41 @@ class JW{
         }
     }
     
+    func prepTempString()  {
+        assemble()
+        memberAssemble()
+    }
+    
+    
     // resultStringをファイルに書き出す
     @discardableResult
-    func press(name: String, dist : String) ->String{return ""}
+    func press(name: String, dist : String) -> String{
+        self.pressTreatment = Press()   // prep templeteString
+        prepTempString()                // make templeteString
+        
+        self.pressTreatment.templeteString = self.templeteString
+        self.pressTreatment.initResutString()               // templeteString -> resultString
+        self.pressTreatment.removeAllLabel()                // remove label string
+        self.pressTreatment.core(name: name, dist: dist)    // press resultString
+        
+
+        return self.pressTreatment.resultString
+    }
     
     @discardableResult
-    func press () -> String  {
-       return self.press(name: EXPORT_TEST_File, dist: EXPORT_TEST_Dir)
+    func press () -> String {
+        return self.press(name: EXPORT_TEST_File, dist: EXPORT_TEST_Dir)
     }
     
+    @discardableResult
+    func insertPress(_data_: [(label:String, data :String)]) -> String {
+        return self.pressTreatment.withInsert(_data_: _data_)
+    }
     
-    func removeFile(path:String){
-        let fileManager = FileManager.default
+    @discardableResult
+    func insertPress(label:String, data:String) -> String {
+        return self.pressTreatment.withInsert(label: label, data: data)
+    }
+    
+}
 
-        do {
-            try fileManager.removeItem(atPath: path)
-            print("Removal successful")
-        } catch let error {
-            print("Error: \(error.localizedDescription)")
-        }
-    }
- }

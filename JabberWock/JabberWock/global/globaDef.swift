@@ -34,6 +34,11 @@ let ROW_SPAN = "%rowSpan="
 let COL_SPAN = "%colSpan="
 
 
+// variable label
+func V(label:String) -> String {
+    return LABEL_INSERT_START + label + LABEL_INSERT_END
+}
+
 // - extention
 extension String {
     

@@ -27,8 +27,8 @@ class headingTest: XCTestCase {
     func test_headings_h1 (){
         let h1 = HEADING()
         h1.level = 0 // h1 tag
-        h1.press()
-        
+        let ans = h1.press()
+        XCTAssertEqual(ans, "<h1></h1>")
         /* answer
          <h1></h1>
          
@@ -38,7 +38,8 @@ class headingTest: XCTestCase {
     func test_headings_h6 (){
         let h1 = HEADING()
         h1.level = 10 // h6 tag
-        h1.press()
+        let ans = h1.press()
+        XCTAssertEqual(ans, "<h6></h6>")
         
         /* answer
          <h6></h6>
@@ -49,7 +50,9 @@ class headingTest: XCTestCase {
         let h1 = HEADING()
         h1.level = 1
         h1.content = "test"
-        h1.press()
+        let ans = h1.press()
+        XCTAssertEqual(ans, "<h1>test</h1>")
+        
         /* answer
          <h1>test</h1>
          
@@ -58,7 +61,8 @@ class headingTest: XCTestCase {
     
     func test_heading_init(){
         let h2 = HEADING(level: 2, content: "init test")
-        h2.press()
+        let ans = h2.press()
+        XCTAssertEqual(ans, "<h2>init test</h2>")
         
         /* answer
          <h2>init test</h2>
@@ -69,7 +73,8 @@ class headingTest: XCTestCase {
     func test_heading_id(){
         let h2 = HEADING(level: 2, content: "init test")
         h2.setID(id: "header2")
-        h2.press()
+        let ans = h2.press()
+        XCTAssertEqual(ans, "<h2 id=\"header2\">init test</h2>")
         
         /* answer
          <h2 id="header2">init test</h2>

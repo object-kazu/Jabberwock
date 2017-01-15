@@ -72,7 +72,8 @@ class bistrongTest: XCTestCase {
     func test_i () {
         let ii = I()
         ii.content = "italic test"
-        ii.press()
+        let ans = ii.press()
+        XCTAssertEqual(ans, "<i>italic test</i>")
         
         /* answer
          <i>italic test</i>
@@ -96,8 +97,8 @@ class bistrongTest: XCTestCase {
     func test_strong () {
         let st = STRONG()
         st.content = "strong"
-        st.press()
-        
+        let ans = st.press()
+        XCTAssertEqual(ans, "<strong>strong</strong>")
         /* answer
          <strong>strong</strong>
          */

@@ -21,9 +21,13 @@ class META:JWSingle {
     
     override init() {
         super.init()
-        self.openString     = "<meta" + SPC + INSERTSTRING + "/>"
-        self.closeString    = ""
+        initilizer()
+        self.tagManager.openString(spec: SPC + INSERTSTRING + "/")
+        self.tagManager.closeString(spec: "")
 
+    }
+    override func initilizer() {
+        setName(name: "meta")
     }
     
     func setCharset(of: CHARSET)  {
@@ -31,10 +35,8 @@ class META:JWSingle {
     }
     
     func insertCharset () {
-        openString = openString.replacingOccurrences(of: INSERTSTRING, with: self.charset.str())
+        self.tagManager.openStringReplace(of: INSERTSTRING, with: charset.str())
     }
-    
-    override func makeTag() {}
     
     override func assemble() {
         insertCharset()

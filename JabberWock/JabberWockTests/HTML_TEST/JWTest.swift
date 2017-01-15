@@ -23,30 +23,36 @@ class JWTest: XCTestCase {
     }
     
     func test_press() {
-        jw.resultString = "test"
-        jw.press()
+        jw.templeteString = "test"
+        let ans = jw.press()
+        XCTAssertEqual(ans, "test")
     }
     
     func test_assemble() {
-        jw.openString = "test"
-        jw.closeString = "done"
-        jw.press()
+        jw.tagManager.name = "test"
+        let ans = jw.press()
+        XCTAssertEqual(ans, "<test>\n</test>")
     }
-    
+
     // label
     func test_label_case1 (){
         let j = JWSingle()
-        j.content = "test" + j.V(label: "a")
-        j.press()
-        XCTAssertEqual(j.resultString, "<>test</>")
+        j.setName(name: "j")
+        j.content = "test" + V(label: "a")
+        let ans = j.press()
+        XCTAssertEqual(ans, "<j>test</j>")
     }
-    
+
     func test_label_case2 (){
         let j = JWSingle()
-        j.content = "test" + j.V(label: "a")
-        j.press()
-        j.insertPress(_data_: [("a", " is done")])
-        XCTAssertEqual(j.resultString, "<>test is done</>")
+        j.setName(name: "j")
+        j.content = "test" + V(label: "a")
+        let fAns = j.press()
+        XCTAssertEqual(fAns, "<j>test</j>")
+        
+        
+        let sAns = j.insertPress(_data_: [("a", " is done")])
+        XCTAssertEqual(sAns, "<j>test is done</j>")
         
     }
     

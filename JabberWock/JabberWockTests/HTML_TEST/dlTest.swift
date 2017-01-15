@@ -1,11 +1,11 @@
-////
-////  dlTest.swift
-////  JabberWock
-////
-////  Created by 清水 一征 on 2016/12/31.
-////  Copyright © 2016年 momiji-mac. All rights reserved.
-////
 //
+//  dlTest.swift
+//  JabberWock
+//
+//  Created by 清水 一征 on 2016/12/31.
+//  Copyright © 2016年 momiji-mac. All rights reserved.
+//
+
 //import XCTest
 //
 //class dlTest: XCTestCase {
@@ -22,9 +22,7 @@
 //    
 //    
 //    func  test_dl()  {
-//        let dl = DL()
-//        dl.content = "test"
-//        dl.press()
+//        
 //        
 //    }
 //    
