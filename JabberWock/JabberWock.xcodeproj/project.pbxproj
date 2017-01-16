@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		1B08131F1E0E7AD400C0A8DD /* mixHtmlTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B08131E1E0E7AD400C0A8DD /* mixHtmlTest.swift */; };
+		1B18A6121E2CAE5500F134D2 /* JS_Document.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B18A6111E2CAE5500F134D2 /* JS_Document.swift */; };
+		1B18A6131E2CAE5500F134D2 /* JS_Document.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B18A6111E2CAE5500F134D2 /* JS_Document.swift */; };
 		1B19979B1E08A5E500C41C69 /* bodyTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B19979A1E08A5E500C41C69 /* bodyTest.swift */; };
 		1B19979D1E08F1C600C41C69 /* b_i_strong_br.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B19979C1E08F1C600C41C69 /* b_i_strong_br.swift */; };
 		1B19979F1E08FEAF00C41C69 /* bistrongTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B19979E1E08FEAF00C41C69 /* bistrongTest.swift */; };
@@ -101,6 +103,7 @@
 
 /* Begin PBXFileReference section */
 		1B08131E1E0E7AD400C0A8DD /* mixHtmlTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = mixHtmlTest.swift; sourceTree = "<group>"; };
+		1B18A6111E2CAE5500F134D2 /* JS_Document.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = JS_Document.swift; path = JS_Document.swift; sourceTree = "<group>"; };
 		1B19979A1E08A5E500C41C69 /* bodyTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = bodyTest.swift; sourceTree = "<group>"; };
 		1B19979C1E08F1C600C41C69 /* b_i_strong_br.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = b_i_strong_br.swift; sourceTree = "<group>"; };
 		1B19979E1E08FEAF00C41C69 /* bistrongTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = bistrongTest.swift; sourceTree = "<group>"; };
@@ -263,6 +266,7 @@
 		1B1CE2E21DF0089D00DD2561 /* js */ = {
 			isa = PBXGroup;
 			children = (
+				1B18A6111E2CAE5500F134D2 /* JS_Document.swift */,
 			);
 			path = js;
 			sourceTree = "<group>";
@@ -271,11 +275,11 @@
 			isa = PBXGroup;
 			children = (
 				1B71C0DA1DF2A98F006492D5 /* JW.swift */,
+				1BE378ED1E2B49D10078A89A /* Press.swift */,
 				1B282C361E1C69C00098ED40 /* TagString.swift */,
 				1B1CE2E61DF0127E00DD2561 /* charset.swift */,
 				1B88D4E31E027FF40069A8AC /* globaDef.swift */,
 				1B1CE2E41DF0117200DD2561 /* language.swift */,
-				1BE378ED1E2B49D10078A89A /* Press.swift */,
 			);
 			path = global;
 			sourceTree = "<group>";
@@ -448,6 +452,7 @@
 				1BAAE56F1E0B77F300A13637 /* blockquote.swift in Sources */,
 				1B55D29D1E1A1C7E00F98E27 /* table.swift in Sources */,
 				1B1CE2BC1DEFF8D000DD2561 /* AppDelegate.swift in Sources */,
+				1B18A6121E2CAE5500F134D2 /* JS_Document.swift in Sources */,
 				1B8F6FCD1E1E2AD300553871 /* style.swift in Sources */,
 				1BCB14EA1E0CDC1B009949A9 /* list.swift in Sources */,
 			);
@@ -487,6 +492,7 @@
 				1BD1C1691E1DE2B800679590 /* CSSItem.swift in Sources */,
 				1B55D29B1E1A1ABD00F98E27 /* footer.swift in Sources */,
 				1B71C0E21DF2B2D9006492D5 /* JW.swift in Sources */,
+				1B18A6131E2CAE5500F134D2 /* JS_Document.swift in Sources */,
 				1B9946EE1E02A07D00BA13B4 /* heading.swift in Sources */,
 				1B447C0B1E040F7F009C1BB8 /* headTest.swift in Sources */,
 				1B19979B1E08A5E500C41C69 /* bodyTest.swift in Sources */,
