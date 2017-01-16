@@ -33,10 +33,14 @@ let BLA: String = "<br>"
 let ROW_SPAN = "%rowSpan="
 let COL_SPAN = "%colSpan="
 
-
-// variable label
-func V(label:String) -> String {
-    return LABEL_INSERT_START + label + LABEL_INSERT_END
+extension String {
+    var variable: String {
+        return LABEL_INSERT_START + self + LABEL_INSERT_END
+    }
+    
+    func ins (data:String) -> (label:String, data:String){
+        return (self,data)
+    }
 }
 
 // - extention

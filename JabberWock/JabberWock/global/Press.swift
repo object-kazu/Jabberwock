@@ -94,7 +94,7 @@ class Press{
     }
     
     func insertData (label: String, Data :String) {
-        let targetString = V(label: label)
+        let targetString = label.variable
         let dataPlusTargetString = targetString + Data
         resultString = resultString.replacingOccurrences(of: targetString, with: dataPlusTargetString)
     }
@@ -152,7 +152,6 @@ class Press{
             print("Fail to write result at text file")
             
         }
-        
         
         
         //file exist
