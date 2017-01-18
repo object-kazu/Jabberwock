@@ -8,6 +8,14 @@
 
 import Foundation
 
+// export html & css
+let EXPORT_TEST_Dir = "/Users/shimizukazuyuki/Desktop/index/"
+let EXPORT_TEST_File = "result.txt"
+
+// export js
+let EXPORT_TEST_JS_Dir = "/Users/shimizukazuyuki/Desktop/index/"
+let EXPORT_TEST_JS_File = "result.js"
+
 
 /*
  press後、変更可能とする仕組み
@@ -76,6 +84,10 @@ import Foundation
 
 class Press{
     
+    // js
+    
+    
+    // html & css
     var templeteString  : String!           // Labelによる書き換え前のString
     var resultString    : String    = ""    // Labelによる書き換え後の最終String
     
@@ -129,7 +141,6 @@ class Press{
     // templateString -> resultString -> export
     @discardableResult
     func core(name: String, dist : String) -> String{
-        
         exportResult(name: name, dist: dist)
         return resultString
     }
@@ -141,8 +152,11 @@ class Press{
         // 保存するもの
         let fileObject = resultString
         // ファイル名
-        let fileName = name
+        var fileName = name
         // 保存する場所
+        if !fileName.contains("/") {
+            fileName = "/" + fileName
+        }
         let filePath = documentsPath + fileName
         
         // 保存処理

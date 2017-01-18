@@ -16,6 +16,12 @@ class TagString{
     var lang: LANG      = LANG.NO_LANG
     private var language    = ""
     
+    //script tag
+    var jsPath    : String    = ""
+    var jsPathPlusName :String   = ""
+    var jsFileName: String    = ""
+    var jsType    : String    = ""
+    
     var tempOpenString = ""
     var tempCloseString = ""
   
@@ -26,26 +32,117 @@ class TagString{
     var isSingleTag = false
     
     func initialize() {
-        id = ""
-        cls = ""
-        name = ""
+        id          = ""
+        cls         = ""
+        name        = ""
+        jsFileName  = ""
+        jsPath      = ""
+        jsType      = ""
     }
     
-    func addID (){
+    private func isScriptTag() -> Bool {
+        return name == "script" ? true : false
+    }
+    
+    private func addID (){
         if id.isEmpty {return}
-        id = SPC + "id=" + "\"" +  id + "\""
+        id = SPC + "id=" + DOUBLE_QUO +  id + DOUBLE_QUO
     }
     
-    func addCls (){
+    private func addCls (){
         if cls.isEmpty {return}
-        cls = SPC + "class=" + "\"" + cls + "\""
+        cls = SPC + "class=" + DOUBLE_QUO + cls + DOUBLE_QUO
     }
     
-    func addLang (){
+    private func addLang (){
         if lang == LANG.NO_LANG {return}
         language = SPC + lang.str()
     }
+    
+    // js
+    private func addPath() {
         
+        if jsFileName.isEmpty {return}
+        if jsPath.isEmpty {
+            jsPath = EXPORT_TEST_JS_Dir
+        }
+        
+        jsPathPlusName = SPC + "src=" + DOUBLE_QUO + jsPath + jsFileName + DOUBLE_QUO
+    }
+    
+    private func addType()  {
+        if jsType.isEmpty{return}
+        jsType = SPC + "type=" + DOUBLE_QUO + jsType + DOUBLE_QUO
+    }
+    
+    
+    /// js <script></script>に挟まれた文字列を取り出す
+    func extranctBetweenScriptTag (target: [String]) -> (scriptTag:[String], extract:[String]) {
+        /*
+         [0] = "<!DOCTYPE html type=\"text/javascript\" src=\"/Users/shimizukazuyuki/Desktop/index/test.js\">"
+         [1] = "<script type=\"text/javascript\" src=\"/Users/shimizukazuyuki/Desktop/index/test.js\">"
+         [2] = "\ttest\t"
+         [3] = "</script>"
+         
+         */
+        
+        var s : [String] = []
+        var e : [String] = []
+        
+        var start = false
+        for st in target {
+            if st.contains("<script") {
+                s.append(st)
+                start = true
+                continue
+            }
+            
+            if st.contains("</script>") {
+                s.append(st)
+                start = false
+                continue
+            }
+            
+            if start {
+                e.append(st)
+                
+            }else{
+                s.append(st)
+            }
+            
+            
+        }
+        return (scriptTag: s, extract: e)
+    }
+
+    
+    /*
+     => isNeedJsSrc
+     <script type="text/javascript" src="/Users/shimizukazuyuki/Desktop/index/test.js"></script>
+     
+     => InDocument
+     <script type="text/javascript"></script>
+     
+     
+     */
+    
+    func isJsAvailable () -> Bool {
+        if !jsType.isEmpty || !jsPath.isEmpty || !jsFileName.isEmpty { // <script> available
+            return true
+        }else{
+            return false
+        }
+    }
+    
+    func isNeedJsSrc () -> Bool {
+        if isJsAvailable() {
+            if !jsFileName.isEmpty {
+                return true
+            }
+        }
+        return false
+    }
+    
     @discardableResult
     func openString (spec:String) -> String {
         
@@ -63,11 +160,19 @@ class TagString{
         
         // br
         if isBRTag {return ""}
-
+     
         addID()
         addCls()
         addLang()
+        addPath()
+        addType()
         
+        // script
+        if isScriptTag() {
+            tempOpenString = "<" + name + id + cls + language + jsType + jsPathPlusName + ">"
+            return tempOpenString
+        }
+
         tempOpenString = "<" + name + id + cls + language + ">"
         return tempOpenString
     }

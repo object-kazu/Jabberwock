@@ -8,8 +8,6 @@
 
 import Foundation
 
-let EXPORT_TEST_Dir = "/Users/shimizukazuyuki/Desktop/index/"
-let EXPORT_TEST_File = "result.txt"
 
 
 /*
@@ -85,7 +83,9 @@ class JWMulti: JWObject {
     
     // add child
     func addChild (child : JWObject){
-       
+        
+        //js
+        importJSParameters(child: child)
         // html
         child.assemble()
         self.addCihld(child: child.templeteString)
@@ -101,6 +101,7 @@ class JWMulti: JWObject {
     }
     
     func addChildren (children : [JWObject]){
+        
         for c: JWObject in children {
             addChild(child: c)
         }
@@ -108,6 +109,7 @@ class JWMulti: JWObject {
     
     
     func addCihld (child: String) {
+        
         let t = child.replacingOccurrences(of: RET, with: RET + TAB)
         childString.append(t)
     }
@@ -242,10 +244,14 @@ class JWCSS: JW { // add css functions
     
     // add member
     func addMember(member:String)  {
+    
         memberString.append(member)
     }
 
     func addMember (member: JWObject){
+        // js
+        importJSParameters(child: member)
+        
         // html
         member.assemble()
         addMember(member: member.templeteString)
@@ -296,7 +302,7 @@ class JW{
 
     
     
-    // remove last \n
+    // remove charactor
     func removeLastRET (str: String) -> String {
         if str.hasSuffix("\n") {
             return str.substring(to: str.index(before: str.endIndex))
@@ -310,13 +316,28 @@ class JW{
         return str
     }
     
+    func removeHeadTAB (str:String) -> String{
+        if str.hasPrefix("\t"){
+            return str.substring(from: str.index(after: str.startIndex))
+        }
+        return str
+    }
+    
     //export string
     func tgStr () -> String {
         assemble()
         return templeteString
     }
 
-    
+    //js
+    func importJSParameters (child:JWObject) {
+        if child.tagManager.isJsAvailable() {
+            self.tagManager.jsFileName  = child.tagManager.jsFileName
+            self.tagManager.jsType      = child.tagManager.jsType
+            self.tagManager.jsPath      = child.tagManager.jsPath
+        }
+        
+    }
     
     // tag
     func isBRTag (single: Bool) {
@@ -363,7 +384,6 @@ class JW{
         return "." + tagCls()
     }
     
-    // tagの変更時には必ず呼び出しアップデート
     func makeTag() {
         tagManager.openString(spec: "")
         tagManager.closeString(spec: "")
@@ -425,6 +445,10 @@ class JW{
     }
 
     
+    func prepTempString()  {
+        assemble()
+        memberAssemble()
+    }
     
     func assemble(){
         makeTag()
@@ -457,17 +481,43 @@ class JW{
         }
     }
     
-    func prepTempString()  {
-        assemble()
-        memberAssemble()
-    }
-    
-    
     // resultStringをファイルに書き出す
     @discardableResult
     func press(name: String, dist : String) -> String{
         self.pressTreatment = Press()   // prep templeteString
         prepTempString()                // make templeteString
+        
+        if self.tagManager.isJsAvailable() {
+            if self.tagManager.isNeedJsSrc() {
+                // prep for js
+                // <script>　と<その他>を分離
+                // <その他>を別ファイルに書き出す
+                // ＜script＞を通常通り書き出す
+                let a = enumerateLine(target: self.templeteString)
+                let ans = self.tagManager.extranctBetweenScriptTag(target: a)
+                var b : [String] = []
+                for t in ans.extract {
+                    b.append(removeHeadTAB(str: t))
+                }
+                self.templeteString = b.joined(separator: "\n")
+                
+                // export to js file
+                self.pressTreatment.templeteString = self.templeteString
+                self.pressTreatment.initResutString()               // templeteString -> resultString
+                self.pressTreatment.removeAllLabel()                // remove label string
+                let tempName = self.tagManager.jsFileName
+                let tempDir = self.tagManager.jsPath
+                self.pressTreatment.core(name: tempName, dist: tempDir)    // press resultString
+
+                // prep for html and css
+                self.templeteString = ans.scriptTag.joined(separator: "\n")
+                
+                
+            }else{
+                //通常のTagと同じ処理
+            }
+            
+        }
         
         self.pressTreatment.templeteString = self.templeteString
         self.pressTreatment.initResutString()               // templeteString -> resultString

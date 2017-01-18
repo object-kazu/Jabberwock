@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		1B08131F1E0E7AD400C0A8DD /* mixHtmlTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B08131E1E0E7AD400C0A8DD /* mixHtmlTest.swift */; };
+		1B104A481E2CE8780060840A /* scriptTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B104A471E2CE8780060840A /* scriptTest.swift */; };
 		1B18A6121E2CAE5500F134D2 /* JS_Document.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B18A6111E2CAE5500F134D2 /* JS_Document.swift */; };
 		1B18A6131E2CAE5500F134D2 /* JS_Document.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B18A6111E2CAE5500F134D2 /* JS_Document.swift */; };
 		1B19979B1E08A5E500C41C69 /* bodyTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B19979A1E08A5E500C41C69 /* bodyTest.swift */; };
@@ -30,6 +31,8 @@
 		1B282C371E1C69C00098ED40 /* TagString.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B282C361E1C69C00098ED40 /* TagString.swift */; };
 		1B282C381E1C69C00098ED40 /* TagString.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B282C361E1C69C00098ED40 /* TagString.swift */; };
 		1B30787E1E21A1D20042BDCC /* CSS_Study.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B30787D1E21A1D20042BDCC /* CSS_Study.swift */; };
+		1B31F3CC1E2CB4F100482675 /* script.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B31F3CB1E2CB4F100482675 /* script.swift */; };
+		1B31F3CD1E2CB4F100482675 /* script.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B31F3CB1E2CB4F100482675 /* script.swift */; };
 		1B447C0B1E040F7F009C1BB8 /* headTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B447C0A1E040F7F009C1BB8 /* headTest.swift */; };
 		1B447C0D1E04102F009C1BB8 /* headingTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B447C0C1E04102F009C1BB8 /* headingTest.swift */; };
 		1B55D29A1E1A1A9A00F98E27 /* footerTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B55D2991E1A1A9A00F98E27 /* footerTest.swift */; };
@@ -103,7 +106,8 @@
 
 /* Begin PBXFileReference section */
 		1B08131E1E0E7AD400C0A8DD /* mixHtmlTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = mixHtmlTest.swift; sourceTree = "<group>"; };
-		1B18A6111E2CAE5500F134D2 /* JS_Document.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = JS_Document.swift; path = JS_Document.swift; sourceTree = "<group>"; };
+		1B104A471E2CE8780060840A /* scriptTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = scriptTest.swift; sourceTree = "<group>"; };
+		1B18A6111E2CAE5500F134D2 /* JS_Document.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JS_Document.swift; sourceTree = "<group>"; };
 		1B19979A1E08A5E500C41C69 /* bodyTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = bodyTest.swift; sourceTree = "<group>"; };
 		1B19979C1E08F1C600C41C69 /* b_i_strong_br.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = b_i_strong_br.swift; sourceTree = "<group>"; };
 		1B19979E1E08FEAF00C41C69 /* bistrongTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = bistrongTest.swift; sourceTree = "<group>"; };
@@ -125,6 +129,7 @@
 		1B227D7F1E17445900787172 /* dlTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = dlTest.swift; sourceTree = "<group>"; };
 		1B282C361E1C69C00098ED40 /* TagString.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TagString.swift; sourceTree = "<group>"; };
 		1B30787D1E21A1D20042BDCC /* CSS_Study.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CSS_Study.swift; sourceTree = "<group>"; };
+		1B31F3CB1E2CB4F100482675 /* script.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = script.swift; sourceTree = "<group>"; };
 		1B447C0A1E040F7F009C1BB8 /* headTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = headTest.swift; sourceTree = "<group>"; };
 		1B447C0C1E04102F009C1BB8 /* headingTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = headingTest.swift; sourceTree = "<group>"; };
 		1B55D2991E1A1A9A00F98E27 /* footerTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = footerTest.swift; sourceTree = "<group>"; };
@@ -248,6 +253,7 @@
 				1B8F6FCC1E1E2AD300553871 /* style.swift */,
 				1B55D29C1E1A1C7D00F98E27 /* table.swift */,
 				1BAAB6D91E00D2560009BA87 /* title.swift */,
+				1B31F3CB1E2CB4F100482675 /* script.swift */,
 			);
 			path = html;
 			sourceTree = "<group>";
@@ -304,6 +310,7 @@
 				1BE090DA1E06536800A82473 /* pTest.swift */,
 				1B55D29F1E1A308500F98E27 /* tableTest.swift */,
 				1B7A692D1E19E4EB0030FF2D /* titleTest.swift */,
+				1B104A471E2CE8780060840A /* scriptTest.swift */,
 			);
 			path = HTML_TEST;
 			sourceTree = "<group>";
@@ -434,6 +441,7 @@
 				1B1CE2E51DF0117200DD2561 /* language.swift in Sources */,
 				1BD1C1621E1DDDC700679590 /* CSS.swift in Sources */,
 				1B7F1C741DF9265C006F570B /* documentType.swift in Sources */,
+				1B31F3CC1E2CB4F100482675 /* script.swift in Sources */,
 				1BE090DD1E06538400A82473 /* p.swift in Sources */,
 				1B71C0DB1DF2A98F006492D5 /* JW.swift in Sources */,
 				1BCB14EF1E0CE80F009949A9 /* dl_ul_ol.swift in Sources */,
@@ -494,6 +502,7 @@
 				1B71C0E21DF2B2D9006492D5 /* JW.swift in Sources */,
 				1B18A6131E2CAE5500F134D2 /* JS_Document.swift in Sources */,
 				1B9946EE1E02A07D00BA13B4 /* heading.swift in Sources */,
+				1B104A481E2CE8780060840A /* scriptTest.swift in Sources */,
 				1B447C0B1E040F7F009C1BB8 /* headTest.swift in Sources */,
 				1B19979B1E08A5E500C41C69 /* bodyTest.swift in Sources */,
 				1B227D801E17445900787172 /* dlTest.swift in Sources */,
@@ -506,6 +515,7 @@
 				1BFB03AD1E222C0A0022041D /* CSS_Font.swift in Sources */,
 				1BAAB6DD1E00FD7A0009BA87 /* body.swift in Sources */,
 				1BD1C1631E1DDDC700679590 /* CSS.swift in Sources */,
+				1B31F3CD1E2CB4F100482675 /* script.swift in Sources */,
 				1B7A692E1E19E4EB0030FF2D /* titleTest.swift in Sources */,
 				1B88D4E61E02825A0069A8AC /* globaDef.swift in Sources */,
 				1B8F6FCE1E1E2AD300553871 /* style.swift in Sources */,

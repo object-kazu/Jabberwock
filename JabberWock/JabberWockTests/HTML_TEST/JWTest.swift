@@ -62,8 +62,7 @@ class JWTest: XCTestCase {
         j.content = "test" + "a".variable
         let fAns = j.press()
         XCTAssertEqual(fAns, "<j>test</j>")
-        
-        
+    
         let sAns = j.insertPress(_data_: [("a", " is done")])
         XCTAssertEqual(sAns, "<j>test is done</j>")
         

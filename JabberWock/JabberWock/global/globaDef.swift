@@ -21,6 +21,7 @@ let SPC         : String    = " "
 let COMMA       : String    = ","
 let COLON       : String    = ":"
 let SEMI_COLON  : String    = ";"
+let DOUBLE_QUO  : String    = "\""
 
 
 let INSERTSTRING: String        = "%%"
@@ -32,6 +33,21 @@ let LABEL_INSERT_END   : String = "##LABELEND##"
 let BLA: String = "<br>"
 let ROW_SPAN = "%rowSpan="
 let COL_SPAN = "%colSpan="
+
+
+//１行ごとに文字列を抜き出す
+func enumerateLine (target:String) -> [String] {
+    var l: [String] = []
+    target.enumerateLines{
+        line, stop in
+        
+        //下記に１行ごとに行いたい動作を記述
+        l.append(line)
+        print("\(line)")
+    }
+    return l
+}
+
 
 extension String {
     var variable: String {
