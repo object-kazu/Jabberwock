@@ -15,4 +15,8 @@ class JSDocument{
     func write(str: String) -> String {
         return name + JS.dotAdd(str: "write") + JS.inParentheses(str: str) + JS_CMD_END
     }
+
+    
 }
+
+

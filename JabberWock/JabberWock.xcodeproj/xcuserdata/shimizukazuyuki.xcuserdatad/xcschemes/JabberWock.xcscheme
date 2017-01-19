@@ -32,7 +32,7 @@
             ActionType = "Xcode.IDEStandardExecutionActionsCore.ExecutionActionType.ShellScriptAction">
             <ActionContent
                title = "Run Script"
-               scriptText = "open ~/Desktop/index/result.html&#10;open ~/Desktop/index/result.txt&#10;">
+               scriptText = "open ~/Desktop/index/result.html&#10;">
                <EnvironmentBuildable>
                   <BuildableReference
                      BuildableIdentifier = "primary"

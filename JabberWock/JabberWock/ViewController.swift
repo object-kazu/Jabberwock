@@ -16,7 +16,7 @@ class ViewController: UIViewController,UIWebViewDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         webView.delegate = self
-        jsLoad()
+        jqueryLoad()
         
         // パスを取得する
         // ドキュメントパス
@@ -53,7 +53,7 @@ class ViewController: UIViewController,UIWebViewDelegate {
     }
 
     // js load
-    func jsLoad(){
+    func jqueryLoad(){
         let path = Bundle.main.path(forResource: "jquery-3.1.1.min", ofType: "js")
         let jsCode = try? String(contentsOfFile: path!, encoding: String.Encoding.utf8)
         webView.stringByEvaluatingJavaScript(from: jsCode!)

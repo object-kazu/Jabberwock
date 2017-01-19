@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1B053A171E306F8300FFBCCC /* test.js in Resources */ = {isa = PBXBuildFile; fileRef = 1B053A161E306F8300FFBCCC /* test.js */; };
 		1B08131F1E0E7AD400C0A8DD /* mixHtmlTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B08131E1E0E7AD400C0A8DD /* mixHtmlTest.swift */; };
 		1B104A481E2CE8780060840A /* scriptTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B104A471E2CE8780060840A /* scriptTest.swift */; };
 		1B18A6121E2CAE5500F134D2 /* JS_Document.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B18A6111E2CAE5500F134D2 /* JS_Document.swift */; };
@@ -111,6 +112,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		1B053A161E306F8300FFBCCC /* test.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = test.js; sourceTree = "<group>"; };
 		1B08131E1E0E7AD400C0A8DD /* mixHtmlTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = mixHtmlTest.swift; sourceTree = "<group>"; };
 		1B104A471E2CE8780060840A /* scriptTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = scriptTest.swift; sourceTree = "<group>"; };
 		1B18A6111E2CAE5500F134D2 /* JS_Document.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JS_Document.swift; sourceTree = "<group>"; };
@@ -203,6 +205,7 @@
 				1B1CE2D21DEFF8D000DD2561 /* JabberWockTests */,
 				1B1CE2B91DEFF8D000DD2561 /* Products */,
 				1B8122721E0A278E00495340 /* index.html */,
+				1B053A161E306F8300FFBCCC /* test.js */,
 				1BAAE56C1E0B5EEF00A13637 /* jquery-3.1.1.min.js */,
 			);
 			sourceTree = "<group>";
@@ -432,6 +435,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1B053A171E306F8300FFBCCC /* test.js in Resources */,
 				1B8122731E0A278E00495340 /* index.html in Resources */,
 				1BAAE56B1E0B5C1800A13637 /* Main.storyboard in Resources */,
 				1B1CE2C91DEFF8D000DD2561 /* LaunchScreen.storyboard in Resources */,

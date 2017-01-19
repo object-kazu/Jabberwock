@@ -109,13 +109,72 @@ class scriptTest: XCTestCase {
          
          => result.txt
          <!DOCTYPE html>
-         <script type="text/javascript" src="test.js">
-            test
+         <script type="text/javascript">
+            test case 6
          </script>
          <p>this is next</p>
         
          
          */
     }
+    
+    func test_script_loadFile_case1 (){
+        let doc = DOCTYPE()
+        let s = SCRIPT(type: "text/javascript")
+        s.addCihld(child: "insert js file")
+        s.loadFile(jsFile: "test")
+        
+        doc.addMember(member: s)
+        doc.press()
+        
+        /* answer
+         <!DOCTYPE html>
+         <script type="text/javascript">
+         insert js file
+         function init() {
+         var a = 3, b = 2, c = 9;
+         var x = (a == b);
+         var y = (a>b);
+         var z = (b>c);
+         
+         var str = "x =" + x + ", y=" + y + ", z=" + z;
+         document.getElementById("info").textContent = str;
+         
+         }	
+         
+         </script>
+         
+         */
+    }
+    
+    func test_script_loadFile_case2 (){
+        let doc = DOCTYPE()
+        let s = SCRIPT(name: "sample")
+        s.addCihld(child: "insert js file")
+        s.loadFile(jsFile: "test")
+        
+        doc.addMember(member: s)
+        doc.press()
+        
+        /* answer
+         <!DOCTYPE html>
+         <script type="text/javascript">
+         insert js file
+         function init() {
+         var a = 3, b = 2, c = 9;
+         var x = (a == b);
+         var y = (a>b);
+         var z = (b>c);
+         
+         var str = "x =" + x + ", y=" + y + ", z=" + z;
+         document.getElementById("info").textContent = str;
+         
+         }
+         
+         </script>
+         
+         */
+    }
+
  
 }
