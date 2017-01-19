@@ -15,10 +15,12 @@ class JSWindow{
     var name:String = "window"
     
     func defaultStatus(str: String) -> String {
-            return name + JS.dotAdd(str: "defaultStatus") + EQUAL + SINGLE_QUO + str + SINGLE_QUO + JS_CMD_END
+        return name.dott(nex: "defaultStatus") + EQUAL.inSingleQuo(inn: str) + JS_CMD_END
+ 
     }
     
     func confirm(str: String) -> String {
-        return name + JS.dotAdd(str: "confirm") + JS.inParentheses(str: str) + JS_CMD_END
+        return name.dott(nex: "confirm").inParenth(inn: str) + JS_CMD_END
+
     }
 }

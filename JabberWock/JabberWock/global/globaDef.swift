@@ -51,7 +51,7 @@ func enumerateLine (target:String) -> [String] {
 }
 
 
-extension String {
+extension String { // variable in html
     var variable: String {
         return LABEL_INSERT_START + self + LABEL_INSERT_END
     }
@@ -62,7 +62,25 @@ extension String {
 }
 
 // - extention
-extension String {
+extension String {// dot connect
+    func dott (nex: String) -> String {
+        return self + "." + nex
+    }
+    
+    func inParenth (inn: String) -> String {
+        return self + "(" + SINGLE_QUO + inn + SINGLE_QUO + ")"
+    }
+    
+    func inDoubleQuo (inn : String) -> String {
+        return self +  DOUBLE_QUO + inn + DOUBLE_QUO
+    }
+    
+    func inSingleQuo (inn : String) -> String {
+        return self +  SINGLE_QUO + inn + SINGLE_QUO
+    }
+}
+
+extension String { // 一行ずつに分割
     
     var lines: [String] {
         var lines = [String]()

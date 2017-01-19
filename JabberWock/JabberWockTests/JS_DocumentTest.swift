@@ -40,6 +40,15 @@ class JS_Document: XCTestCase {
         doc.press()
     }
     
+    func test_write(){
+        let ans = jsd.write(str: "test")
+        XCTAssertEqual(ans, "document.write('test')")
+    }
+    
+    func test_getElementByID_case1 () {
+        let ans = jsd.getElememtByID(id: "test1").innerHTML(str: "test is done")
+        XCTAssertEqual(ans, "document.getElementByID('test1').innerHTML=\"test is done\";")
+    }
 
     
 }

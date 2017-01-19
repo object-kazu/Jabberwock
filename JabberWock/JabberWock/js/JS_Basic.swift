@@ -8,13 +8,17 @@
 
 import Foundation
 class JS {
-    class func dotAdd (str: String) -> String{
-        return "." + str
-    }
-    
-    class func inParentheses (str :String) -> String {
-        return "(" + SINGLE_QUO + str + SINGLE_QUO + ")"
-    }
+//    class func dotAdd (str: String) -> String{
+//        return "." + str
+//    }
+//    
+//    class func inParentheses (str :String) -> String {
+//        return "(" + SINGLE_QUO + str + SINGLE_QUO + ")"
+//    }
+//    
+//    class func inDoubleQuo (str : String) -> String {
+//        return DOUBLE_QUO + str + DOUBLE_QUO
+//    }
     
     /*
      <!doctype html>
