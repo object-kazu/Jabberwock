@@ -10,7 +10,7 @@ import Foundation
 
 // export html & css
 let EXPORT_TEST_Dir = "/Users/shimizukazuyuki/Desktop/index/"
-let EXPORT_TEST_File = "result.txt"
+let EXPORT_TEST_File = "result.html"
 
 // export js
 let EXPORT_TEST_JS_Dir = "/Users/shimizukazuyuki/Desktop/index/"

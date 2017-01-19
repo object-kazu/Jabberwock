@@ -91,6 +91,31 @@ class scriptTest: XCTestCase {
          
          */
     }
-
+    
+    func test_script_case6()  {
+        
+        let doc = DOCTYPE()
+        let p = P(content: "this is next")
+        
+        let s = SCRIPT(type: "text/javascript")
+        s.addCihld(child: "test case 6")
+        
+        doc.addMember(member: s)
+        doc.addMember(member: p)
+        doc.press()
+        
+        
+        /* answer
+         
+         => result.txt
+         <!DOCTYPE html>
+         <script type="text/javascript" src="test.js">
+            test
+         </script>
+         <p>this is next</p>
+        
+         
+         */
+    }
  
 }

@@ -21,8 +21,10 @@ let SPC         : String    = " "
 let COMMA       : String    = ","
 let COLON       : String    = ":"
 let SEMI_COLON  : String    = ";"
+let JS_CMD_END  : String    = SEMI_COLON
 let DOUBLE_QUO  : String    = "\""
-
+let SINGLE_QUO  : String    = "'"
+let EQUAL       : String    = "="
 
 let INSERTSTRING: String        = "%%"
 let STYLE_CONTENT: String       = "##STYLE##"

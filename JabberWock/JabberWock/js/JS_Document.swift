@@ -10,4 +10,9 @@ import Foundation
 
 class JSDocument{
     
+    private let name:String = "document"
+    
+    func write(str: String) -> String {
+        return name + JS.dotAdd(str: "write") + JS.inParentheses(str: str) + JS_CMD_END
+    }
 }
