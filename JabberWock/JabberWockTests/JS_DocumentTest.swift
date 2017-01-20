@@ -46,8 +46,14 @@ class JS_Document: XCTestCase {
     }
     
     func test_getElementByID_case1 () {
-        let ans = jsd.getElememtByID(id: "test1").innerHTML(str: "test is done")
-        XCTAssertEqual(ans, "document.getElementByID('test1').innerHTML=\"test is done\";")
+        let ans = jsd.getElememtBy(ID: "test1").innerHTML(str: "test is done")
+        XCTAssertEqual(ans, "document.getElementById('test1').innerHTML=\"test is done\";")
+    }
+    
+    func test_getElementByTagName_case1(){
+        let ans = jsd.getElementBy(TagName: "p").innerHTML(str: "test is done")
+        XCTAssertEqual(ans, "document.getElementByTagName('p').innerHTML=\"test is done\";")
+        
     }
 
     
