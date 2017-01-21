@@ -50,6 +50,9 @@
 		1B71C0DB1DF2A98F006492D5 /* JW.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B71C0DA1DF2A98F006492D5 /* JW.swift */; };
 		1B71C0DF1DF2B24B006492D5 /* JWTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B71C0DE1DF2B24B006492D5 /* JWTest.swift */; };
 		1B71C0E21DF2B2D9006492D5 /* JW.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B71C0DA1DF2A98F006492D5 /* JW.swift */; };
+		1B722AF81E3348DB007F6064 /* a.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B722AF71E3348DB007F6064 /* a.swift */; };
+		1B722AF91E3348DB007F6064 /* a.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B722AF71E3348DB007F6064 /* a.swift */; };
+		1B722AFB1E334ED8007F6064 /* aTagTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B722AFA1E334ED8007F6064 /* aTagTest.swift */; };
 		1B7A692E1E19E4EB0030FF2D /* titleTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B7A692D1E19E4EB0030FF2D /* titleTest.swift */; };
 		1B7F1C741DF9265C006F570B /* documentType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B7F1C731DF9265C006F570B /* documentType.swift */; };
 		1B7F1C761DF927FE006F570B /* doctypeTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B7F1C751DF927FE006F570B /* doctypeTest.swift */; };
@@ -149,6 +152,8 @@
 		1B55D29F1E1A308500F98E27 /* tableTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = tableTest.swift; sourceTree = "<group>"; };
 		1B71C0DA1DF2A98F006492D5 /* JW.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JW.swift; sourceTree = "<group>"; };
 		1B71C0DE1DF2B24B006492D5 /* JWTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JWTest.swift; sourceTree = "<group>"; };
+		1B722AF71E3348DB007F6064 /* a.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = a.swift; sourceTree = "<group>"; };
+		1B722AFA1E334ED8007F6064 /* aTagTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = aTagTest.swift; sourceTree = "<group>"; };
 		1B7A692D1E19E4EB0030FF2D /* titleTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = titleTest.swift; sourceTree = "<group>"; };
 		1B7F1C731DF9265C006F570B /* documentType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = documentType.swift; sourceTree = "<group>"; };
 		1B7F1C751DF927FE006F570B /* doctypeTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = doctypeTest.swift; sourceTree = "<group>"; };
@@ -268,6 +273,7 @@
 				1B55D29C1E1A1C7D00F98E27 /* table.swift */,
 				1BAAB6D91E00D2560009BA87 /* title.swift */,
 				1B31F3CB1E2CB4F100482675 /* script.swift */,
+				1B722AF71E3348DB007F6064 /* a.swift */,
 			);
 			path = html;
 			sourceTree = "<group>";
@@ -336,6 +342,7 @@
 				1B55D29F1E1A308500F98E27 /* tableTest.swift */,
 				1B7A692D1E19E4EB0030FF2D /* titleTest.swift */,
 				1B104A471E2CE8780060840A /* scriptTest.swift */,
+				1B722AFA1E334ED8007F6064 /* aTagTest.swift */,
 			);
 			path = HTML_TEST;
 			sourceTree = "<group>";
@@ -465,6 +472,7 @@
 				1B19979D1E08F1C600C41C69 /* b_i_strong_br.swift in Sources */,
 				1BFB03AC1E222B1F0022041D /* CSS_Font.swift in Sources */,
 				1BB619CB1E1DBDCC008D7261 /* div.swift in Sources */,
+				1B722AF81E3348DB007F6064 /* a.swift in Sources */,
 				1B1CE2E51DF0117200DD2561 /* language.swift in Sources */,
 				1BD1C1621E1DDDC700679590 /* CSS.swift in Sources */,
 				1B7F1C741DF9265C006F570B /* documentType.swift in Sources */,
@@ -519,6 +527,7 @@
 				1B4116551E2F5857002AC7AC /* JS_Window.swift in Sources */,
 				1B1997A01E090FEB00C41C69 /* b_i_strong_br.swift in Sources */,
 				1BB619CE1E1DBDF9008D7261 /* divTest.swift in Sources */,
+				1B722AF91E3348DB007F6064 /* a.swift in Sources */,
 				1BD05B4E1DF6CB3000AFAABD /* htmlTest.swift in Sources */,
 				1B282C381E1C69C00098ED40 /* TagString.swift in Sources */,
 				1BD1C1661E1DE1B100679590 /* CSS_Color.swift in Sources */,
@@ -543,6 +552,7 @@
 				1BE378EF1E2B49D10078A89A /* Press.swift in Sources */,
 				1BCB14EB1E0CDC1B009949A9 /* list.swift in Sources */,
 				1B4F3E781E30377400F3057B /* JS_Basic.swift in Sources */,
+				1B722AFB1E334ED8007F6064 /* aTagTest.swift in Sources */,
 				1BD05B521DF6CF8400AFAABD /* language.swift in Sources */,
 				1BFB03AD1E222C0A0022041D /* CSS_Font.swift in Sources */,
 				1BAAB6DD1E00FD7A0009BA87 /* body.swift in Sources */,

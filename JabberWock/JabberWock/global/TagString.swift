@@ -31,6 +31,10 @@ class TagString{
     // li, doctype, meta 場合＝True
     var isSingleTag = false
     
+    // <a href, target ></a>
+    var href :String    = ""
+    var target :String  = ""
+    
     func initialize() {
         id          = ""
         cls         = ""
@@ -40,10 +44,17 @@ class TagString{
         jsType      = ""
     }
     
+    
+    // tag judgemnet
     private func isScriptTag() -> Bool {
         return name == "script" ? true : false
     }
     
+    private func isATag() -> Bool {
+        return name == "a" ? true : false
+    }
+    
+    // add id, cls, path, etc
     private func addID (){
         if id.isEmpty {return}
         id = SPC + "id=" + DOUBLE_QUO +  id + DOUBLE_QUO
@@ -161,6 +172,8 @@ class TagString{
         // br
         if isBRTag {return ""}
      
+        /// id, clsなどの指定が必要Tagはここより下に記入
+        
         addID()
         addCls()
         addLang()
@@ -169,11 +182,33 @@ class TagString{
         
         // script
         if isScriptTag() {
-            tempOpenString = "<" + name + id + cls + language + jsType + jsPathPlusName + ">"
-            return tempOpenString
+            return scriptTag()
         }
-
+        
+        //<a>
+        if isATag(){
+            return ATag()
+        }
+        
         tempOpenString = "<" + name + id + cls + language + ">"
+        return tempOpenString
+    }
+    
+    private func ATag() -> String {
+        if !href.isEmpty {
+            href = SPC + "href=" + href
+        }
+        if !target.isEmpty {
+            target = SPC + "target=" + target
+        }
+        
+        tempOpenString = "<" + name + id + cls + href + target + ">"
+        return tempOpenString
+        
+    }
+    
+    private func scriptTag () -> String {
+        tempOpenString = "<" + name + id + cls + language + jsType + jsPathPlusName + ">"
         return tempOpenString
     }
     
