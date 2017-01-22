@@ -27,6 +27,10 @@ let SINGLE_QUO  : String    = "'"
 let EQUAL       : String    = "="
 
 let INSERTSTRING: String        = "%%"
+
+/// close tag not require
+let NOT_REQUIRE = "not require"
+
 let STYLE_CONTENT: String       = "##STYLE##"
 let LABEL_INSERT_START : String = "##LABELSTART##"
 let LABEL_INSERT_END   : String = "##LABELEND##"
@@ -49,6 +53,9 @@ func enumerateLine (target:String) -> [String] {
     }
     return l
 }
+
+
+
 
 
 extension String { // variable in html
@@ -78,6 +85,8 @@ extension String {// dot connect
     func inSingleQuo (inn : String) -> String {
         return self +  SINGLE_QUO + inn + SINGLE_QUO
     }
+    
+    
 }
 
 extension String { // 一行ずつに分割

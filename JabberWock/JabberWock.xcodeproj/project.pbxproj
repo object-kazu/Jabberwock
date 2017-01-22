@@ -67,6 +67,9 @@
 		1B8FACC01E16964900641934 /* metaTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B8FACBF1E16964900641934 /* metaTest.swift */; };
 		1B9946ED1E02A07D00BA13B4 /* heading.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B9946EC1E02A07D00BA13B4 /* heading.swift */; };
 		1B9946EE1E02A07D00BA13B4 /* heading.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B9946EC1E02A07D00BA13B4 /* heading.swift */; };
+		1BAA497C1E344BF500C70E7D /* image.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BAA497B1E344BF500C70E7D /* image.swift */; };
+		1BAA497D1E344BF500C70E7D /* image.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BAA497B1E344BF500C70E7D /* image.swift */; };
+		1BAA497F1E3452E500C70E7D /* imageTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BAA497E1E3452E500C70E7D /* imageTest.swift */; };
 		1BAAB6DA1E00D2560009BA87 /* title.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BAAB6D91E00D2560009BA87 /* title.swift */; };
 		1BAAB6DB1E00D2DF0009BA87 /* head.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B1CE2E81DF017F000DD2561 /* head.swift */; };
 		1BAAB6DC1E00FD730009BA87 /* title.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BAAB6D91E00D2560009BA87 /* title.swift */; };
@@ -163,6 +166,8 @@
 		1B8F6FCC1E1E2AD300553871 /* style.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = style.swift; sourceTree = "<group>"; };
 		1B8FACBF1E16964900641934 /* metaTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = metaTest.swift; sourceTree = "<group>"; };
 		1B9946EC1E02A07D00BA13B4 /* heading.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = heading.swift; sourceTree = "<group>"; };
+		1BAA497B1E344BF500C70E7D /* image.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = image.swift; sourceTree = "<group>"; };
+		1BAA497E1E3452E500C70E7D /* imageTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = imageTest.swift; sourceTree = "<group>"; };
 		1BAAB6D91E00D2560009BA87 /* title.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = title.swift; sourceTree = "<group>"; };
 		1BAAE56A1E0B5C1800A13637 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		1BAAE56C1E0B5EEF00A13637 /* jquery-3.1.1.min.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = "jquery-3.1.1.min.js"; sourceTree = "<group>"; };
@@ -274,6 +279,7 @@
 				1BAAB6D91E00D2560009BA87 /* title.swift */,
 				1B31F3CB1E2CB4F100482675 /* script.swift */,
 				1B722AF71E3348DB007F6064 /* a.swift */,
+				1BAA497B1E344BF500C70E7D /* image.swift */,
 			);
 			path = html;
 			sourceTree = "<group>";
@@ -343,6 +349,7 @@
 				1B7A692D1E19E4EB0030FF2D /* titleTest.swift */,
 				1B104A471E2CE8780060840A /* scriptTest.swift */,
 				1B722AFA1E334ED8007F6064 /* aTagTest.swift */,
+				1BAA497E1E3452E500C70E7D /* imageTest.swift */,
 			);
 			path = HTML_TEST;
 			sourceTree = "<group>";
@@ -484,6 +491,7 @@
 				1B1CE2EB1DF0185C00DD2561 /* body.swift in Sources */,
 				1B1CE2DF1DF0086500DD2561 /* html.swift in Sources */,
 				1BE378EE1E2B49D10078A89A /* Press.swift in Sources */,
+				1BAA497C1E344BF500C70E7D /* image.swift in Sources */,
 				1BAAB6DA1E00D2560009BA87 /* title.swift in Sources */,
 				1B88D4E21E027E6A0069A8AC /* meta.swift in Sources */,
 				1B282C371E1C69C00098ED40 /* TagString.swift in Sources */,
@@ -539,6 +547,7 @@
 				1BD1C1691E1DE2B800679590 /* CSSItem.swift in Sources */,
 				1B55D29B1E1A1ABD00F98E27 /* footer.swift in Sources */,
 				1B71C0E21DF2B2D9006492D5 /* JW.swift in Sources */,
+				1BAA497D1E344BF500C70E7D /* image.swift in Sources */,
 				1B18A6131E2CAE5500F134D2 /* JS_Document.swift in Sources */,
 				1B9946EE1E02A07D00BA13B4 /* heading.swift in Sources */,
 				1B104A481E2CE8780060840A /* scriptTest.swift in Sources */,
@@ -551,6 +560,7 @@
 				1B55D29A1E1A1A9A00F98E27 /* footerTest.swift in Sources */,
 				1BE378EF1E2B49D10078A89A /* Press.swift in Sources */,
 				1BCB14EB1E0CDC1B009949A9 /* list.swift in Sources */,
+				1BAA497F1E3452E500C70E7D /* imageTest.swift in Sources */,
 				1B4F3E781E30377400F3057B /* JS_Basic.swift in Sources */,
 				1B722AFB1E334ED8007F6064 /* aTagTest.swift in Sources */,
 				1BD05B521DF6CF8400AFAABD /* language.swift in Sources */,

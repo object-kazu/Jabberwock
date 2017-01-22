@@ -23,7 +23,7 @@ class META:JWSingle {
         super.init()
         initilizer()
         self.tagManager.openString(spec: SPC + INSERTSTRING + "/")
-        self.tagManager.closeString(spec: "")
+        self.tagManager.closeString(spec: NOT_REQUIRE)
 
     }
     override func initilizer() {

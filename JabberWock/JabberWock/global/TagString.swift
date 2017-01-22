@@ -226,10 +226,14 @@ class TagString{
             return ""
         }
 
-        // meta
-        if name == "meta" {
+        // not require
+        /// meta, img
+        if spec == NOT_REQUIRE {
             return ""
         }
+//        if name == "meta" || name == "image" {
+//            return ""
+//        }
 
         
         if !spec.isEmpty {
