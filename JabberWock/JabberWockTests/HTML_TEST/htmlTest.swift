@@ -26,10 +26,10 @@ class htmlTest: XCTestCase {
     
    
     func test_html_basic() {
-        html.press()
-
+        let a = html.press()
+        XCTAssertEqual(a, "<html>\n</html>")
         /*
-         <html lang="en">
+         <html>
          </html>
          */
         

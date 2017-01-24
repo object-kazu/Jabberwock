@@ -358,7 +358,7 @@ class JW{
         tagManager.name = name
     }
     func setLang(lang:LANG) {
-        tagManager.lang = lang
+        tagManager.attr.add(lang: lang)
     }
     func tagName() -> String {
         return tagManager.name

@@ -13,8 +13,10 @@ class TagString{
     var name: String    = ""
     var id: String      = ""
     var cls: String     = ""
-    var lang: LANG      = LANG.NO_LANG
-    private var language    = ""
+    
+    // tag attribute
+    var attr: TagAttribute = TagAttribute()
+    
     
     //script tag
     var jsPath    : String    = ""
@@ -65,10 +67,10 @@ class TagString{
         cls = SPC + "class=" + DOUBLE_QUO + cls + DOUBLE_QUO
     }
     
-    private func addLang (){
-        if lang == LANG.NO_LANG {return}
-        language = SPC + lang.str()
-    }
+//    private func addLang (){
+//        if lang == LANG.NO_LANG {return}
+//        language = SPC + lang.str()
+//    }
     
     // js
     private func addPath() {
@@ -176,7 +178,6 @@ class TagString{
         
         addID()
         addCls()
-        addLang()
         addPath()
         addType()
         
@@ -190,7 +191,7 @@ class TagString{
             return ATag()
         }
         
-        tempOpenString = "<" + name + id + cls + language + ">"
+        tempOpenString = "<" + name + id + cls + attr.aString + ">"
         return tempOpenString
     }
     
@@ -208,7 +209,7 @@ class TagString{
     }
     
     private func scriptTag () -> String {
-        tempOpenString = "<" + name + id + cls + language + jsType + jsPathPlusName + ">"
+        tempOpenString = "<" + name + id + cls + attr.aString + jsType + jsPathPlusName + ">"
         return tempOpenString
     }
     
@@ -231,11 +232,7 @@ class TagString{
         if spec == NOT_REQUIRE {
             return ""
         }
-//        if name == "meta" || name == "image" {
-//            return ""
-//        }
 
-        
         if !spec.isEmpty {
             tempCloseString = "</" + spec + ">"
             return tempCloseString
