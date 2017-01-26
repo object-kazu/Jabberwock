@@ -38,7 +38,6 @@ class BR : JWSingle {
  
     
     override func initilizer () {
-        isBRTag(single: true)
         setName(name: "br")
     }
     

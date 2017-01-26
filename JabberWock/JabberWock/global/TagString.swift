@@ -28,7 +28,7 @@ class TagString{
     var tempCloseString = ""
   
     // br 場合＝True
-    var isBRTag     = false
+//    var isBRTag     = false
     
     // li, doctype, meta 場合＝True
     var isSingleTag = false
@@ -54,6 +54,10 @@ class TagString{
     
     private func isATag() -> Bool {
         return name == "a" ? true : false
+    }
+    
+    func isBrTag() -> Bool{
+        return name == "br" ? true : false
     }
     
     // add id, cls, path, etc
@@ -172,7 +176,7 @@ class TagString{
         }
         
         // br
-        if isBRTag {return ""}
+        if isBrTag() { return ""}
      
         /// id, clsなどの指定が必要Tagはここより下に記入
         
@@ -186,6 +190,8 @@ class TagString{
             return scriptTag()
         }
         
+        
+        // TODO: attribute Stringなので統一させたい！
         //<a>
         if isATag(){
             return ATag()
@@ -239,8 +245,14 @@ class TagString{
         }
         
         // br
-        if isBRTag {return "<" + name + ">"}
-        if isSingleTag {return ""}
+        if isBrTag() {
+            tempCloseString = "<" + name + ">"
+            return tempCloseString
+        }
+        if isSingleTag {
+            tempCloseString = ""
+            return tempCloseString
+        }
 
         
         tempCloseString = "</" + name + ">"

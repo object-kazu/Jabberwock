@@ -340,9 +340,9 @@ class JW{
     }
     
     // tag
-    func isBRTag (single: Bool) {
-        tagManager.isBRTag = single
-    }
+//    func isBRTag (single: Bool) {
+//        tagManager.name = single
+//    }
     func isSingleTag (single: Bool) {
         tagManager.isSingleTag = single
     }
