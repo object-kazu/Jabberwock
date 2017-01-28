@@ -71,6 +71,8 @@
 		1B8FACC01E16964900641934 /* metaTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B8FACBF1E16964900641934 /* metaTest.swift */; };
 		1B9946ED1E02A07D00BA13B4 /* heading.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B9946EC1E02A07D00BA13B4 /* heading.swift */; };
 		1B9946EE1E02A07D00BA13B4 /* heading.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B9946EC1E02A07D00BA13B4 /* heading.swift */; };
+		1BA0EEDA1E3C8DDF00A46361 /* pre.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BA0EED91E3C8DDF00A46361 /* pre.swift */; };
+		1BA0EEDB1E3C8DDF00A46361 /* pre.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BA0EED91E3C8DDF00A46361 /* pre.swift */; };
 		1BAA497C1E344BF500C70E7D /* image.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BAA497B1E344BF500C70E7D /* image.swift */; };
 		1BAA497D1E344BF500C70E7D /* image.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BAA497B1E344BF500C70E7D /* image.swift */; };
 		1BAA497F1E3452E500C70E7D /* imageTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BAA497E1E3452E500C70E7D /* imageTest.swift */; };
@@ -148,7 +150,7 @@
 		1B1EF5E11E3C82FD003EACE8 /* aTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = aTest.swift; sourceTree = "<group>"; };
 		1B227D7F1E17445900787172 /* dlTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = dlTest.swift; sourceTree = "<group>"; };
 		1B282C361E1C69C00098ED40 /* TagString.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TagString.swift; sourceTree = "<group>"; };
-		1B2AE8841E2F8AFA008885FA /* JS_WindowTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = JS_WindowTest.swift; path = JS_WindowTest.swift; sourceTree = "<group>"; };
+		1B2AE8841E2F8AFA008885FA /* JS_WindowTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JS_WindowTest.swift; sourceTree = "<group>"; };
 		1B30787D1E21A1D20042BDCC /* CSS_Study.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CSS_Study.swift; sourceTree = "<group>"; };
 		1B31F3CB1E2CB4F100482675 /* script.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = script.swift; sourceTree = "<group>"; };
 		1B4116531E2F5857002AC7AC /* JS_Window.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JS_Window.swift; sourceTree = "<group>"; };
@@ -173,6 +175,7 @@
 		1B8F6FCC1E1E2AD300553871 /* style.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = style.swift; sourceTree = "<group>"; };
 		1B8FACBF1E16964900641934 /* metaTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = metaTest.swift; sourceTree = "<group>"; };
 		1B9946EC1E02A07D00BA13B4 /* heading.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = heading.swift; sourceTree = "<group>"; };
+		1BA0EED91E3C8DDF00A46361 /* pre.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = pre.swift; sourceTree = "<group>"; };
 		1BAA497B1E344BF500C70E7D /* image.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = image.swift; sourceTree = "<group>"; };
 		1BAA497E1E3452E500C70E7D /* imageTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = imageTest.swift; sourceTree = "<group>"; };
 		1BAAB6D91E00D2560009BA87 /* title.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = title.swift; sourceTree = "<group>"; };
@@ -287,6 +290,7 @@
 				1B8F6FCC1E1E2AD300553871 /* style.swift */,
 				1B55D29C1E1A1C7D00F98E27 /* table.swift */,
 				1BAAB6D91E00D2560009BA87 /* title.swift */,
+				1BA0EED91E3C8DDF00A46361 /* pre.swift */,
 			);
 			path = html;
 			sourceTree = "<group>";
@@ -332,7 +336,6 @@
 				1B4F3E7C1E30422500F3057B /* JS_DocumentTest.swift */,
 				1B2AE8841E2F8AFA008885FA /* JS_WindowTest.swift */,
 			);
-			name = JS_TEST;
 			path = JS_TEST;
 			sourceTree = "<group>";
 		};
@@ -484,6 +487,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				1B1CE2BE1DEFF8D000DD2561 /* ViewController.swift in Sources */,
+				1BA0EEDA1E3C8DDF00A46361 /* pre.swift in Sources */,
 				1B4F3E771E30377400F3057B /* JS_Basic.swift in Sources */,
 				1BD1C1651E1DE1B100679590 /* CSS_Color.swift in Sources */,
 				1BCA4BA81E0953F50089772A /* footer.swift in Sources */,
@@ -581,6 +585,7 @@
 				1BFB03AD1E222C0A0022041D /* CSS_Font.swift in Sources */,
 				1BAAB6DD1E00FD7A0009BA87 /* body.swift in Sources */,
 				1BD1C1631E1DDDC700679590 /* CSS.swift in Sources */,
+				1BA0EEDB1E3C8DDF00A46361 /* pre.swift in Sources */,
 				1B31F3CD1E2CB4F100482675 /* script.swift in Sources */,
 				1B7A692E1E19E4EB0030FF2D /* titleTest.swift in Sources */,
 				1B88D4E61E02825A0069A8AC /* globaDef.swift in Sources */,
