@@ -9,6 +9,10 @@
 import Foundation
 class A : JWSingle {
     
+    override init() {
+        super.init()
+    }
+    
     init(href:String){
         super.init()
         initilizer()
@@ -25,11 +29,13 @@ class A : JWSingle {
     }
 
     func href(_href : String) {
-        self.tagManager.href = _href
+        if _href.isEmpty {return}
+        tagManager.attr.add(href: _href)
     }
     
     func target(_target:String)  {
-        self.tagManager.target = _target
+        if _target.isEmpty {return}
+        tagManager.attr.add(target: _target)
     }
     
     override func initilizer () {

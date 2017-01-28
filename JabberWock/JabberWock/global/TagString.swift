@@ -34,8 +34,8 @@ class TagString{
     var isSingleTag = false
     
     // <a href, target ></a>
-    var href :String    = ""
-    var target :String  = ""
+//    var href :String    = ""
+//    var target :String  = ""
     
     func initialize() {
         id          = ""
@@ -190,29 +190,22 @@ class TagString{
             return scriptTag()
         }
         
-        
-        // TODO: attribute Stringなので統一させたい！
-        //<a>
-        if isATag(){
-            return ATag()
-        }
-        
         tempOpenString = "<" + name + id + cls + attr.aString + ">"
         return tempOpenString
     }
     
-    private func ATag() -> String {
-        if !href.isEmpty {
-            href = SPC + "href=" + href
-        }
-        if !target.isEmpty {
-            target = SPC + "target=" + target
-        }
-        
-        tempOpenString = "<" + name + id + cls + href + target + ">"
-        return tempOpenString
-        
-    }
+//    private func ATag() -> String {
+//        if !href.isEmpty {
+//            href = SPC + "href=" + href
+//        }
+//        if !target.isEmpty {
+//            target = SPC + "target=" + target
+//        }
+//        
+//        tempOpenString = "<" + name + id + cls + href + target + ">"
+//        return tempOpenString
+//        
+//    }
     
     private func scriptTag () -> String {
         tempOpenString = "<" + name + id + cls + attr.aString + jsType + jsPathPlusName + ">"
